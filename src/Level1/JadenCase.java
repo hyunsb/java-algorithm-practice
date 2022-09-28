@@ -2,8 +2,12 @@ package Level1;
 
 public class JadenCase {
     public static void main(String[] args) {
+        // JadenCase 문자열 만들기
+
         String str1 = "3people unFollowed me ";
         String str2 = "for the last week";
+        // return
+        // str1 = "3people Unfollowed Me "
 
         // 마지막 문자열이 공백일 경우 error
         /*
