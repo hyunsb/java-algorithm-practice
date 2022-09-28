@@ -22,14 +22,15 @@ public class JadenCase {
          *         System.out.println("'"+answer+"'");
          */
 
-        String[] strArr = str1.split("");
+        String[] strArr = str1.toLowerCase().split("");
         for(int i = 0; i < strArr.length-1; i++){
-            strArr[i+1] = (strArr[i].equals(" "))?strArr[i+1].toUpperCase():strArr[i+1].toLowerCase();
+            strArr[i+1] = (strArr[i].equals(" "))?
+                    strArr[i+1].toUpperCase():strArr[i+1];
         }
         strArr[0] = strArr[0].toUpperCase();
         String answer = String.join("", strArr);
 
-        System.out.println("'"+answer+"'");
+        System.out.println(answer);
 
 
 
