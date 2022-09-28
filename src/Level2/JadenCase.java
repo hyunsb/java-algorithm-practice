@@ -1,4 +1,4 @@
-package Level1;
+package Level2;
 
 public class JadenCase {
     public static void main(String[] args) {
