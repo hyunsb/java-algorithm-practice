@@ -10,6 +10,9 @@ public class FindMinArray {
         int[] B = {5, 4, 4};
         int answer = 0;
 
+        String SD = "Dsadas";
+        SD.substring(1, 2);
+
         int[] arr1 = A;
         Arrays.sort(arr1);
 
