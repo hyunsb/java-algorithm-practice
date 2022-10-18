@@ -3,7 +3,8 @@ import java.util.*;
 public class Poketmon {
 
     public static void main(String[] args) {
-
+        int[] nums = {1,2,3,4};
+        solution(nums);
     }
 
     public static int solution(int[] nums) {
