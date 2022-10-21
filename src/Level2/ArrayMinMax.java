@@ -14,6 +14,15 @@ public class ArrayMinMax {
         System.out.println(String.valueOf(intArr[0]) + " " +
                 String.valueOf(intArr[intArr.length-1]));
 
+        System.out.println(solution(str1));
+    }
 
+    public static String solution(String str){
+        String[] strArr = str.split(" ");
+
+        int[] intArr = Arrays.stream(strArr).mapToInt(Integer::parseInt).toArray();
+        Arrays.sort(intArr);
+
+        return String.valueOf(intArr[0]) + " " + String.valueOf(intArr[intArr.length-1]);
     }
 }
