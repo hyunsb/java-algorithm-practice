@@ -6,9 +6,7 @@ public class RemoveBothNumber {
     public static void main(String[] args) {
         // Programmers 코딩테스트 - 스택/큐 - 같은 숫자는 싫어
         int[] arr = {1,1,3,3,0,1,1};
-
-
-        
+        System.out.println(solution(arr));
     }
 
     // Use Stack
