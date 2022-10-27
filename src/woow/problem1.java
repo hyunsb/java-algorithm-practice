@@ -9,6 +9,14 @@ public class problem1 {
 
         System.out.println(solution(pobi,crong));
 
+        List<Integer> pobi2 = List.of(131, 132);
+        List<Integer> crong2 = List.of(211, 212);
+        System.out.println(solution(pobi2,crong2));
+
+        List<Integer> pobi3 = List.of(99, 102);
+        List<Integer> crong3 = List.of(211, 212);
+        System.out.println(solution(pobi3,crong3));
+
     }
 
     public static int solution(List<Integer> pobi, List<Integer> crong){
