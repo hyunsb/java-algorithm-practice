@@ -5,9 +5,11 @@ import java.util.ArrayList;
 public class problem2 {
     public static void main(String[] args) {
         String cryptogram = "browoanoommnaon";
+        String test = "zyelleyz";
 
 //        System.out.println(solution(cryptogram));
         System.out.println(solution2(cryptogram));
+        System.out.println(solution2(test));
     }
 
     public static String solution2(String cryptogram){
