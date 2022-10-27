@@ -18,9 +18,7 @@ public class problem1 {
         System.out.println(solution(pobi3,crong3));
 
     }
-
     public static int solution(List<Integer> pobi, List<Integer> crong){
-
         // 첫 페이지 혹은 마지막 페이지 혹은 범위를 벗어나는 페이지를 선택했을 시 에러처리
         if(Math.min(pobi.get(0), crong.get(0))<=0 && Math.max(pobi.get(1), crong.get(1))>=400){
             return -1;
@@ -35,7 +33,6 @@ public class problem1 {
             return -1;
         }
     }
-
     public static int findMaxNum(int n) {
         int add = n % 10;
         int mul = n % 10;
