@@ -12,6 +12,7 @@ public class problem3 {
                 temp /= 10;
             }
         }
+        //test
 
         System.out.println(count);
     }
