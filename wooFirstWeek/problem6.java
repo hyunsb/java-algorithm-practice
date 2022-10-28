@@ -16,18 +16,10 @@ public class problem6 {
                 List.of("nowm@email.com", "이제엠")
         );
 
-        for(int i=0; i<forms.size(); i++){
-            String email = forms.get(i).get(0);
-            String name = forms.get(i).get(1);
+        System.out.println(solution(forms));
 
-            if(!(isEmail(email) || isNickName(name))) {
-                break;
-            }
-
-        }
     }
     public static List<String> solution(List<List<String>> forms){
-        List<String> overlapEmail = new ArrayList<>();
         HashSet<String> overlapList = new HashSet<String>();
 
         for(int i=0; i<forms.size(); i++){
@@ -35,17 +27,16 @@ public class problem6 {
             String nickName = forms.get(i).get(1);
 
             //이메일, 닉네임 체크
-            if(!(isEmail(email) || isNickName(nickName))) {
-                overlapEmail.add("format error");
-                break;
-            }
+            if(!(isEmail(email) || isNickName(nickName))) break;
             //중복 체크
             for(int j=forms.size()-1; j > 0; j--){
                 String nickNameChk = forms.get(j).get(1);
+                if(j==i) continue;
                 if(overlapNickName(nickName, nickNameChk)) overlapList.add(email);
-
             }
         }
+
+        List<String> overlapEmail = new ArrayList<>(overlapList);
         return overlapEmail;
     }
 
