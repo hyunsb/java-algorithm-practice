@@ -14,21 +14,15 @@ public class problem6 {
                 List.of("nowm@email.com", "이제엠")
         );
 
+        for(int i=0; i<forms.size(); i++){
+            String email = forms.get(i).get(0);
+            String name = forms.get(i).get(1);
 
-//        for(int i=0; i<forms.size(); i++){
-//            String email = forms.get(i).get(0);
-//            String name = forms.get(i).get(1);
-//
-//            //이메일 길이, 도메인 chk
-//            if(!(isEmail(email))) break;
-//
-//
-//        }
+            if(!(isEmail(email))) break;  //이메일 길이, 도메인 check
+            if(!(isNickName(name))) break; // 닉네임 길이, 한글 check
 
 
-        //닉네임 chk
-
-
+        }
     }
     public static List<String> solution(List<List<String>> forms){
         List<String> answer = List.of("answer");
@@ -47,5 +41,9 @@ public class problem6 {
             if (email.split("@")[1].equals("email.com")) validation = true;
         }
         return validation;
+    }
+    public static boolean isNickName(String nickName){
+        return Pattern.matches("^[가-힣]*$", nickName)
+                && nickName.length() >= 1 && nickName.length() < 20;
     }
 }
