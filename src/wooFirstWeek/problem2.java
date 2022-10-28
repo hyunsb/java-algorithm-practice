@@ -1,4 +1,4 @@
-package woow;
+package wooFirstWeek;
 
 import java.util.ArrayList;
 

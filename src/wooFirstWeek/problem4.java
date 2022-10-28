@@ -1,7 +1,4 @@
-package woow;
-
-import java.util.HashMap;
-import java.util.Map;
+package wooFirstWeek;
 
 public class problem4 {
     public static void main(String[] args) {
