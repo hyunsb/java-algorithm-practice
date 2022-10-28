@@ -7,6 +7,11 @@ public class problem4 {
     public static void main(String[] args) {
 
         String word = "I love you";
+        System.out.println(sol1(word));
+
+    }
+
+    public static String sol1(String word){
         String answer = "";
 
         char[] code = {'Z', 'Y', 'X', 'W', 'V', 'U', 'T', 'S', 'R', 'Q', 'P',
@@ -23,12 +28,6 @@ public class problem4 {
             }
         }
 
-        System.out.println(answer);
+        return answer;
     }
-
-    public static String sol1(String str){
-        Map<Character, Character> map = new HashMap<Character, Character>();
-        return "";
-    }
-
 }
