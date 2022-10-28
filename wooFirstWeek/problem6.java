@@ -1,6 +1,8 @@
 package wooFirstWeek;
 
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class problem6 {
     public static void main(String[] args) {
@@ -12,15 +14,17 @@ public class problem6 {
                 List.of("nowm@email.com", "이제엠")
         );
 
-        for(int i=0; i<forms.size(); i++){
-            String email = forms.get(i).get(0);
-            String name = forms.get(i).get(1);
 
+//        for(int i=0; i<forms.size(); i++){
+//            String email = forms.get(i).get(0);
+//            String name = forms.get(i).get(1);
+//
+//            //이메일 길이, 도메인 chk
+//            if(!(isEmail(email))) break;
+//
+//
+//        }
 
-
-        }
-
-        //이메일 길이, 도메인 chk
 
         //닉네임 chk
 
@@ -32,8 +36,16 @@ public class problem6 {
         return answer;
     }
 
-    public static boolean eMailChk(String email){
+    public static boolean isEmail(String email){
+        boolean validation = false;
+        String regex = "^[_a-z0-9-]+(.[_a-z0-9-]+)*@(?:\\w+\\.)+\\w+$";
 
-        return true;
+        Pattern p = Pattern.compile(regex);
+        Matcher m = p.matcher(email);
+
+        if(m.matches() &&  11 <= email.length() && email.length() < 20){
+            if (email.split("@")[1].equals("email.com")) validation = true;
+        }
+        return validation;
     }
 }
