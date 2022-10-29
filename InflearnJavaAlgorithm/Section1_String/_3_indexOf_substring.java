@@ -6,12 +6,28 @@ public class _3_indexOf_substring {
 
         for (String word : str.split(" ")){
             answer = compareLength(word, answer);
+            //answer = word.length() > answer.length() ? word : answer;
         }
         return answer;
     }
 
     public String compareLength(String word, String answer){
         return (word.length() > answer.length()) ? word : answer;
+    }
+
+    public String solution2(String str){
+        String answer = "";
+
+        int max = Integer.MIN_VALUE;
+        String[] s = str.split(" ");
+        for(String x : s){
+            int len = x.length();
+            if(len > max) {
+                max = len;
+                answer = x;
+            }
+        }
+        return answer;
     }
 
     public static void main(String[] args) {
