@@ -3,7 +3,6 @@ import java.util.Scanner;
 public class _1_find_Character {
     public int solution(String str, char c){
         int answer = 0;
-
         str = str.toUpperCase();
         c = Character.toUpperCase(c);
 
