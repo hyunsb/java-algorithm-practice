@@ -1,8 +1,6 @@
 package wooFirstWeek;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 public class problem7 {
     public static void main(String[] args) {
@@ -23,6 +21,21 @@ public class problem7 {
     }
     public static List<String> solution(String user, List<List<String>> friends, List<String> visitors) {
         List<String> answer = Collections.emptyList();
+
+        HashMap<String, Vector<String>> friendList = new HashMap<String, Vector<String>>();
+
+        for(List<String> list : friends){
+            HashSet<String> set = new HashSet<String>();
+            String name = list.get(0);
+
+            for(List<String> temp : friends){
+                if(temp.contains(name)) {
+                    set.add(temp.get(0));
+                    set.add(temp.get(1));
+                }
+            }
+        }
+
 
         return answer;
     }
