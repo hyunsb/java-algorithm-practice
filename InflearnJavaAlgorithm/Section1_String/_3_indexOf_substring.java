@@ -42,6 +42,7 @@ public class _3_indexOf_substring {
             }
             str = str.substring(position+1);
         }
+        if(str.length() > max) answer = str;
         return answer;
     }
 
