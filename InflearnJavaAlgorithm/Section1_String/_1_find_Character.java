@@ -5,9 +5,18 @@ public class _1_find_Character {
         int answer = 0;
         str = str.toUpperCase();
         c = Character.toUpperCase(c);
-
         for(int i=0; i<str.length(); i++) answer += (str.charAt(i) == c) ? 1 : 0;
 
+        return answer;
+    }
+
+    public int solution2(String str, char c){
+        int answer = 0;
+        str = str.toUpperCase();
+        c = Character.toUpperCase(c);
+
+        // 문자열을 캐릭터 배열로 변환
+        for(char x : str.toCharArray()) answer += ( x == c) ? 1 : 0;
         return answer;
     }
 
@@ -19,6 +28,5 @@ public class _1_find_Character {
         char c = sc.next().charAt(0);
 
         System.out.println(T.solution(str, c));
-
     }
 }
