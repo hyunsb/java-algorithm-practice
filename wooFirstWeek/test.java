@@ -1,6 +1,7 @@
 package wooFirstWeek;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 
@@ -18,12 +19,21 @@ public class test {
         List<String> visitors = List.of("bedi", "bedi", "donut", "bedi", "shakevan");
         List<String> result = List.of("andole", "jun", "bedi");
 
-        System.out.println(frinedList(friends));
-
-
     }
 
-    public static List<String> frinedList(List<List<String>> friends){
+    public static List<String> solution(String user, List<List<String>> friends, List<String> visitors) {
+        List<String> answer = Collections.emptyList();
+        List<String> friendsList = pickFrinedList(friends);
+        ArrayList<ArrayList<String>> graph = new ArrayList<>();
+
+        for(int i=0; i<=friendsList.size(); i++) graph.add(new ArrayList<>());
+        for(int i=0; i<friends.size(); i++) {}
+
+        return answer;
+    }
+
+    // friends의 중복을 제거한 후 반환하는 메소드
+    public static List<String> pickFrinedList(List<List<String>> friends){
         HashSet<String> set = new HashSet<String>();
         for(List<String> friend : friends){
             set.add(friend.get(0));
@@ -37,6 +47,4 @@ public class test {
         graph.get(x).add(y);
         graph.get(y).add(x);
     }
-
-
 }
