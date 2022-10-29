@@ -6,32 +6,30 @@ import java.util.List;
 
 public class test {
     public static void main(String[] args) {
-        String str = "제이엠";
-        String strchk = "제이제잉에엠";
 
-        for(int i=0; i < str.length()-1; i++){
-            System.out.println(strchk.contains(str.substring(i,i+2)));
+        String user = "mrko";
+        List<List<String>> friends = new ArrayList<>();
+
+        List<String> friendsList = new ArrayList<String>(pickFriendsList(user, friends));
+
+    }
+
+    public static List<String> pickFriendsList(String user, List<List<String>> friends){
+        List<String> friendsList = new ArrayList<>();
+
+        for(List<String> relationship : friends){
+            friendsList.add(pickFriend(user, relationship));
         }
 
-        List<List<String>> forms = List.of(
-                List.of("jm@email.com", "제이엠"),
-                List.of("jason@email.com", "제이슨"),
-                List.of("woniee@email.com", "워니"),
-                List.of("mj@email.com", "엠제이"),
-                List.of("nowm@email.com", "이제엠")
-        );
+        return friendsList;
+    }
 
-        System.out.println(forms.size());
-
-        HashSet<String> overlapList = new HashSet<String>();
-        overlapList.add("dd");
-        overlapList.add("dd");
-        overlapList.add("cc");
-        overlapList.add("ee");
-
-        List<String> list = new ArrayList<>(overlapList);
-        System.out.println(list);
-
-
+    public static String pickFriend(String user, List<String> relationship){
+        String friend = "";
+        if(relationship.contains(user)){
+            relationship.remove(user);
+            friend = relationship.get(0);
+        }
+        return friend;
     }
 }
