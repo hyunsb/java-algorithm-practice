@@ -24,10 +24,6 @@ public class problem7 {
     public static List<String> solution(String user, List<List<String>> friends, List<String> visitors) {
         List<String> answer = Collections.emptyList();
 
-        //친구 리스트
-        //함께 아는 친구 리스트
-        //친구 0점, 함께 아는 친구 10점, 모르는 사람 1점
-
         return answer;
     }
 
