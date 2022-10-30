@@ -13,6 +13,18 @@ public class _4_Reverse_Word {
         return answer;
     }
 
+    public ArrayList<String> solution2(int n, String[] strings) {
+        ArrayList<String> answer = new ArrayList<String>();
+
+        for(String str : strings){
+            //StringBuilder는 객체를 여러개 만들지 않음 - 공부할 것
+            String tmp = new StringBuilder(str).reverse().toString();
+            answer.add(tmp);
+        }
+
+        return answer;
+    }
+
     public static void main(String[] args) {
         _4_Reverse_Word T = new _4_Reverse_Word();
         Scanner sc = new Scanner(System.in);
