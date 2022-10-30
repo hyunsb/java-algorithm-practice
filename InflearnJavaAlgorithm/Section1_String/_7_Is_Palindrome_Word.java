@@ -27,11 +27,19 @@ public class _7_Is_Palindrome_Word {
         return answer;
     }
 
+    public String solution3(String word){
+        String answer = "YES";
+        String tmp = new StringBuilder(word).reverse().toString();
+        if(!word.equalsIgnoreCase(tmp)) answer = "NO";
+        return answer;
+    }
+
     public static void main(String[] args) {
         _7_Is_Palindrome_Word T = new _7_Is_Palindrome_Word();
         Scanner sc = new Scanner(System.in);
         String word = sc.next();
         System.out.println(T.solution(word));
         System.out.println(T.solution2(word));
+        System.out.println(T.solution3(word));
     }
 }
