@@ -1,6 +1,8 @@
 import java.util.Scanner;
 
 public class _5_Reverse_Specific_Word {
+
+    // 클린코드의 원칙에 따라 리팩토링 해보기
     public String solution(String word){
         String answer = "";
 
