@@ -1,10 +1,10 @@
-import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.Scanner;
 import java.util.Set;
 
 public class _6_Remove_Overlap_Word {
     public String solution(String word){
-        Set<String> set = new HashSet<>();
+        Set<String> set = new LinkedHashSet<>();
         for(String str : word.split("")) set.add(str);
 
         String answer = String.join("", set);
