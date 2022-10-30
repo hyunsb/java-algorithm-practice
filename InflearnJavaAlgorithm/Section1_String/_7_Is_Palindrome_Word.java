@@ -14,10 +14,24 @@ public class _7_Is_Palindrome_Word {
 
         return lWord.equalsIgnoreCase(rWord) ? "YES" : "NO";
     }
+
+    public String solution2(String word){
+        String answer = "YES";
+        int len = word.length();
+        for(int i = 0; i < len/2; i++){
+            if(word.charAt(i)!=word.charAt(len-1-i)) {
+                answer = "NO";
+                return answer;
+            }
+        }
+        return answer;
+    }
+
     public static void main(String[] args) {
         _7_Is_Palindrome_Word T = new _7_Is_Palindrome_Word();
         Scanner sc = new Scanner(System.in);
         String word = sc.next();
         System.out.println(T.solution(word));
+        System.out.println(T.solution2(word));
     }
 }
