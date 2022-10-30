@@ -5,6 +5,11 @@ public class _4_Reverse_Word {
     public ArrayList<String> solution(int n, String[] strings) {
         ArrayList<String> answer = new ArrayList<String>();
 
+        for(int i=0; i < n; i++) {
+            StringBuilder sb = new StringBuilder(strings[i]);
+            answer.add(sb.reverse().toString());
+        }
+
         return answer;
     }
 
