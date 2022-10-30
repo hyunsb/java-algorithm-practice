@@ -21,7 +21,26 @@ public class _4_Reverse_Word {
             String tmp = new StringBuilder(str).reverse().toString();
             answer.add(tmp);
         }
+        return answer;
+    }
 
+    public ArrayList<String> solution3(int n, String[] strings) {
+        ArrayList<String> answer = new ArrayList<String>();
+        for(String str : strings){
+            char[] chars = str.toCharArray();
+            int lt = 0, rt = chars.length-1;
+
+            while (lt < rt) {
+                char tmp = chars[lt];
+                chars[lt] = chars[rt];
+                chars[rt] = tmp;
+                lt++;
+                rt--;
+            }
+
+            String reverseWord = String.valueOf(chars);
+            answer.add(reverseWord);
+        }
         return answer;
     }
 
