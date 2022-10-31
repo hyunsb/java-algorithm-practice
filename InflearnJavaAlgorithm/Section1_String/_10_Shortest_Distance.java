@@ -20,7 +20,6 @@ public class _10_Shortest_Distance {
             }
             answer.add(++count);
         }
-
         count = 0;
         for (int i = charList.length-1; i > 0; i--) {
             if ( c == charList[i] ) {
@@ -29,15 +28,51 @@ public class _10_Shortest_Distance {
             }
             if ( ++count < answer.get(i)) answer.set(i, count);
         }
+        return answer;
+    }
+
+    public List<Integer> solution2(String str, char c){
+        List<Integer> answer = new ArrayList<Integer>();
+
+        int dist = Integer.MAX_VALUE;
+
+
 
         return answer;
     }
+
+    public int[] solution3(String str, char c){
+        int[] answer = new int[str.length()];
+        int p = Integer.MAX_VALUE;
+
+        for(int i = 0; i < str.length(); i++){
+            if(str.charAt(i) == c) {
+                p = 0;
+                answer[i] = p;
+            }
+            else{
+                p++;
+                answer[i] = p;
+            }
+        }
+        p = Integer.MAX_VALUE;
+        for(int i = str.length()-1; i >= 0; i--){
+            if(str.charAt(i) == c) p = 0;
+            else{
+                p++;
+                answer[i] = Math.min(answer[i], p);
+            }
+        }
+        return answer;
+    }
+
 
     public static void main(String[] args) {
         _10_Shortest_Distance T = new _10_Shortest_Distance();
         Scanner sc = new Scanner(System.in);
         String str = sc.next();
         char c = sc.next().charAt(0);
-        for(int i : T.solution(str, c)) System.out.print(i);
+
+        for(int i : T.solution(str, c)) System.out.print(i + " ");
     }
 }
