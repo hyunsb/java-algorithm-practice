@@ -13,11 +13,20 @@ public class _9_Extraction_Integer {
         return answer;
     }
 
+    public int solution3(String string){
+        String answer = "";
+        for (char x : string.toCharArray()){
+            if(Character.isDigit(x)) answer += x;
+        }
+        return Integer.parseInt(answer);
+    }
+
     public static void main(String[] args) {
         _9_Extraction_Integer T = new _9_Extraction_Integer();
         Scanner sc = new Scanner(System.in);
         String string = sc.nextLine();
         System.out.println(T.solution(string));
         System.out.println(T.solution2(string));
+        System.out.println(T.solution3(string));
     }
 }
