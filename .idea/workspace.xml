@@ -5,9 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5957eb84-87c3-4942-b4f7-bc9bee2fa990" name="Changes" comment="Inflearn">
-      <change afterPath="$PROJECT_DIR$/InflearnJavaAlgorithm/Section1_String/_8_Valid_Palindrome.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InflearnJavaAlgorithm/Section1_String/_7_Is_Palindrome_Word.java" beforeDir="false" afterPath="$PROJECT_DIR$/InflearnJavaAlgorithm/Section1_String/_7_Is_Palindrome_Word.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InflearnJavaAlgorithm/Section1_String/_8_Valid_Palindrome.java" beforeDir="false" afterPath="$PROJECT_DIR$/InflearnJavaAlgorithm/Section1_String/_8_Valid_Palindrome.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -152,7 +151,7 @@
       <workItem from="1666982466344" duration="733000" />
       <workItem from="1666983566302" duration="11019000" />
       <workItem from="1667033467995" duration="22860000" />
-      <workItem from="1667124710585" duration="13424000" />
+      <workItem from="1667124710585" duration="14630000" />
     </task>
     <task id="LOCAL-00001" summary="Algorithm test">
       <created>1663813983822</created>

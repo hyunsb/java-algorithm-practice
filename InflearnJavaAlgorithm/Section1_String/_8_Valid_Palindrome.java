@@ -18,8 +18,7 @@ public class _8_Valid_Palindrome {
     public static void main(String[] args) {
         _8_Valid_Palindrome T = new _8_Valid_Palindrome();
         Scanner sc = new Scanner(System.in);
-        String string = "kdjg$@kjkldjkg%@dkjgkj";
-//        String string = sc.next();
+        String string = sc.nextLine();
         System.out.println(T.solution(string));
     }
 }
