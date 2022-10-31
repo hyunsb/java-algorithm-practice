@@ -7,11 +7,11 @@ public class _8_Valid_Palindrome {
     }
 
     public String extractionAlphabet(String word){
-        String answer = "";
+        StringBuilder answer = new StringBuilder();
         for (char x : word.toCharArray()) {
-            if(Character.isAlphabetic(x)) answer += x;
+            if(Character.isAlphabetic(x)) answer.append(x);
         }
-        return answer;
+        return answer.toString();
     }
 
     public String solution2(String string){
