@@ -1,3 +1,5 @@
+package InflearnJavaAlgorithm.Section1_String;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
