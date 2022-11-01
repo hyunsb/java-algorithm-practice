@@ -5,23 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5957eb84-87c3-4942-b4f7-bc9bee2fa990" name="Changes" comment="Inflearn">
-      <change afterPath="$PROJECT_DIR$/InflearnJavaAlgorithm/Section2_Array/_1_Greater_Number.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/InflearnJavaAlgorithm/Section2_Array/_2_Compare_Student.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InflearnJavaAlgorithm/section1.String/section1.String.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/InflearnJavaAlgorithm/section1.String/src/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/InflearnJavaAlgorithm/_10_Shortest_Distance.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/InflearnJavaAlgorithm/_11_String_Compression.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/InflearnJavaAlgorithm/_12_Password.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/InflearnJavaAlgorithm/_1_find_Character.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/InflearnJavaAlgorithm/_2_To_Upper_Lower_Case.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/InflearnJavaAlgorithm/_3_indexOf_substring.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/InflearnJavaAlgorithm/_4_Reverse_Word.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/InflearnJavaAlgorithm/_5_Reverse_Specific_Word.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/InflearnJavaAlgorithm/_6_Remove_Overlap_Word.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/InflearnJavaAlgorithm/_7_Is_Palindrome_Word.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/InflearnJavaAlgorithm/_8_Valid_Palindrome.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/InflearnJavaAlgorithm/_9_Extraction_Integer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Programmers/InflearnJavaAlgorithm/Section2_Array/_1_Greater_Number.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Programmers/InflearnJavaAlgorithm/Section2_Array/_1_Greater_Number.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Programmers/_4_Reverse_Word.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -166,7 +153,7 @@
       <workItem from="1666982466344" duration="733000" />
       <workItem from="1666983566302" duration="11019000" />
       <workItem from="1667033467995" duration="22860000" />
-      <workItem from="1667124710585" duration="37878000" />
+      <workItem from="1667124710585" duration="38538000" />
     </task>
     <task id="LOCAL-00001" summary="Algorithm test">
       <created>1663813983822</created>

@@ -5,11 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5957eb84-87c3-4942-b4f7-bc9bee2fa990" name="Changes" comment="Inflearn">
-      <change afterPath="$PROJECT_DIR$/InflearnJavaAlgorithm/Section2_Array/_1_Greater_Number.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/InflearnJavaAlgorithm/Section2_Array/_2_Compare_Student.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InflearnJavaAlgorithm/section1.String/section1.String.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/InflearnJavaAlgorithm/section1.String/src/Main.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -154,7 +151,7 @@
       <workItem from="1666982466344" duration="733000" />
       <workItem from="1666983566302" duration="11019000" />
       <workItem from="1667033467995" duration="22860000" />
-      <workItem from="1667124710585" duration="37822000" />
+      <workItem from="1667124710585" duration="38428000" />
     </task>
     <task id="LOCAL-00001" summary="Algorithm test">
       <created>1663813983822</created>
