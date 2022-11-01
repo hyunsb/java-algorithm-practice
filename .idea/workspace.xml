@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5957eb84-87c3-4942-b4f7-bc9bee2fa990" name="Changes" comment="Inflearn">
-      <change afterPath="$PROJECT_DIR$/InflearnJavaAlgorithm/Section2_Array/_2_Compare_Student.java" afterDir="false" />
+    <list default="true" id="5957eb84-87c3-4942-b4f7-bc9bee2fa990" name="Changes" comment="section 2-2 solved">
+      <change afterPath="$PROJECT_DIR$/InflearnJavaAlgorithm/Section2_Array/_3_Rock_Scissors_Paper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Programmers/InflearnJavaAlgorithm/Section2_Array/_1_Greater_Number.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Programmers/InflearnJavaAlgorithm/Section2_Array/_1_Greater_Number.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Programmers/_4_Reverse_Word.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Programmers/InflearnJavaAlgorithm/Section2_Array/_2_Compare_Student.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Programmers/InflearnJavaAlgorithm/Section2_Array/_2_Compare_Student.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -153,7 +152,7 @@
       <workItem from="1666982466344" duration="733000" />
       <workItem from="1666983566302" duration="11019000" />
       <workItem from="1667033467995" duration="22860000" />
-      <workItem from="1667124710585" duration="38538000" />
+      <workItem from="1667124710585" duration="40186000" />
     </task>
     <task id="LOCAL-00001" summary="Algorithm test">
       <created>1663813983822</created>
@@ -477,7 +476,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667038597596</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="section 2-2 solved">
+      <created>1667297689159</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1667297689159</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -519,7 +525,8 @@
     <MESSAGE value="ReName folder" />
     <MESSAGE value="." />
     <MESSAGE value="Inflearn" />
-    <option name="LAST_COMMIT_MESSAGE" value="Inflearn" />
+    <MESSAGE value="section 2-2 solved" />
+    <option name="LAST_COMMIT_MESSAGE" value="section 2-2 solved" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
