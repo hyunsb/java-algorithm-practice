@@ -3,9 +3,9 @@ package wooSecondWeek;
 import java.util.ArrayList;
 import java.util.List;
 
-public class baseball {
+public class Baseball {
     public static void main(String[] args) {
-        baseball baseball = new baseball();
+        Baseball baseball = new Baseball();
         // TODO: 프로그램 구현
         List<Integer> computer = baseball.computerSelectNumbers();
         System.out.println(computer);
