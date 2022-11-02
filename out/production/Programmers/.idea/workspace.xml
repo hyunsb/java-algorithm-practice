@@ -1,0 +1,537 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="5957eb84-87c3-4942-b4f7-bc9bee2fa990" name="Changes" comment="section 2-2 solved">
+      <change afterPath="$PROJECT_DIR$/wooSecondWeek/Randoms.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wooSecondWeek/baseball.java" beforeDir="false" afterPath="$PROJECT_DIR$/wooSecondWeek/baseball.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wooSecondWeek/woowacourse-precourse java-basevball ReadMe 18d31d43ab27449a9ecb88a8a7afe13d.md" beforeDir="false" afterPath="$PROJECT_DIR$/wooSecondWeek/ReadMe.md" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2F6TvAPgYUpPlLqWNDBNJh4eLvr" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "jdk.selected.JAVA_MODULE": "11",
+    "last_opened_file_path": "C:/Users/jhass/java-baseball",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Algorithm-Practice\wooFirstWeek" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Algorithm-Practice\wooSecondWeek" />
+      <recent name="C:\Algorithm-Practice\InflearnJavaAlgorithm" />
+      <recent name="C:\Algorithm-Practice" />
+      <recent name="C:\Programmers" />
+      <recent name="C:\Programmers\Level1\src" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="problem6" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="wooFirstWeek.problem6" />
+      <module name="Algorithm-Practice" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="wooFirstWeek.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5957eb84-87c3-4942-b4f7-bc9bee2fa990" name="Changes" comment="" />
+      <created>1663811761716</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1663811761716</updated>
+      <workItem from="1663811762895" duration="183000" />
+      <workItem from="1663811958848" duration="9109000" />
+      <workItem from="1664089577598" duration="6043000" />
+      <workItem from="1664191314132" duration="6297000" />
+      <workItem from="1664354836932" duration="11520000" />
+      <workItem from="1664428239844" duration="10397000" />
+      <workItem from="1664789663644" duration="4699000" />
+      <workItem from="1665313601043" duration="88000" />
+      <workItem from="1665500241551" duration="188000" />
+      <workItem from="1665644116689" duration="5353000" />
+      <workItem from="1665726473950" duration="5165000" />
+      <workItem from="1666016803912" duration="1294000" />
+      <workItem from="1666103305881" duration="49000" />
+      <workItem from="1666363312845" duration="1092000" />
+      <workItem from="1666843556411" duration="71000" />
+      <workItem from="1666843638875" duration="358000" />
+      <workItem from="1666867889409" duration="22736000" />
+      <workItem from="1666962430049" duration="60000" />
+      <workItem from="1666962659784" duration="160000" />
+      <workItem from="1666962831769" duration="129000" />
+      <workItem from="1666962964700" duration="28000" />
+      <workItem from="1666962996831" duration="25000" />
+      <workItem from="1666963134444" duration="91000" />
+      <workItem from="1666963438738" duration="16000" />
+      <workItem from="1666963588474" duration="912000" />
+      <workItem from="1666964515919" duration="148000" />
+      <workItem from="1666964677872" duration="1199000" />
+      <workItem from="1666965889442" duration="4490000" />
+      <workItem from="1666971135591" duration="50000" />
+      <workItem from="1666971190586" duration="188000" />
+      <workItem from="1666971387955" duration="50000" />
+      <workItem from="1666971443098" duration="65000" />
+      <workItem from="1666971529996" duration="3105000" />
+      <workItem from="1666982053301" duration="249000" />
+      <workItem from="1666982318019" duration="108000" />
+      <workItem from="1666982466344" duration="733000" />
+      <workItem from="1666983566302" duration="11019000" />
+      <workItem from="1667033467995" duration="22860000" />
+      <workItem from="1667124710585" duration="52094000" />
+    </task>
+    <task id="LOCAL-00001" summary="Algorithm test">
+      <created>1663813983822</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1663813983822</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Algorithm test day1">
+      <created>1663857199599</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1663857199599</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Algorithm test day1">
+      <created>1664092635434</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1664092635434</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Algorithm test day2">
+      <created>1664092644869</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1664092644869</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Algorithm test day2">
+      <created>1664093469418</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1664093469418</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Algorithm test day3">
+      <created>1664193379458</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1664193379458</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Algorithm test day4">
+      <created>1664281489770</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1664281489770</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Algorithm test day4">
+      <created>1664286722059</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1664286722059</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Algorithm test day5">
+      <created>1664356169743</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1664356169743</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Algorithm test day5">
+      <created>1664362305040</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1664362305040</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Algorithm test day5">
+      <created>1664362430196</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1664362430196</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Algorithm test day5">
+      <created>1664362835893</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1664362835893</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Algorithm test day5">
+      <created>1664367224264</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1664367224264</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Algorithm test day6">
+      <created>1664431451142</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1664431451142</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Algorithm test day6">
+      <created>1664449843584</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1664449843584</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Algorithm test day7">
+      <created>1664798582417</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1664798582417</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Algorithm test day8">
+      <created>1665500391233</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1665500391233</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Algorithm test day9">
+      <created>1665645442033</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1665645442033</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Algorithm test day10">
+      <created>1665730892075</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1665730892075</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Algorithm test day11">
+      <created>1665764278488</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1665764278488</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Algorithm test day12">
+      <created>1666016882008</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1666016882008</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Algorithm test day13">
+      <created>1666103347533</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1666103347533</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Algorithm test day13">
+      <created>1666363398311</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1666363398311</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Algorithm test day13">
+      <created>1666363458136</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1666363458136</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Algorithm test day13">
+      <created>1666371329304</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1666371329304</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Algorithm test day13">
+      <created>1666371415112</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1666371415112</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Algorithm test day13">
+      <created>1666371470871</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1666371470871</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Algorithm test day13">
+      <created>1666371628261</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1666371628261</updated>
+    </task>
+    <task id="LOCAL-00029" summary="woow problem1">
+      <created>1666869336748</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1666869336748</updated>
+    </task>
+    <task id="LOCAL-00030" summary="woow problem1">
+      <created>1666871139910</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1666871139910</updated>
+    </task>
+    <task id="LOCAL-00031" summary="woow problem1">
+      <created>1666872140435</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1666872140435</updated>
+    </task>
+    <task id="LOCAL-00032" summary="woow problem2">
+      <created>1666873702826</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1666873702826</updated>
+    </task>
+    <task id="LOCAL-00033" summary="woow problem2">
+      <created>1666878051837</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1666878051837</updated>
+    </task>
+    <task id="LOCAL-00034" summary="woow problem2">
+      <created>1666879891066</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1666879891066</updated>
+    </task>
+    <task id="LOCAL-00035" summary="woow problem2">
+      <created>1666881787008</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1666881787008</updated>
+    </task>
+    <task id="LOCAL-00036" summary="woow problem2">
+      <created>1666882659577</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1666882659577</updated>
+    </task>
+    <task id="LOCAL-00037" summary="woow problem3">
+      <created>1666884300564</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1666884300564</updated>
+    </task>
+    <task id="LOCAL-00038" summary="woow problem3">
+      <created>1666885367289</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1666885367289</updated>
+    </task>
+    <task id="LOCAL-00039" summary="create problem4">
+      <created>1666886638372</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1666886638372</updated>
+    </task>
+    <task id="LOCAL-00040" summary="create problem5">
+      <created>1666943443398</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1666943443398</updated>
+    </task>
+    <task id="LOCAL-00041" summary="Rename folder">
+      <created>1666944343040</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1666944343040</updated>
+    </task>
+    <task id="LOCAL-00042" summary="Relocate folder">
+      <created>1666944444766</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1666944444766</updated>
+    </task>
+    <task id="LOCAL-00043" summary="ReName folder">
+      <created>1666944507134</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1666944507134</updated>
+    </task>
+    <task id="LOCAL-00044" summary=".">
+      <created>1666965115020</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1666965115020</updated>
+    </task>
+    <task id="LOCAL-00045" summary="Inflearn">
+      <created>1667038554321</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1667038554321</updated>
+    </task>
+    <task id="LOCAL-00046" summary="Inflearn">
+      <created>1667038597596</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1667038597596</updated>
+    </task>
+    <task id="LOCAL-00047" summary="section 2-2 solved">
+      <created>1667297689159</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1667297689159</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Algorithm test" />
+    <MESSAGE value="Algorithm test day1" />
+    <MESSAGE value="Algorithm test day2" />
+    <MESSAGE value="Algorithm test day3" />
+    <MESSAGE value="Algorithm test day4" />
+    <MESSAGE value="Algorithm test day5" />
+    <MESSAGE value="Algorithm test day6" />
+    <MESSAGE value="Algorithm test day7" />
+    <MESSAGE value="Algorithm test day8" />
+    <MESSAGE value="Algorithm test day9" />
+    <MESSAGE value="Algorithm test day10" />
+    <MESSAGE value="Algorithm test day11" />
+    <MESSAGE value="Algorithm test day12" />
+    <MESSAGE value="Algorithm test day13" />
+    <MESSAGE value="woow problem1" />
+    <MESSAGE value="woow problem2" />
+    <MESSAGE value="woow problem3" />
+    <MESSAGE value="create problem4" />
+    <MESSAGE value="create problem5" />
+    <MESSAGE value="Rename folder" />
+    <MESSAGE value="Relocate folder" />
+    <MESSAGE value="ReName folder" />
+    <MESSAGE value="." />
+    <MESSAGE value="Inflearn" />
+    <MESSAGE value="section 2-2 solved" />
+    <option name="LAST_COMMIT_MESSAGE" value="section 2-2 solved" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>
