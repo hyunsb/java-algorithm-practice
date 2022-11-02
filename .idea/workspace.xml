@@ -5,15 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5957eb84-87c3-4942-b4f7-bc9bee2fa990" name="Changes" comment="section 2-2 solved">
-      <change afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Programmers.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Programmers/wooSecondWeek/baseball.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Programmers/wooSecondWeek/baseball.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wooSecondWeek/Baseball.java" beforeDir="false" afterPath="$PROJECT_DIR$/wooSecondWeek/Baseball.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -162,7 +155,7 @@
       <workItem from="1667033467995" duration="22860000" />
       <workItem from="1667124710585" duration="60930000" />
       <workItem from="1667408710316" duration="473000" />
-      <workItem from="1667409196441" duration="66000" />
+      <workItem from="1667409196441" duration="482000" />
     </task>
     <task id="LOCAL-00001" summary="Algorithm test">
       <created>1663813983822</created>
