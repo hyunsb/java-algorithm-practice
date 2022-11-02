@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5957eb84-87c3-4942-b4f7-bc9bee2fa990" name="Changes" comment="section 2-2 solved">
-      <change afterPath="$PROJECT_DIR$/wooSecondWeek/Console.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Programmers/wooSecondWeek/baseball.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Programmers/wooSecondWeek/baseball.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wooSecondWeek/Baseball.java" beforeDir="false" afterPath="$PROJECT_DIR$/wooSecondWeek/Baseball.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -153,7 +153,7 @@
       <workItem from="1666982466344" duration="733000" />
       <workItem from="1666983566302" duration="11019000" />
       <workItem from="1667033467995" duration="22860000" />
-      <workItem from="1667124710585" duration="54548000" />
+      <workItem from="1667124710585" duration="58448000" />
     </task>
     <task id="LOCAL-00001" summary="Algorithm test">
       <created>1663813983822</created>
