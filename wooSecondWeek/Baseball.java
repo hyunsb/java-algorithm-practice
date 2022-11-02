@@ -1,9 +1,7 @@
 package wooSecondWeek;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Stream;
 
 public class Baseball {
     public static void main(String[] args) {
@@ -34,7 +32,7 @@ public class Baseball {
         String inputNumber = Console.readLine();
 
         // TODO : 사용자가 잘못된 값을 입력할 시 IllegalArgumentException 발생
-        isInputMatch(inputNumber);
+        //isInputMatch(inputNumber);
 
         // TODO : 사용자가 선택한 숫자를 List에 담아 리턴
         List<Integer> numbers = new ArrayList<>();

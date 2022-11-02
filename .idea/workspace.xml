@@ -5,7 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5957eb84-87c3-4942-b4f7-bc9bee2fa990" name="Changes" comment="section 2-2 solved">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Programmers.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Programmers/wooSecondWeek/baseball.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Programmers/wooSecondWeek/baseball.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wooSecondWeek/Baseball.java" beforeDir="false" afterPath="$PROJECT_DIR$/wooSecondWeek/Baseball.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -53,10 +60,9 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "jdk.selected.JAVA_MODULE": "11",
-    "last_opened_file_path": "C:/Users/jhass/java-baseball",
+    "last_opened_file_path": "C:/JAVA-Practice",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -95,11 +101,13 @@
       </method>
     </configuration>
     <configuration default="true" type="JetRunConfigurationType">
+      <module name="Programmers" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="Programmers" />
       <option name="filePath" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -152,7 +160,9 @@
       <workItem from="1666982466344" duration="733000" />
       <workItem from="1666983566302" duration="11019000" />
       <workItem from="1667033467995" duration="22860000" />
-      <workItem from="1667124710585" duration="59456000" />
+      <workItem from="1667124710585" duration="60930000" />
+      <workItem from="1667408710316" duration="473000" />
+      <workItem from="1667409196441" duration="66000" />
     </task>
     <task id="LOCAL-00001" summary="Algorithm test">
       <created>1663813983822</created>
