@@ -19,6 +19,8 @@ public class Baseball {
             System.out.print("숫자를 입력해주세요 : ");
             List<Integer> user = baseball.selectNumbers();
 
+            //컴퓨터, 유저 숫자를 비교해서 리스트에 담아 리턴 (볼, 스트라이크, 낫싱)
+
 
             System.out.println(computer);
             System.out.println(user);
