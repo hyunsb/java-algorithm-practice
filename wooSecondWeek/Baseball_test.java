@@ -3,12 +3,17 @@ package wooSecondWeek;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Baseball {
+public class Baseball_test {
+    final static int MIN_RANGE_NUM = 1;
+    final static int MAX_RANGE_NUM = 9;
+    final static int MAX_ARRAY_SIZE = 3;
+
+
     public static void main(String[] args) {
-        Baseball baseball = new Baseball();
+        Baseball_test baseball = new Baseball_test();
         // TODO: 프로그램 구현
 
-        boolean newGame = true; // 새로운 게임을 판별하는 변수
+        boolean newGame = true;
         List<Integer> computer = new ArrayList<>();
 
         System.out.println("숫자 야구 게임을 시작합니다.");
@@ -19,8 +24,8 @@ public class Baseball {
             System.out.print("숫자를 입력해주세요 : ");
             List<Integer> user = baseball.selectNumbers();
 
-            //컴퓨터, 유저 숫자를 비교해서 리스트에 담아 리턴 (볼, 스트라이크, 낫싱)
-
+            // TODO : 컴퓨터, 유저 숫자를 비교해서 리스트에 담아 리턴 (볼, 스트라이크, 낫싱)
+            //compareNumbers(computer, user);
 
             System.out.println(computer);
             System.out.println(user);
@@ -31,8 +36,8 @@ public class Baseball {
     // TODO : 컴퓨터가 숫자를 랜덤으로 선택하여 리턴
     public List<Integer> selectRandomNumbers() {
         List<Integer> numbers = new ArrayList<>();
-        while (numbers.size() < 3) {
-            int randomNumber = Randoms.pickNumberInRange(1, 9);
+        while (numbers.size() < MAX_ARRAY_SIZE) {
+            int randomNumber = Randoms.pickNumberInRange(MIN_RANGE_NUM, MAX_RANGE_NUM);
             if (!numbers.contains(randomNumber)){
                 numbers.add(randomNumber);
             }
@@ -44,7 +49,6 @@ public class Baseball {
     public List<Integer> selectNumbers(){
         String inputNumber = Console.readLine();
 
-        // TODO : 사용자가 잘못된 값을 입력할 시 IllegalArgumentException 발생
         isInputMatch(inputNumber);
 
         // TODO : 사용자가 선택한 숫자를 List에 담아 리턴
@@ -56,17 +60,17 @@ public class Baseball {
     }
 
     // TODO : 사용자가 잘못된 값을 입력할 시 IllegalArgumentException 발생하는 함수
-    public void isInputMatch(String inputNumber){
-        // 입력 값의 길이가 3이 아닐 시, 0이 포함되어 있을 시, 숫자 이외의 값이 포함되어 있을 시 예외처리
-        if (inputNumber.length() != 3
-                || inputNumber.contains("0")
+    // 입력 값의 길이가 3이 아닐 시, 0이 포함되어 있을 시, 숫자 이외의 값이 포함되어 있을 시 예외처리
+    public void isInputMatch(String inputNumber) throws IllegalArgumentException{
+        if (inputNumber.length() != MAX_ARRAY_SIZE
                 || !inputNumber.replaceAll("[1-9]", "").isEmpty())
             throw new IllegalArgumentException();
     }
 
     //TODO : 컴퓨터와 사용자의 수를 비교하여 힌트를 리턴
-    public String compareNumbers(){
+    public String compareNumbers(List<Integer> computer, List<Integer> user){
         String answer = "";
+
         return answer;
     }
 
