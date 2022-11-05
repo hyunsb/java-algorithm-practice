@@ -40,4 +40,10 @@ public class baseball {
         return true;
     }
 
+    // TODO : 입력 값의 범위가 1-9가 아닌 경우 예외를 발생한다.
+    public boolean isCorrectRange(String input) throws IllegalArgumentException{
+        if(input.replaceAll("[1-9]", "").isEmpty())
+            throw new IllegalArgumentException();
+        return true;
+    }
 }
