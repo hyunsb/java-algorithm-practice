@@ -3,6 +3,9 @@ package wooSecondWeek;
 import java.util.*;
 
 public class Baseball {
+    final static int NEW_GAME_NUMBER = 1;
+    final static int END_GAME_NUMBER = 2;
+
     final static int MIN_RANGE_NUM = 1;
     final static int MAX_RANGE_NUM = 9;
     final static int MAX_ARRAY_SIZE = 3;
@@ -20,13 +23,13 @@ public class Baseball {
         printStartSentence();
         while (true) {
             List<Integer> computer = SelectRandomNumbers();
-            System.out.println(computer);
 
             while (!threeStrike)
                 startGame(computer);
             threeStrike = false;
 
-
+            printReStartSentence();
+            if (!playNewGame()) break;
         }
     }
 
@@ -127,5 +130,18 @@ public class Baseball {
     // TODO : 게임 시작 문구를 출력하는 함수
     public void printStartSentence(){
         System.out.println("숫자 야구 게임을 시작합니다.");
+    }
+
+    // TODO : 게임을 재시작 선택 문구를 출력하는 함수
+    public void printReStartSentence() {
+        System.out.println("게임을 새로 시작하려면 1, 종료하려면 2를 입력하세요.");
+    }
+
+    // TODO : 게임이 종료되었을 때 게임을 다시 진행할 지 선택하는 함수
+    public boolean playNewGame() throws IllegalArgumentException{
+        int input = Character.getNumericValue(Console.readLine().charAt(0));
+        if (input == NEW_GAME_NUMBER) return true;
+        if (input == END_GAME_NUMBER) return false;
+        throw new IllegalArgumentException();
     }
 }
