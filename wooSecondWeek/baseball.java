@@ -14,7 +14,7 @@ public class baseball {
 
     }
 
-    // TODO : 컴퓨터가 1에서 9까지의 서로다른 임의의 수 3개를 선택하여 저장한다.
+    // TODO : 컴퓨터가 1에서 9까지의 서로다른 임의의 수 3개를 선택한다.
     public List<Integer> SelectRandomNumbers() {
         List<Integer> numbers = new ArrayList<>();
 
@@ -29,13 +29,20 @@ public class baseball {
 
     // TODO : 사용자에게 3자리 수를 입력 받는다.
     public List<Integer> selectNumbers() {
-        String inputNumber = Console.readLine();
+        List<Integer> numbers = new ArrayList<>();
 
+        String input = Console.readLine();
+        if(isLengthThree(input) && isCorrectRange(input) && isEachOtherDifferent(input)){
+            for (char number : input.toCharArray())
+                numbers.add(Character.getNumericValue(number));
+        }
+
+        return numbers;
     }
 
     // TODO : 입력 값이 3자리가 아닌 경우 예외를 발생한다.
     public boolean isLengthThree(String input) throws IllegalArgumentException{
-        if(input.length() != 3)
+        if(input.length() != MAX_ARRAY_SIZE)
             throw new IllegalArgumentException();
         return true;
     }
