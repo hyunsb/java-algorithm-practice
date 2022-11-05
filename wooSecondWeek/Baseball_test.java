@@ -33,7 +33,7 @@ public class Baseball_test {
         }
     }
 
-    // TODO : 컴퓨터가 숫자를 랜덤으로 선택하여 리턴
+    // TODO : 컴퓨터가 숫자를 랜덤으로 선택하여 반환
     public List<Integer> selectRandomNumbers() {
         List<Integer> numbers = new ArrayList<>();
         while (numbers.size() < MAX_ARRAY_SIZE) {
@@ -45,13 +45,13 @@ public class Baseball_test {
         return numbers;
     }
 
-    // TODO : 사용자가 숫자를 선택한 숫자를 리턴
+    // TODO : 사용자가 숫자를 선택한 숫자를 반환
     public List<Integer> selectNumbers(){
         String inputNumber = Console.readLine();
 
         isInputMatch(inputNumber);
 
-        // TODO : 사용자가 선택한 숫자를 List에 담아 리턴
+        // TODO : 사용자가 선택한 숫자를 List에 담아 반환
         List<Integer> numbers = new ArrayList<>();
         for (char number : inputNumber.toCharArray())
             numbers.add(Character.getNumericValue(number));
@@ -67,7 +67,7 @@ public class Baseball_test {
             throw new IllegalArgumentException();
     }
 
-    //TODO : 컴퓨터와 사용자의 수를 비교하여 힌트를 리턴
+    //TODO : 컴퓨터와 사용자의 수를 비교하여 힌트를 반환
     public String compareNumbers(List<Integer> computer, List<Integer> user){
         String answer = "";
 
