@@ -46,4 +46,16 @@ public class baseball {
             throw new IllegalArgumentException();
         return true;
     }
+
+    // TODO : 입력 값 중 중복된 숫자가 존재하는 경우 예외를 발생한다.
+    public boolean isEachOtherDifferent(String input) throws IllegalArgumentException{
+        Set<Character> set = new HashSet<>();
+        for (char x : input.toCharArray())
+            set.add(x);
+
+        if (set.size() != MAX_ARRAY_SIZE)
+            throw new IllegalArgumentException();
+
+        return true;
+    }
 }
