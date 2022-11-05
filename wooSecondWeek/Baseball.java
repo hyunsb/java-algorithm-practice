@@ -80,4 +80,14 @@ public class Baseball {
         }
         return strike;
     }
+
+    // TODO : 같은 숫자가 다른 자리에 존재하는 경우
+    public int CountingBall(List<Integer> computer, List<Integer> user){
+        int ball = ZERO_VALUE;
+        for (int number : user) {
+            if (computer.contains(number))
+                ball++;
+        }
+        return ball;
+    }
 }
