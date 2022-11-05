@@ -1,16 +1,15 @@
 package wooSecondWeek;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
-public class baseball {
+public class Baseball {
     final static int MIN_RANGE_NUM = 1;
     final static int MAX_RANGE_NUM = 9;
     final static int MAX_ARRAY_SIZE = 3;
+    final static int ZERO_VALUE = 0;
 
     public static void main(String[] args) {
+        Baseball baseball = new Baseball();
 
     }
 
@@ -64,5 +63,21 @@ public class baseball {
             throw new IllegalArgumentException();
 
         return true;
+    }
+
+    // TODO : 컴퓨터와 사용자의 숫자를 비교하여 힌트를 출력한다.
+    public void getHint(List<Integer> computer, List<Integer> user){
+//        int strike = CountingStrike(computer, user);
+//        int ball = CountingBall(computer, user);
+    }
+
+    // TODO : 같은 숫자가 같은 자리에 존재하는 경우
+    public int CountingStrike(List<Integer> computer, List<Integer> user){
+        int strike = ZERO_VALUE;
+        for (int i=0; i<MAX_ARRAY_SIZE; i++){
+            if (Objects.equals(computer.get(i), user.get(i)))
+                strike++;
+        }
+        return strike;
     }
 }
