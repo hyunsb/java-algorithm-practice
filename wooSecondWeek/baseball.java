@@ -26,4 +26,18 @@ public class baseball {
         }
         return numbers;
     }
+
+    // TODO : 사용자에게 3자리 수를 입력 받는다.
+    public List<Integer> selectNumbers() {
+        String inputNumber = Console.readLine();
+
+    }
+
+    // TODO : 입력 값이 3자리가 아닌 경우 예외를 발생한다.
+    public boolean isLengthThree(String input) throws IllegalArgumentException{
+        if(input.length() != 3)
+            throw new IllegalArgumentException();
+        return true;
+    }
+
 }
