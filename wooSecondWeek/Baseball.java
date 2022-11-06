@@ -3,13 +3,13 @@ package wooSecondWeek;
 import java.util.*;
 
 public class Baseball {
-    final static int NEW_GAME_NUMBER = 1;
-    final static int END_GAME_NUMBER = 2;
+    static final int NEW_GAME_NUMBER = 1;
+    static final int END_GAME_NUMBER = 2;
 
-    final static int MIN_RANGE_NUM = 1;
-    final static int MAX_RANGE_NUM = 9;
-    final static int MAX_ARRAY_SIZE = 3;
-    final static int ZERO_VALUE = 0;
+    static final int MIN_RANGE_NUM = 1;
+    static final int MAX_RANGE_NUM = 9;
+    static final int MAX_ARRAY_SIZE = 3;
+    static final int ZERO_VALUE = 0;
 
     public boolean threeStrike = false;
 
