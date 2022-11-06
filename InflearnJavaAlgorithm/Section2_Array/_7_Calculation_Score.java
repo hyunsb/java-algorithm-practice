@@ -20,6 +20,21 @@ public class _7_Calculation_Score {
         return answer;
     }
 
+    public int solution2(int length, int[] errata){
+        int answer = 0, cnt = 0;
+        for(int i=0; i<length; i++){
+            if(errata[i] == 1) {
+                cnt++;
+                answer += cnt;
+            }
+            if(errata[i] == 0){
+                cnt = 0;
+            }
+        }
+
+        return answer;
+    }
+
     public static void main(String[] args) {
         _7_Calculation_Score T = new _7_Calculation_Score();
         Scanner sc = new Scanner(System.in);
@@ -30,5 +45,7 @@ public class _7_Calculation_Score {
         }
 
         System.out.println(T.solution(length, errata));
+        System.out.println(T.solution2(length, errata));
+
     }
 }
