@@ -18,7 +18,7 @@ public class Baseball {
         baseball.setBaseballGame();
     }
 
-    //
+    // TODO : 숫자베이스볼 게임을 시작한다.
     public void setBaseballGame() {
         printStartSentence();
         while (true) {
@@ -33,7 +33,7 @@ public class Baseball {
         }
     }
 
-    //
+    // TODO : 유저의 숫자를 입력받고 힌트를 얻는다.
     public void startGame(List<Integer> computer) {
         List<Integer> user = selectNumbers();
         getHint(computer, user);
