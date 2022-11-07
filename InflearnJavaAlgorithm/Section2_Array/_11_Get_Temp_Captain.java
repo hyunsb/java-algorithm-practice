@@ -25,12 +25,12 @@ public class _11_Get_Temp_Captain {
             }
 
             if (maxClassmate < countClassmate) {
-                captain = i;
+                captain = i+1;
                 maxClassmate = countClassmate;
             }
         }
 
-        return captain+1;
+        return captain;
     }
 
     public static void main(String[] args) {
@@ -43,7 +43,6 @@ public class _11_Get_Temp_Captain {
                 studentInfo[i][j] = sc.nextInt();
             }
         }
-
         System.out.println(T.solution(length, studentInfo));
     }
 }
