@@ -7,8 +7,8 @@ public class _4_Continuous_Subsequence {
     public int solution(int n, int m, int[] sequence){
         int answer=0;
         int lt=0, rt=0;
-        int sum = sequence[rt];
-        rt++;
+
+        int sum = sequence[rt++];
         if(sum == m) answer++;
 
         while (rt < n){
