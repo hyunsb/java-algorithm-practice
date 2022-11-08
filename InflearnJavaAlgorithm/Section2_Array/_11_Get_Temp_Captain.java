@@ -23,7 +23,6 @@ public class _11_Get_Temp_Captain {
                     }
                 }
             }
-
             if (maxClassmate < countClassmate) {
                 captain = i+1;
                 maxClassmate = countClassmate;

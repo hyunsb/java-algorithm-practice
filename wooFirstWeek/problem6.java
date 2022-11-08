@@ -9,7 +9,7 @@ import java.util.regex.Pattern;
 public class problem6 {
     public static void main(String[] args) {
         List<List<String>> forms = List.of(
-                List.of("jm@email.com", "제이엠"),
+                List.of("jm@email.com", "엠제이"),
                 List.of("jason@email.com", "제이슨"),
                 List.of("woniee@email.com", "워니"),
                 List.of("mj@email.com", "엠제이"),
@@ -35,7 +35,6 @@ public class problem6 {
                 if(overlapNickName(nickName, nickNameChk)) overlapList.add(email);
             }
         }
-
         List<String> overlapEmail = new ArrayList<>(overlapList);
         return overlapEmail;
     }
