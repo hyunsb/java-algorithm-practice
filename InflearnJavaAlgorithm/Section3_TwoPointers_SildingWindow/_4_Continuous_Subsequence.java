@@ -12,13 +12,8 @@ public class _4_Continuous_Subsequence {
         if(sum == m) answer++;
 
         while (rt < n){
-            if (sum < m) {
-                sum += sequence[rt];
-                rt++;
-            }else if (sum >= m) {
-                sum -= sequence[lt];
-                lt++;
-            }
+            if (sum < m) sum += sequence[rt++];
+            else if (sum >= m) sum -= sequence[lt++];
             if(sum == m) answer++;
         }
         return answer;
