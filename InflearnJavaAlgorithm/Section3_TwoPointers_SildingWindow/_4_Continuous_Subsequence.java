@@ -24,6 +24,20 @@ public class _4_Continuous_Subsequence {
         return answer;
     }
 
+    public int solution2(int n, int m, int[] sequence) {
+        int answer=0, sum=0, lt=0;
+        for(int rt=0; rt<n; rt++){
+            sum += sequence[rt];
+            if(sum == m) answer ++;
+
+            while (sum >= m) {
+                sum -= sequence[lt++];
+                if(sum == m) answer ++;
+            }
+        }
+        return answer;
+    }
+
     public static void main(String[] args) {
         _4_Continuous_Subsequence T = new _4_Continuous_Subsequence();
         Scanner sc = new Scanner(System.in);
@@ -35,6 +49,7 @@ public class _4_Continuous_Subsequence {
         for(int i=0; i<n; i++) sequence[i] = sc.nextInt();
 
         System.out.println(T.solution(n, m, sequence));
+        System.out.println(T.solution2(n, m, sequence));
     }
 
 }
