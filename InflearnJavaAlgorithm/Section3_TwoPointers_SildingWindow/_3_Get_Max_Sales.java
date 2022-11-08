@@ -24,6 +24,7 @@ public class _3_Get_Max_Sales {
 
         for(int i=k; i<n; i++){
             sale = sale + sales[i] - sales[i-k];
+            //sale += (sales[i] - sales[i-k]);
             maxSales = Math.max(maxSales, sale);
         }
         return maxSales;
