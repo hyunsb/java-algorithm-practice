@@ -8,6 +8,7 @@
 
 
 ### 입력 값
+- 입력 값은 `camp.nextstep.edu.missionutils.Console`의 `readLine()`을 활용한다.
 
 1. 로또 구입 금액
    - 구입 금액은 1,000원 단위로 입력 받는다.
@@ -29,6 +30,7 @@
    - 보너스 번호의 숫자 범위는 당첨 번호와 동일하다.
    - 당첨 번호와 중복되지 않는 숫자를 입력 받는다.
    - 숫자 범위 외의 숫자 혹은 문자가 존재하는 경우, 1개의 숫자를 입력하지 않은 경우, 당첨 번호와 중복되는 값이 존재하는 경우 `IllegalArgumentException`를 발생하여 예외 처리한다.
-
-
+     - 숫자 범위 외의 숫자 혹은 문자가 존재하는 경우: "[ERROR] An out-of-range number or character exists in the input value." 메시지 출력 후 종료
+     - 1개의 숫자를 입력하지 않은 경우: "[ERROR] The number of input values does not match 1." 메시지 출력 후 종료
+     - 당첨 번호와 중복된 숫자를 입력한 경우: "[ERROR] The input value contains a number that overlaps the winning number." 메시지 출력 후 종료
  
