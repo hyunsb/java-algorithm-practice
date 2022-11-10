@@ -7,6 +7,7 @@ public class Error {
     private Error() {
     }
 
+    // TODO : 로또 구매 금액을 입력 받아 검증 후 반환한다.
     public static int isCorrectAmount(String purchaseAmount) {
         int amount = isContainCharacter(purchaseAmount);
         isDividedByTicketPrice(amount);
