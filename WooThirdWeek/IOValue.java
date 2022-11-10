@@ -23,6 +23,7 @@ public class IOValue {
 
     private static final List<Lotto> LottoList = new ArrayList<>();
     private static final List<Integer> winningNumber = new ArrayList<>();
+//    private static final int bonusNumber;
 
     public void buyTicket(){
         initializationLottoAmount();
@@ -68,7 +69,20 @@ public class IOValue {
 
     public void receiveWinningNumber(){
         String winningNumbers = Console.readLine();
-        String[] winningNumberList = winningNumbers.split(SEPARATED_CHARACTER);
+            // TODO: 입력 값의 숫자가 6개가 아닌 경우 예외 처리한다. - 쉼표(,) 기준으로 구분하여 개수 확인
+            // TODO: 입력 값에 1~45 범위에 해당하지 않는 숫자나 문자가 존재하는 경우 경우 예외 처리한다.
+            // TODO: 입력 값에 중복된 숫자가 존재하는 경우 예외 처리한다.
+
+        // TODO: 입력받은 번호를 쉼표(,) 기준으로 구분한다.
+        // TODO: 구분된 숫자를 리스트(winningNumber)에 저장한다.
+
+        // TODO: 보너스 번호를 입력받는다.
+            // TODO: 입력 값에 문자가 포함되어 있는 경우 예외 처리한다.
+            // TODO: 입력 값의 범위가 1~45가 아닌 경우 예외 처리한다.
+            // TODO: 입력 값이 1개의 숫자가 아닌 경우 예외 처리한다.
+            // TODO: 입력 값이 리스트(winningNumber)에 포함되어 있는 숫자일 경우 예외처리한다.
+
+        // TODO: bonusNumber를 초기화한다.
 
     }
 
