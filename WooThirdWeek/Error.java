@@ -1,4 +1,4 @@
 package WooThirdWeek;
 
-public class User {
+public class Error {
 }
