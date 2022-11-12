@@ -7,8 +7,16 @@ public class Error {
     private static final int ZERO = 0;
     private static final int TICKET_PRICE = 1000;
     private static final int WINNING_NUMBER_SIZE = 6;
+    private static final int MAX_VALUE_OF_WINNING_NUMBER = 45;
+    private static final int MIN_VALUE_OF_WINNING_NUMBER = 1;
 
     private Error() {
+    }
+
+    public static void main(String[] args) {
+        List<String> winningNumbers = isSixInputValues(splitBasedComma("12,12,34,5,1,45"));
+        if (isAllDifferentValues(winningNumbers) && isRangeFromOneToFortyFive(winningNumbers))
+            System.out.println(winningNumbers);
     }
 
     // TODO : 로또 구매 금액을 입력 받아 검증 후 반환한다.
@@ -48,20 +56,25 @@ public class Error {
         return true;
     }
 
-    // TODO: 입력 값에 1~45 범위에 해당하지 않는 숫자나 문자가 존재하는 경우 경우 예외 처리한다.
+    // TODO: 입력 값이= 1~45 범위에 해당하는 경우 True 를 반환한다.
     private static boolean isRangeFromOneToFortyFive(List<String> winningNumbers) throws IllegalArgumentException{
         for(String number : winningNumbers) {
-            if(!isMatchFromOneToFortyFive(number))
-                throw new IllegalArgumentException("[ERROR] An out-of-range number or character exists in the input value.");
+            isMatchFromOneToFortyFive(number);
         }
         return true;
     }
 
-    // TODO: 문자열을 1~45와 비교하여 일치하지 않는 경우 False 를 반환한다.
-    private static boolean isMatchFromOneToFortyFive(String number){
-        if ((1 <= Integer.parseInt(number) && Integer.parseInt(number) <= 45))
-            return true;
-        return false;
+    // 리팩토링 필요
+    // TODO: 문자열을 1~45와 비교하여 일치하지 않는 경우 예외 처리한다.
+    private static void isMatchFromOneToFortyFive(String number) throws IllegalArgumentException{
+        try {
+            if (!(MIN_VALUE_OF_WINNING_NUMBER <= Integer.parseInt(number)
+                    && Integer.parseInt(number) <= MAX_VALUE_OF_WINNING_NUMBER))
+                throw new IllegalArgumentException("[ERROR] An out-of-range number or character exists in the input value.");
+        } catch (NumberFormatException e) {
+            throw new IllegalArgumentException("[ERROR] An out-of-range number or character exists in the input value.");
+        }
+
     }
 
     // TODO: 입력 값을 쉼표 기준으로 분리하여 리스트로 반환한다.
