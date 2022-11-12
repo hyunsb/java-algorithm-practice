@@ -33,7 +33,7 @@ public class Error {
     }
 
     // TODO: 담청 번호 6자리를 입력받아 검증 후 반환한다.
-    public List<String> isCorrectWinningNumbers(String winningNumber){
+    public static List<String> isCorrectWinningNumbers(String winningNumber){
         List<String> winningNumbers = isSixInputValues(splitBasedComma(winningNumber));
         if (isAllDifferentValues(winningNumbers) && isRangeFromOneToFortyFive(winningNumbers))
             return winningNumbers;
