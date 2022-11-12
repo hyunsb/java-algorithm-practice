@@ -49,7 +49,13 @@ public class Error {
     }
 
     // TODO: 입력 값에 1~45 범위에 해당하지 않는 숫자나 문자가 존재하는 경우 경우 예외 처리한다.
-
+    private static boolean isRangeFromOneToFortyFive(List<String> winningNumbers) throws IllegalArgumentException{
+        for(String number : winningNumbers) {
+            if(!isMatchFromOneToFortyFive(number))
+                throw new IllegalArgumentException("[ERROR] An out-of-range number or character exists in the input value.");
+        }
+        return true;
+    }
 
     // TODO: 문자열을 1~45와 비교하여 일치하지 않는 경우 False 를 반환한다.
     private static boolean isMatchFromOneToFortyFive(String number){
