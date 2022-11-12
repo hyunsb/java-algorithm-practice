@@ -24,9 +24,9 @@ public class Error {
     }
 
     // TODO : 입력 값에 문자가 포함되어 있는 경우 예외 처리 한다.
-    private static int isContainCharacter(String purchaseAmount) throws IllegalArgumentException{
+    private static int isContainCharacter(String number) throws IllegalArgumentException{
         try {
-            return Integer.parseInt(purchaseAmount);
+            return Integer.parseInt(number);
         } catch (NumberFormatException e){
             throw new IllegalArgumentException("[ERROR] Characters exist in the input value.");
         }
@@ -47,7 +47,7 @@ public class Error {
         return winningNumbers;
     }
 
-    // TODO: 입력 값에 중복된 숫자가 존재하는 경우 예외 처리한다.
+    // TODO: 입력 값에 중복된 값이 존재하는 경우 예외 처리한다.
     private static boolean isAllDifferentValues(List<String> winningNumbers) throws IllegalArgumentException{
         Set<String> WinningSet = new HashSet<>(winningNumbers);
         if (WinningSet.size() != WINNING_NUMBER_SIZE)
@@ -55,7 +55,7 @@ public class Error {
         return true;
     }
 
-    // TODO: 입력 값이= 1~45 범위에 해당하는 경우 True 를 반환한다.
+    // TODO: 입력 값이 1~45 범위에 해당하는 경우 True 를 반환한다.
     private static boolean isRangeFromOneToFortyFive(List<String> winningNumbers) throws IllegalArgumentException{
         for(String number : winningNumbers) {
             isMatchFromOneToFortyFive(number);
@@ -63,16 +63,11 @@ public class Error {
         return true;
     }
 
-    // 리팩토링 필요
     // TODO: 문자열을 1~45와 비교하여 일치하지 않는 경우 예외 처리한다.
     private static void isMatchFromOneToFortyFive(String number) throws IllegalArgumentException{
-        try {
-            if (!(MIN_VALUE_OF_WINNING_NUMBER <= Integer.parseInt(number)
-                    && Integer.parseInt(number) <= MAX_VALUE_OF_WINNING_NUMBER))
-                throw new IllegalArgumentException("[ERROR] An out-of-range number or character exists in the input value.");
-        } catch (NumberFormatException e) {
+        if ( !(MIN_VALUE_OF_WINNING_NUMBER <= isContainCharacter(number)
+                && isContainCharacter(number) <= MAX_VALUE_OF_WINNING_NUMBER))
             throw new IllegalArgumentException("[ERROR] An out-of-range number or character exists in the input value.");
-        }
 
     }
 
