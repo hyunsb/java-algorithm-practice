@@ -54,8 +54,8 @@
      - 1,000으로 나누어 떨어지지 않는 경우: [ERROR] The unit of the purchase amount is not 1,000" 메시지를 출력한다.
      - 문자가 포함된 경우: "[ERROR] Characters exist in the input value."
    - 당첨 번호
+     - 6개의 숫자 혹은 문자를 입력하지 않은 경우: "[ERROR] The number of input values does not match 6." 메시지를 출력한다.
      - 숫자 범위 외의 숫자 혹은 문자가 존재하는 경우: "[ERROR] An out-of-range number or character exists in the input value." 메시지를 출력한다.
-     - 6개의 숫자를 입력하지 않은 경우: "[ERROR] The number of input values does not match 6." 메시지를 출력한다.
      - 중복 값이 존재하는 경우: "[ERROR] Duplicate number exists in input value." 메시지를 출력한다.
    - 보너스 번호
      - 숫자 범위 외의 숫자 혹은 문자가 존재하는 경우: "[ERROR] An out-of-range number or character exists in the input value." 메시지를 출력한다.

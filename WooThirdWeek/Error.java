@@ -10,6 +10,7 @@ public class Error {
     private static final int TICKET_PRICE = 1000;
     private static final int WINNING_NUMBER_SIZE = 6;
 
+
     private Error() {
     }
 
@@ -35,14 +36,18 @@ public class Error {
         }
     }
 
-    // TODO: 입력 값의 문자 혹은 숫자가 6개가 아닌 경우 예외 처리한다. - 쉼표(,) 기준으로 구분하여 개수 확인
-    private static void isSixInputValues(List<String> winningNumbers) throws IllegalArgumentException{
+    // TODO: 입력 값의 문자 혹은 숫자가 6개가 아닌 경우 예외 처리한다.
+    private static List<String> isSixInputValues(List<String> winningNumbers) throws IllegalArgumentException{
         if (winningNumbers.size() != WINNING_NUMBER_SIZE)
             throw new IllegalArgumentException("[ERROR] The number of input values does not match 6.");
+        return winningNumbers;
     }
 
-    // TODO: 입력 값에 1~45 범위에 해당하지 않는 숫자나 문자가 존재하는 경우 경우 예외 처리한다.
     // TODO: 입력 값에 중복된 숫자가 존재하는 경우 예외 처리한다.
+
+
+    // TODO: 입력 값에 1~45 범위에 해당하지 않는 숫자나 문자가 존재하는 경우 경우 예외 처리한다.
+
 
     // TODO: 입력 값을 쉼표 기준으로 분리하여 리스트로 반환한다.
     private static List<String> splitBasedComma(String winningNumbers) {
