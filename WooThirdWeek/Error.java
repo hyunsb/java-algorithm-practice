@@ -1,15 +1,12 @@
 package WooThirdWeek;
 
 import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public class Error {
     private static final int ZERO = 0;
     private static final int TICKET_PRICE = 1000;
     private static final int WINNING_NUMBER_SIZE = 6;
-
 
     private Error() {
     }
@@ -44,9 +41,15 @@ public class Error {
     }
 
     // TODO: 입력 값에 중복된 숫자가 존재하는 경우 예외 처리한다.
-
+    private static boolean isAllDifferentValues(List<String> winningNumbers) throws IllegalArgumentException{
+        Set<String> WinningSet = new HashSet<>(winningNumbers);
+        if (WinningSet.size() != WINNING_NUMBER_SIZE)
+            throw new IllegalArgumentException("[ERROR] Duplicate number exists in input value.");
+        return true;
+    }
 
     // TODO: 입력 값에 1~45 범위에 해당하지 않는 숫자나 문자가 존재하는 경우 경우 예외 처리한다.
+
 
 
     // TODO: 입력 값을 쉼표 기준으로 분리하여 리스트로 반환한다.
