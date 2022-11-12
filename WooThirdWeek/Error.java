@@ -9,7 +9,6 @@ public class Error {
     private static final int WINNING_NUMBER_SIZE = 6;
     private static final int MAX_VALUE_OF_WINNING_NUMBER = 45;
     private static final int MIN_VALUE_OF_WINNING_NUMBER = 1;
-    private static final int BONUS_NUMBER_SIZE = 1;
     private static final String SEPARATED_CHARACTER = ",";
 
     // TODO : 로또 구매 금액을 입력 받아 검증 후 반환한다.
