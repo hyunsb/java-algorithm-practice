@@ -1,19 +1,18 @@
 package WooThirdWeek;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import static WooThirdWeek.Error.isCorrectWinningNumbers;
 
+import static WooThirdWeek.Error.isCorrectBonusNumber;
+import static WooThirdWeek.Error.isCorrectWinningNumbers;
 
 public class IOValue {
     private static final String INPUT_LOTTO_AMOUNT = "로또금액을 입력해 주세요.";
     private static final String INPUT_WINNING_NUMBERS = "당첨 번호를 입력해 주세요.";
     private static final String INPUT_BONUS_NUMBER = "보너스 번호를 입력해 주세요.";
+    private static final String ENTER = "\n";
 
     private static final String OUTPUT_LOTTO_PURCHASE_COUNT = "개를 구매했습니다.";
-
-    private static final String SEPARATED_CHARACTER = ",";
 
     private static final int TICKET_PRICE = 1000;
     private static final int MAX_VALUE_OF_LOTTO_NUMBER = 45;
@@ -25,7 +24,7 @@ public class IOValue {
 
     private static final List<Lotto> LottoList = new ArrayList<>();
     private static List<String> winningNumbers = new ArrayList<>();
-//    private static final int bonusNumber;
+    private static String bonusNumber;
 
     public void buyTicket(){
         initializationLottoAmount();
@@ -64,27 +63,33 @@ public class IOValue {
 
     // TODO: 로또 구매 개수 및 번호 출력
     public void printLottoNumbers(){
-        System.out.println("\n" + ticketNumbers + OUTPUT_LOTTO_PURCHASE_COUNT);
+        System.out.println(ENTER + ticketNumbers + OUTPUT_LOTTO_PURCHASE_COUNT);
         for(Lotto lottoTicket : LottoList)
             System.out.println(lottoTicket.getNumbers());
     }
 
-    public void receiveWinningNumber(){
+    public static void receiveWinningNumber(){
         initializationWinningNumbers();
-        // TODO: 보너스 번호를 입력받는다.
-            // TODO: 입력 값에 문자가 포함되어 있는 경우 예외 처리한다.
-            // TODO: 입력 값의 범위가 1~45가 아닌 경우 예외 처리한다.
-            // TODO: 입력 값이 1개의 숫자가 아닌 경우 예외 처리한다.
-            // TODO: 입력 값이 리스트(winningNumber)에 포함되어 있는 숫자일 경우 예외처리한다.
-        // TODO: bonusNumber를 초기화한다.
-
+        initializationBonusNumber();
     }
 
     // TODO: winningNumbers 리스트를 초기화 한다.
     private static void initializationWinningNumbers() {
+        System.out.println(ENTER + INPUT_WINNING_NUMBERS);
         winningNumbers = isCorrectWinningNumbers(Console.readLine());
     }
 
+    // TODO: bonusNumber 변수를 초기화 한다.
+    private static void initializationBonusNumber() {
+        System.out.println(ENTER + INPUT_BONUS_NUMBER);
+        bonusNumber = isCorrectBonusNumber(Console.readLine());
+    }
 
+    public static List<String> getWinningNumbers() {
+        return winningNumbers;
+    }
+    public static String getBonusNumber() {
+        return bonusNumber;
+    }
 
 }
