@@ -1,5 +1,10 @@
 package WooThirdWeek;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class Error {
     private static final int ZERO = 0;
     private static final int TICKET_PRICE = 1000;
@@ -28,4 +33,17 @@ public class Error {
             throw new IllegalArgumentException("[ERROR] Characters exist in the input value.");
         }
     }
+
+    // TODO: 입력 값의 숫자가 6개가 아닌 경우 예외 처리한다. - 쉼표(,) 기준으로 구분하여 개수 확인
+    private static List<String> isSixInputValues(List<String> winningNumbers){
+
+    }
+    // TODO: 입력 값에 1~45 범위에 해당하지 않는 숫자나 문자가 존재하는 경우 경우 예외 처리한다.
+    // TODO: 입력 값에 중복된 숫자가 존재하는 경우 예외 처리한다.
+
+    // TODO: 입력 값을 쉼표 기준으로 분리하여 리스트로 반환한다.
+    private static List<String> splitBasedComma(String winningNumbers) {
+        return Arrays.asList(winningNumbers.split(","));
+    }
+
 }
