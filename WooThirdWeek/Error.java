@@ -13,12 +13,6 @@ public class Error {
     private Error() {
     }
 
-    public static void main(String[] args) {
-        List<String> winningNumbers = isSixInputValues(splitBasedComma("12,12,34,5,1,45"));
-        if (isAllDifferentValues(winningNumbers) && isRangeFromOneToFortyFive(winningNumbers))
-            System.out.println(winningNumbers);
-    }
-
     // TODO : 로또 구매 금액을 입력 받아 검증 후 반환한다.
     public static int isCorrectAmount(String purchaseAmount) {
         int amount = isContainCharacter(purchaseAmount);
@@ -39,6 +33,14 @@ public class Error {
         } catch (NumberFormatException e){
             throw new IllegalArgumentException("[ERROR] Characters exist in the input value.");
         }
+    }
+
+    // TODO: 담청 번호 6자리를 입력받아 검증 후 반환한다.
+    public List<String> isCorrectWinningNumbers(String winningNumber){
+        List<String> winningNumbers = isSixInputValues(splitBasedComma(winningNumber));
+        if (isAllDifferentValues(winningNumbers) && isRangeFromOneToFortyFive(winningNumbers))
+            return winningNumbers;
+        throw new IllegalArgumentException();
     }
 
     // TODO: 입력 값의 문자 혹은 숫자가 6개가 아닌 경우 예외 처리한다.
