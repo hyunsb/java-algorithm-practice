@@ -9,6 +9,7 @@ public class Error {
     private static final int WINNING_NUMBER_SIZE = 6;
     private static final int MAX_VALUE_OF_WINNING_NUMBER = 45;
     private static final int MIN_VALUE_OF_WINNING_NUMBER = 1;
+    private static final String SEPARATED_CHARACTER = ",";
 
     // TODO : 로또 구매 금액을 입력 받아 검증 후 반환한다.
     public static int isCorrectAmount(String purchaseAmount) {
@@ -73,7 +74,7 @@ public class Error {
 
     // TODO: 입력 값을 쉼표 기준으로 분리하여 리스트로 반환한다.
     private static List<String> splitBasedComma(String winningNumbers) {
-        return Arrays.asList(winningNumbers.split(","));
+        return Arrays.asList(winningNumbers.split(SEPARATED_CHARACTER));
     }
 
 }

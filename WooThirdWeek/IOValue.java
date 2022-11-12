@@ -71,7 +71,6 @@ public class IOValue {
 
     public void receiveWinningNumber(){
         initializationWinningNumbers();
-
         // TODO: 보너스 번호를 입력받는다.
             // TODO: 입력 값에 문자가 포함되어 있는 경우 예외 처리한다.
             // TODO: 입력 값의 범위가 1~45가 아닌 경우 예외 처리한다.
