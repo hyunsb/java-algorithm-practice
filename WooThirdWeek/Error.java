@@ -10,9 +10,6 @@ public class Error {
     private static final int MAX_VALUE_OF_WINNING_NUMBER = 45;
     private static final int MIN_VALUE_OF_WINNING_NUMBER = 1;
 
-    private Error() {
-    }
-
     // TODO : 로또 구매 금액을 입력 받아 검증 후 반환한다.
     public static int isCorrectAmount(String purchaseAmount) {
         int amount = isContainCharacter(purchaseAmount);
