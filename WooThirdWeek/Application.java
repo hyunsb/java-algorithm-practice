@@ -9,7 +9,7 @@ public class Application {
         IOValue ioValue = new IOValue();
         ioValue.buyTicket();
         ioValue.receiveWinningNumber();
-
-
+        ioValue.ad();
+        ioValue.print();
     }
 }

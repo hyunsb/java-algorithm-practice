@@ -48,7 +48,6 @@ public class Error {
         }
     }
 
-
     // TODO: 입력 값의 문자 혹은 숫자가 6개가 아닌 경우 예외 처리한다.
     private static List<String> isSixInputValues(List<String> winningNumbers) throws IllegalArgumentException{
         if (winningNumbers.size() != WINNING_NUMBER_SIZE)

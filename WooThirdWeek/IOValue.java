@@ -24,7 +24,8 @@ public class IOValue {
 
     private static final List<Lotto> LottoList = new ArrayList<>();
     private static List<String> winningNumbers = new ArrayList<>();
-    private static String bonusNumber;
+    private static List<Rank> prizeList = new ArrayList<>();
+    private static int bonusNumber;
 
     public void buyTicket(){
         initializationLottoAmount();
@@ -79,17 +80,41 @@ public class IOValue {
         winningNumbers = isCorrectWinningNumbers(Console.readLine());
     }
 
-    // TODO: bonusNumber 변수를 초기화 한다.
+    // TODO: bonusNumber 변수를 초기화 쉼표기준한다.
     private static void initializationBonusNumber() {
         System.out.println(ENTER + INPUT_BONUS_NUMBER);
-        bonusNumber = isCorrectBonusNumber(Console.readLine());
+        bonusNumber = Integer.parseInt(isCorrectBonusNumber(Console.readLine()));
     }
+
+    public void ad(){
+        lotteryComparison();
+    }
+
+    public void print(){
+        System.out.println(prizeList);
+    }
+
+    // TODO: 로또 번호와 당첨 번호를 비교 한다.
+    private static void lotteryComparison(){
+        for(Lotto lottoTicket : LottoList) {
+
+            int hitCount = 0;
+            boolean hitBonus = false;
+
+            for(int number : lottoTicket.getNumbers()){
+                if (winningNumbers.contains(Integer.toString(number))) hitCount++;
+                if (bonusNumber == number) hitBonus = true;
+            }
+
+            prizeList.add(Rank.valueOf(hitCount, hitBonus));
+        }
+    }
+    //TODO: 6개, 5개+보너스 5개, 4개, 3개
+    // TODO: 당첨 통계를 PrizeList 에 저장한다.
+    // TODO: 당첨 통계를 출력한다.
+    // TODO: 총 수익률을 출력한다.
 
     public static List<String> getWinningNumbers() {
         return winningNumbers;
     }
-    public static String getBonusNumber() {
-        return bonusNumber;
-    }
-
 }
