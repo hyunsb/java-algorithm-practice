@@ -46,6 +46,14 @@ public enum Rank {
         return this.hitCount == hitCount;
     }
 
+    public int getPrizeMoney() {
+        return prizeMoney;
+    }
+
+    public int getHitCount() {
+        return hitCount;
+    }
+
 
 
 }

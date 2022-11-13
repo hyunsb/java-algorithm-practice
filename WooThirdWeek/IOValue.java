@@ -1,6 +1,7 @@
 package WooThirdWeek;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import static WooThirdWeek.Error.isCorrectBonusNumber;
@@ -91,7 +92,10 @@ public class IOValue {
     }
 
     public void print(){
-        System.out.println(prizeList);
+        List<Rank> rankList = new ArrayList<>();
+        for(Rank rank : Rank.values()){
+            System.out.println(Collections.frequency(prizeList, rank));
+        }
     }
 
     // TODO: 로또 번호와 당첨 번호를 비교 한다.
