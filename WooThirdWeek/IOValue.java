@@ -92,7 +92,6 @@ public class IOValue {
     }
 
     public void print(){
-        List<Rank> rankList = new ArrayList<>();
         for(Rank rank : Rank.values()){
             System.out.println(Collections.frequency(prizeList, rank));
         }
