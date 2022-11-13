@@ -93,7 +93,9 @@ public class IOValue {
 
     public void print(){
         for(Rank rank : Rank.values()){
-            System.out.println(Collections.frequency(prizeList, rank));
+            System.out.println(rank.getHitCount() + "개 일치 " +
+                    "(" + rank.getPrizeMoney() + "원)-" +
+                    Collections.frequency(prizeList, rank) + "개");
         }
     }
 
