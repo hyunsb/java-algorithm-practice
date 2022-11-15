@@ -1,5 +1,6 @@
 package WooThirdWeek;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -27,6 +28,8 @@ public class Domain {
     private static List<String> winningNumbers = new ArrayList<>();
     private static List<Rank> prizeList = new ArrayList<>();
     private static int bonusNumber;
+
+    DecimalFormat decFormat = new DecimalFormat("###,###");
 
     public void buyTicket(){
         initializationLottoAmount();
@@ -87,18 +90,30 @@ public class Domain {
         bonusNumber = Integer.parseInt(isCorrectBonusNumber(Console.readLine()));
     }
 
-    public void ad(){
+    public void printPrize(){
         lotteryComparison();
+        print();
     }
 
+    // need Refactor
     public void print(){
+        System.out.println(ENTER + "당첨 통계" + ENTER + "---");
         for(Rank rank : Rank.values()){
-            System.out.println(rank.getHitCount() + "개 일치 " +
-                    "(" + rank.getPrizeMoney() + "원)-" +
+            if(rank.getHitBonus()){
+                System.out.println(rank.getHitCount() + "개 일치, 보너스 볼 일치 " +
+                        "(" + decFormat.format(rank.getPrizeMoney()) + "원) - " +
+                        Collections.frequency(prizeList, rank) + "개");
+                continue;
+            }else if(rank.getHitCount() == 0){
+                continue;
+            }
+            System.out.println(rank.getHitCount() + "개 일치" +
+                    " (" + decFormat.format(rank.getPrizeMoney()) + "원) - " +
                     Collections.frequency(prizeList, rank) + "개");
         }
     }
 
+    // need Refactor
     // TODO: 로또 번호와 당첨 번호를 비교 한다.
     private static void lotteryComparison(){
         for(Lotto lottoTicket : LottoList) {
@@ -114,10 +129,6 @@ public class Domain {
             prizeList.add(Rank.valueOf(hitCount, hitBonus));
         }
     }
-    //TODO: 6개, 5개+보너스 5개, 4개, 3개
-    // TODO: 당첨 통계를 PrizeList 에 저장한다.
-    // TODO: 당첨 통계를 출력한다.
-    // TODO: 총 수익률을 출력한다.
 
     public static List<String> getWinningNumbers() {
         return winningNumbers;

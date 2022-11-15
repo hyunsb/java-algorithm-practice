@@ -6,12 +6,12 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public enum Rank {
-    FIRST(2000000000, 6, false),
-    SECOND(30000000, 5, true),
-    THIRD(1500000, 5, false),
-    FOURTH(50000, 4, false),
+    NO_PRIZE(0, 0, false),
     FIFTH(5000, 3, false),
-    NO_PRIZE(0, 0, false);
+    FOURTH(50000, 4, false),
+    THIRD(1500000, 5, false),
+    SECOND(30000000, 5, true),
+    FIRST(2000000000, 6, false);
 
     private final int prizeMoney;
     private final int hitCount;
@@ -54,6 +54,7 @@ public enum Rank {
         return hitCount;
     }
 
-
-
+    public boolean getHitBonus() {
+        return hitBonus;
+    }
 }
