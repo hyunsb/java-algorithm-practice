@@ -2,7 +2,7 @@ package WooThirdWeek;
 
 import java.util.*;
 
-public class Error {
+public class Exception {
     private static final int ZERO = 0;
     private static final int TICKET_PRICE = 1000;
     private static final int WINNING_NUMBER_SIZE = 6;

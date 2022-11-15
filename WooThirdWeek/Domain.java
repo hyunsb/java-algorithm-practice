@@ -5,8 +5,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import static WooThirdWeek.Error.isCorrectBonusNumber;
-import static WooThirdWeek.Error.isCorrectWinningNumbers;
+import static WooThirdWeek.Exception.isCorrectBonusNumber;
+import static WooThirdWeek.Exception.isCorrectWinningNumbers;
 
 public class Domain {
     private static final String INPUT_LOTTO_AMOUNT = "로또금액을 입력해 주세요.";
@@ -41,7 +41,7 @@ public class Domain {
     // TODO: 로또 금액 문장 출력 후 로또 금액을 입력 받는다.
     private static int inputLottoAmount(){
         System.out.println(INPUT_LOTTO_AMOUNT);
-        return Error.isCorrectAmount(Console.readLine());
+        return Exception.isCorrectAmount(Console.readLine());
     }
 
     // TODO: LOTTO_AMOUNT 변수를 초기화 한다.
