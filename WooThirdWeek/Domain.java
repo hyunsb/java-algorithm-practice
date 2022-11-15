@@ -115,6 +115,7 @@ public class Domain {
     }
 
     // need Refactor
+    // TODO: 총 수익률을 구하여 출력한다.
     public void printYield(){
         float totalPrizeMoney = 0;
         for (Rank rank : Rank.values())
