@@ -84,7 +84,7 @@ public class Domain {
         winningNumbers = isCorrectWinningNumbers(Console.readLine());
     }
 
-    // TODO: bonusNumber 변수를 초기화 쉼표기준한다.
+    // TODO: bonusNumber 변수를 초기화(쉼표기준)한다.
     private static void initializationBonusNumber() {
         System.out.println(ENTER + INPUT_BONUS_NUMBER);
         bonusNumber = Integer.parseInt(isCorrectBonusNumber(Console.readLine()));
