@@ -93,6 +93,7 @@ public class Domain {
     public void printPrize(){
         lotteryComparison();
         print();
+        printYield();
     }
 
     // need Refactor
@@ -111,6 +112,16 @@ public class Domain {
                     " (" + decFormat.format(rank.getPrizeMoney()) + "원) - " +
                     Collections.frequency(prizeList, rank) + "개");
         }
+    }
+
+    // need Refactor
+    public void printYield(){
+        float totalPrizeMoney = 0;
+        for (Rank rank : Rank.values())
+            totalPrizeMoney += rank.getPrizeMoney() * Collections.frequency(prizeList, rank);
+
+        float yield = (totalPrizeMoney / lottoAmount) * 100;
+        System.out.println("총 수익률은 " + String.format("%.1f", yield) + "%입니다.");
     }
 
     // need Refactor
