@@ -26,7 +26,7 @@ public class Console {
             final Field sourceClosedField = Scanner.class.getDeclaredField("sourceClosed");
             sourceClosedField.setAccessible(true);
             return sourceClosedField.getBoolean(scanner);
-        } catch (final Exception e) {
+        } catch (final IllegalAccessException | NoSuchFieldException e) {
             System.out.println("unable to determine if the scanner is closed.");
         }
         return true;
