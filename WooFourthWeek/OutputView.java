@@ -10,11 +10,6 @@ public class OutputView {
     private static final String INPUT_DIRECTION_TO_MOVE = "이동할 칸을 선택해주세요. (위: U, 아래: D)";
     private static final String INPUT_GAME_RESTART_STATUS = "게임을 다시 시도할지 여부를 입력해주세요. (재시도: R, 종료: Q)";
 
-    private static final String PREFIX_MAP = "[ ";
-    private static final String SUFFIX_MAP = " ]";
-    private static final String SEPARATED_CHARACTER = " | ";
-
-
     public static void printStartMessage(){
         System.out.println(GAME_START_MESSAGE);
     }
@@ -35,9 +30,7 @@ public class OutputView {
         System.out.println(ENTER);
     }
 
-    public void printMap(String moving) {
-        StringBuilder top = new StringBuilder();
-        StringBuilder bottom = new StringBuilder();
+    public void printMap() {
 
     }
 

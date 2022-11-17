@@ -32,19 +32,25 @@ public class Controller {
     //TODO: 이동하며 비교
     public void movingBridge(){
         BridgeGame bridgeGame = new BridgeGame(bridge);
+        MapMaker mapMaker = new MapMaker();
         OutputView.printEnter();
 
         int order = 0;
-        while ( ++order < bridge.size() ){
+        while ( order < bridge.size() ){
             OutputView.printInputDirectionToMove();
-            if (bridgeGame.move(order, InputView.readMoving())){
-                System.out.println("실패");
+            String move = InputView.readMoving();
+            System.out.println(order + " " + move);
+            boolean correctBridge = bridgeGame.move(order, move);
+
+            mapMaker.createMap(move, correctBridge);
+            mapMaker.printMap();
+            if (!correctBridge){
                 break;
             }
-            System.out.println("성공");
-            OutputView.printEnter();
-        }
 
+            OutputView.printEnter();
+            order += 1;
+        }
     }
 
 
