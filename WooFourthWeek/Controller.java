@@ -2,6 +2,7 @@ package WooFourthWeek;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class Controller {
     private List<String> bridge = new ArrayList<>();
@@ -11,13 +12,10 @@ public class Controller {
             OutputView.printStartMessage();
             createBridge();
             print();
-            // 재시작 하면 여기서부터 시작
             movingBridge();
-            // 종료되면 결과 출력
         } catch (IllegalArgumentException exception){
             System.out.println(exception.getMessage());
         }
-
     }
 
     // TODO: 다리를 생성한다.
@@ -29,28 +27,42 @@ public class Controller {
         bridge = bridgeMaker.makeBridge(InputView.readBridgeSize());
     }
 
-    //TODO: 이동하며 비교
+    //TODO: 다리를 이동하며 게임을 진행한다.
     public void movingBridge(){
         BridgeGame bridgeGame = new BridgeGame(bridge);
-        MapMaker mapMaker = new MapMaker();
         OutputView.printEnter();
+        movingRoutine(bridgeGame);
+    }
 
+    private void movingRoutine(BridgeGame bridgeGame){
+        MapMaker mapMaker = new MapMaker();
         int order = 0;
         while ( order < bridge.size() ){
             OutputView.printInputDirectionToMove();
             String move = InputView.readMoving();
-            System.out.println(order + " " + move);
             boolean correctBridge = bridgeGame.move(order, move);
 
             mapMaker.createMap(move, correctBridge);
-            mapMaker.printMap();
-            if (!correctBridge){
-                break;
-            }
+            OutputView.printMap(mapMaker);
 
-            OutputView.printEnter();
+            if (!correctBridge){
+                OutputView.printInputGameRestartStatus();
+                mapMaker = bridgeGame.retry(mapMaker, InputView.readGameCommand());
+
+                if(!mapMaker.EmptyMap()){
+                    OutputView.printMap(mapMaker);
+                    break;
+                }
+                order = 0;
+                continue;
+            }
             order += 1;
+            OutputView.printEnter();
         }
+    }
+
+    private MapMaker gameReStart(){
+        return new MapMaker();
     }
 
 

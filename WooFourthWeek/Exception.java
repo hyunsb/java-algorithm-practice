@@ -8,8 +8,12 @@ public class Exception {
 
     private static final int MAX_BRIDGE_SIZE = 20;
     private static final int MIN_BRIDGE_SIZE = 3;
+
     private static final String USER_MOVE_UP = "U";
     private static final String USER_MOVE_DOWN = "D";
+
+    private static final String COMMAND_RESTART = "R";
+    private static final String COMMAND_QUIT = "Q";
 
     public static int convertStringToInteger(String inputValue) throws IllegalArgumentException{
         try {
@@ -28,6 +32,12 @@ public class Exception {
     public static String validateInputValueForMove(String moving){
         if (moving.equals(USER_MOVE_UP) || (moving.equals(USER_MOVE_DOWN)))
             return moving;
+        throw new IllegalArgumentException(ERROR_PREFIX + INVALID_INPUT_VALUE_FOR_MOVE);
+    }
+
+    public static String validateInputValueForReStart(String gameCommand){
+        if (gameCommand.equals(COMMAND_RESTART) || (gameCommand.equals(COMMAND_QUIT)))
+            return gameCommand;
         throw new IllegalArgumentException(ERROR_PREFIX + INVALID_INPUT_VALUE_FOR_MOVE);
     }
 }

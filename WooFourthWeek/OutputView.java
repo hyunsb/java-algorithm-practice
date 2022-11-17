@@ -27,13 +27,14 @@ public class OutputView {
     }
 
     public static void printEnter() {
-        System.out.println(ENTER);
+        System.out.println();
     }
 
-    public void printMap() {
-
+    public static void printMap(MapMaker mapMaker) {
+        for(String map : mapMaker.printMap())
+            System.out.println(map);
     }
 
-    public void printResult() {
+    public static void printResult() {
     }
 }

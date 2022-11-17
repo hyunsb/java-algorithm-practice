@@ -1,6 +1,4 @@
 package WooFourthWeek;
-
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -8,6 +6,8 @@ import java.util.List;
  */
 public class BridgeGame {
     private final List<String> bridge;
+    private static final String COMMAND_RESTART = "R";
+    private static final String COMMAND_QUIT = "Q";
 
     BridgeGame(List<String> bridge){
         this.bridge = bridge;
@@ -17,7 +17,10 @@ public class BridgeGame {
         return bridge.get(order).equals(moving);
     }
 
-    public void retry() {
+    public MapMaker retry(MapMaker mapMaker, String gameCommand) {
+        if (gameCommand.equals(COMMAND_RESTART))
+            return new MapMaker();
+        return mapMaker;
     }
 
 

@@ -1,5 +1,7 @@
 package WooFourthWeek;
 
+import java.util.List;
+
 public class MapMaker {
     private static final String MAP_PREFIX = "[ ";
     private static final String MAP_SUFFIX = " ]";
@@ -48,9 +50,13 @@ public class MapMaker {
         }
     }
 
-    public void printMap(){
-        System.out.println(MAP_PREFIX + topBridge + MAP_SUFFIX);
-        System.out.println(MAP_PREFIX + bottomBridge + MAP_SUFFIX);
+    public List<String> printMap(){
+        return List.of(MAP_PREFIX + topBridge + MAP_SUFFIX
+                , MAP_PREFIX + bottomBridge + MAP_SUFFIX);
+    }
+
+    public boolean EmptyMap(){
+        return topBridge.length() == 0;
     }
 
 
