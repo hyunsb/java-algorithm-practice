@@ -1,8 +1,6 @@
 package WooFourthWeekTest.WooFourthWeek;
 
-import java.util.LinkedList;
 import java.util.List;
-import java.util.Queue;
 
 /**
  * 다리 건너기 게임을 관리하는 클래스
@@ -12,16 +10,27 @@ public class BridgeGame {
     private static final String COMMAND_QUIT = "Q";
 
     private List<String> bridge;
-    private int count = 0;
+    private int count;
 
     BridgeGame(List<String> bridge){
         this.bridge = bridge;
+        count = 0;
     }
 
     public boolean move(String move) {
-        boolean moveResult = bridge.get(count).equals(move);
-        count++;
-        return moveResult;
+        return correctBridge().equals(move);
+    }
+
+    public boolean retry(String gameCommand){
+        if(gameCommand.equals(COMMAND_RESTART))
+            return true;
+        if(gameCommand.equals(COMMAND_QUIT))
+            return false;
+        throw new IllegalArgumentException();
+    }
+
+    private String correctBridge(){
+        return bridge.get(count++);
     }
 
     public boolean isEndBridge(){

@@ -15,7 +15,7 @@ public class BridgeGame {
         this.bridge = new LinkedList<>(bridge);
     }
 
-    public boolean move(int order, String moving) {
+    public boolean move(String moving) {
         return bridge.remove().equals(moving);
     }
 

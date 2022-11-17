@@ -35,6 +35,7 @@ public class OutputView {
             System.out.println(map);
     }
 
-    public static void printResult() {
+    public static void printResult(int count) {
+        System.out.println("시도 횟수: " + count);
     }
 }
