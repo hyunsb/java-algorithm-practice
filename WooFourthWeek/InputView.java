@@ -2,7 +2,7 @@ package WooFourthWeek;
 
 public class InputView {
 
-    public int readBridgeSize() {
+    public static int readBridgeSize() {
         return Validate.bridgeSize(Console.readLine());
     }
 
