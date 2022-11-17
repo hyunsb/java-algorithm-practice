@@ -1,7 +1,7 @@
 package WooFourthWeek;
 
 public class Controller {
-    BridgeGame bridgeGame = new BridgeGame();
+    private final BridgeGame bridgeGame = new BridgeGame();
 
     public Controller(){
         try {
@@ -10,7 +10,6 @@ public class Controller {
         } catch (IllegalArgumentException exception){
             System.out.println(exception.getMessage());
         }
-
     }
 
     public void bridgeGameStart() {
@@ -20,6 +19,5 @@ public class Controller {
     public void bridgeSet(){
         OutputView.printInputLengthOfBridge();
         bridgeGame.createBridge();
-        bridgeGame.print();
     }
 }
