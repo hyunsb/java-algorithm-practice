@@ -2,13 +2,12 @@ package WooFourthWeek;
 
 public class InputView {
 
+    // TODO: 사용자가 생성할 다리의 길이를 입력받는다.
     public static int readBridgeSize() {
         return Validate.bridgeSize(Console.readLine());
     }
 
-    /**
-     * 사용자가 이동할 칸을 입력받는다.
-     */
+    // TODO: 사용자가 이동할 칸을 입력받는다.
     public String readMoving() {
         return null;
     }
