@@ -15,24 +15,17 @@ public class BridgeMaker {
         this.bridgeNumberGenerator = bridgeNumberGenerator;
     }
 
-    /**
-     * @param size 다리의 길이
-     * @return 입력받은 길이에 해당하는 다리 모양. 위 칸이면 "U", 아래 칸이면 "D"로 표현해야 한다.
-     */
+    // TODO: 입력받은 사이즈 만큼의 다리를 생성한다.
     public List<String> makeBridge(int size) {
-        return initializeBridge(size);
-    }
-
-    //TODO: 다리의 길이 만큼 반복
-    private List<String> initializeBridge(int size){
         List<String> bridge = new ArrayList<>();
-        while (bridge.size() < size){
+
+        while (bridge.size() < size)
             bridge.add(convertCorrectBridge());
-        }
+
         return bridge;
     }
 
-    //TODO: U D로 변환
+    //TODO: bridgeNumberGenerator.generate() 값을 "U" 혹은 "D"로 변환하여 반환한다.
     private String convertCorrectBridge(){
         if (bridgeNumberGenerator.generate() == 0)
             return "U";
