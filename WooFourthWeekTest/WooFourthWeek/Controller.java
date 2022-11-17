@@ -6,7 +6,9 @@ import java.util.List;
 public class Controller {
     private List<String> bridge = new ArrayList<>();
     BridgeGame bridgeGame;
+    MapMaker mapMaker;
     private int count = 0;
+    private boolean gameResult = true;
 
     public Controller(){
         try {
@@ -14,7 +16,10 @@ public class Controller {
             createBridge();
             print();
             movingBridge();
-        } catch (IllegalArgumentException exception){
+            System.out.println("최종 게임 결과" + !gameResult);
+            OutputView.printMap(mapMaker);
+            OutputView.printResult(count);
+        } catch (IllegalArgumentException exception) {
             System.out.println(exception.getMessage());
         }
     }
@@ -34,25 +39,28 @@ public class Controller {
         while (true){
             count ++;
             bridgeGameSet();
-            if(!bridgeMoveRoutine()){
-                OutputView.printResult(count);
-            }
+            if(!bridgeMoveRoutine()) break;
         }
     }
 
     public boolean bridgeMoveRoutine(){
-        MapMaker mapMaker = new MapMaker(bridge);
-        boolean retry;
+        mapMaker = new MapMaker(bridge);
         while (true){
+            OutputView.printInputDirectionToMove();
             boolean correctBridge = bridgeGame.move(InputView.readMoving());
-            mapMaker.createMap(correctBridge);
-            OutputView.printMap(mapMaker);
-            if(!correctBridge){
-                retry = isRetry();
-                break;
-            }
+            createMap(correctBridge);
+
+            if(!correctBridge)
+                return isRetry();
+
+            if(bridgeGame.isEndBridge())
+                return (gameResult = false);
         }
-        return retry;
+    }
+
+    private void createMap(boolean correctBridge){
+        mapMaker.createMap(correctBridge);
+        OutputView.printMap(mapMaker);
     }
 
     private void bridgeGameSet(){

@@ -34,7 +34,7 @@ public class BridgeGame {
     }
 
     public boolean isEndBridge(){
-        return (count == bridge.size()-1);
+        return (count == bridge.size());
     }
 
 
