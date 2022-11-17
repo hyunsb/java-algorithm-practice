@@ -2,10 +2,12 @@ package WooFourthWeek;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
+import java.util.Map;
 
 public class Controller {
     private List<String> bridge = new ArrayList<>();
+    private int count = 0;
+
 
     public Controller(){
         try {
@@ -31,35 +33,60 @@ public class Controller {
     public void movingBridge(){
         BridgeGame bridgeGame = new BridgeGame(bridge);
         OutputView.printEnter();
-        movingRoutine(bridgeGame);
+        movingRoutine1(bridgeGame);
     }
 
-    private void movingRoutine(BridgeGame bridgeGame){
+
+    private void movingRoutine1(BridgeGame bridgeGame) {
         MapMaker mapMaker = new MapMaker();
-        int order = 0;
-        while ( order < bridge.size() ){
-            OutputView.printInputDirectionToMove();
-            String move = InputView.readMoving();
-            boolean correctBridge = bridgeGame.move(order, move);
-
-            mapMaker.createMap(move, correctBridge);
-            OutputView.printMap(mapMaker);
-
-            if (!correctBridge){
+        while (true) {
+            if(!movingRoutineSet(mapMaker, bridgeGame)){
                 OutputView.printInputGameRestartStatus();
                 mapMaker = bridgeGame.retry(mapMaker, InputView.readGameCommand());
 
-                if(!mapMaker.EmptyMap()){
-                    OutputView.printMap(mapMaker);
-                    break;
-                }
-                order = 0;
-                continue;
+                bridgeGame = new BridgeGame(bridge);
             }
-            order += 1;
-            OutputView.printEnter();
+            if(bridgeGame.isBridgeEnd())
+                break;
         }
     }
+
+    private boolean movingRoutineSet(MapMaker mapMaker, BridgeGame bridgeGame){
+        OutputView.printInputDirectionToMove();
+        String move = InputView.readMoving();
+        boolean correctBridge = bridgeGame.move(move);
+        mapMaker.createMap(move, correctBridge);
+        OutputView.printMap(mapMaker);
+
+        return correctBridge;
+    }
+
+//    private void movingRoutine(BridgeGame bridgeGame){
+//        MapMaker mapMaker = new MapMaker();
+//        int order = 0;
+//        while ( order < bridge.size() ){
+//            OutputView.printInputDirectionToMove();
+//            String move = InputView.readMoving();
+//            boolean correctBridge = bridgeGame.move(order, move);
+//
+//            mapMaker.createMap(move, correctBridge);
+//            OutputView.printMap(mapMaker);
+//
+//            if (!correctBridge){
+//                OutputView.printInputGameRestartStatus();
+//                mapMaker = bridgeGame.retry(mapMaker, InputView.readGameCommand());
+//
+//                if(!mapMaker.EmptyMap()){
+//                    OutputView.printMap(mapMaker);
+//                    break;
+//                }
+//                order = 0;
+//                continue;
+//            }
+//            order += 1;
+//            OutputView.printEnter();
+//        }
+//    }
 
     private MapMaker gameReStart(){
         return new MapMaker();
