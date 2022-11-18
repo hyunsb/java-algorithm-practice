@@ -53,4 +53,6 @@ public class OutputView {
         System.out.println(OUTPUT_GAME_WIN_OR_LOSE + result);
         System.out.println(OUTPUT_GAME_TRY_COUNT + count);
     }
+
+    // =CONCATENATE(SUBSTITUTE(A3,MID(A3,2,1),"*"),"가족")
 }
