@@ -10,18 +10,27 @@ public class _6_Max_Consecutive_Number_Sub_Sequence {
 
         for(int rt=0; rt<n; rt++){
             if(sequence[rt] == 0) zeroCount += 1;
-
-            if(zeroCount > k){
+            if(zeroCount > k)
                 answer = Math.max(answer, rt - lt);
-            }
-
             while (zeroCount > k){
                 if(sequence[lt] == 0)
                     zeroCount--;
                 lt++;
             }
         }
+        return answer;
+    }
 
+    public int solution2(int n, int k, int[] sequence){
+        int answer = 0, cnt = 0, lt = 0;
+        for (int rt=0; rt<n; rt++){
+            if(sequence[rt] == 0) cnt++;
+            while (cnt > k) {
+                if (sequence[lt] == 0) cnt--;
+                lt++;
+            }
+            answer = Math.max(answer, rt - lt + 1);
+        }
         return answer;
     }
 
@@ -36,5 +45,6 @@ public class _6_Max_Consecutive_Number_Sub_Sequence {
         for(int i=0; i<n; i++) squence[i] = sc.nextInt();
 
         System.out.println(T.solution(n, k, squence));
+        System.out.println(T.solution2(n, k, squence));
     }
 }
