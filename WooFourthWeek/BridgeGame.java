@@ -15,7 +15,7 @@ public class BridgeGame {
     }
 
     public boolean move(String move) {
-        return correctBridge().equals(move);
+        return bridge.get(count++).equals(move);
     }
 
     public boolean retry(String gameCommand){
@@ -24,10 +24,6 @@ public class BridgeGame {
         if(gameCommand.equals(COMMAND_QUIT))
             return false;
         throw new IllegalArgumentException();
-    }
-
-    private String correctBridge(){
-        return bridge.get(count++);
     }
 
     public boolean isEndBridge(){
