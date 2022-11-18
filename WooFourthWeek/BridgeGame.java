@@ -1,34 +1,36 @@
 package WooFourthWeek;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
 
-/**
- * 다리 건너기 게임을 관리하는 클래스
- */
+import java.util.List;
+
 public class BridgeGame {
-    private Queue<String> bridge;
     private static final String COMMAND_RESTART = "R";
     private static final String COMMAND_QUIT = "Q";
 
+    private List<String> bridge;
+    private int count;
+
     BridgeGame(List<String> bridge){
-        this.bridge = new LinkedList<>(bridge);
+        this.bridge = bridge;
+        count = 0;
     }
 
-    public boolean move(String moving) {
-        return bridge.remove().equals(moving);
+    public boolean move(String move) {
+        return correctBridge().equals(move);
     }
 
-    public MapMaker retry(MapMaker mapMaker, String gameCommand) {
-        if (gameCommand.equals(COMMAND_RESTART))
-            return new MapMaker();
-        if (gameCommand.equals(COMMAND_QUIT))
-            return mapMaker;
+    public boolean retry(String gameCommand){
+        if(gameCommand.equals(COMMAND_RESTART))
+            return true;
+        if(gameCommand.equals(COMMAND_QUIT))
+            return false;
         throw new IllegalArgumentException();
     }
 
+    private String correctBridge(){
+        return bridge.get(count++);
+    }
 
-    public boolean isBridgeEnd() {
-        return bridge.isEmpty();
+    public boolean isEndBridge(){
+        return (count == bridge.size());
     }
 }
