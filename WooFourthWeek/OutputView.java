@@ -45,7 +45,12 @@ public class OutputView {
     public static void printResult(MapMaker mapMaker, boolean gameResult, int count) {
         System.out.println(OUTPUT_GAME_RESULT);
         printMap(mapMaker);
-        System.out.println(OUTPUT_GAME_WIN_OR_LOSE + ((gameResult) ? OUTPUT_GAME_LOSE : OUTPUT_GAME_WIN));
+
+        String result = OUTPUT_GAME_WIN;
+        if(gameResult)
+            result = OUTPUT_GAME_LOSE;
+
+        System.out.println(OUTPUT_GAME_WIN_OR_LOSE + result);
         System.out.println(OUTPUT_GAME_TRY_COUNT + count);
     }
 }
