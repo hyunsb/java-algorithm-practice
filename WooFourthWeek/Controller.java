@@ -42,6 +42,7 @@ public class Controller {
         }
     }
 
+    //TODO: 다리 이동 루틴을 구현한다.
     public boolean bridgeMoveRoutine(){
         mapMaker = new MapMaker(bridge);
         while (true){

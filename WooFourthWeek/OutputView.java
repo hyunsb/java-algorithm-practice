@@ -37,7 +37,7 @@ public class OutputView {
     }
 
     public static void printMap(MapMaker mapMaker) {
-        for(String map : mapMaker.printMap())
+        for(String map : mapMaker.makeMap())
             System.out.println(map);
         System.out.print(ENTER);
     }
