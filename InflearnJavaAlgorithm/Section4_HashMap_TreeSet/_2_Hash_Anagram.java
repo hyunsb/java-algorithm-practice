@@ -47,11 +47,9 @@ public class _2_Hash_Anagram {
     private boolean isSameKey(HashMap<Character, Integer> firstWord, HashMap<Character, Integer> secondWord){
         Set<Character> firstKeySet = firstWord.keySet();
         Set<Character> secondKeySet = secondWord.keySet();
-        for(char key : firstKeySet)
-            if (!secondKeySet.contains(key)) return false;
-        for(char key : secondKeySet)
-            if (!firstKeySet.contains(key)) return false;
-        return true;
+
+        firstKeySet.retainAll(secondKeySet);
+        return firstKeySet.size() == secondKeySet.size();
     }
 
     private boolean isAnagram(HashMap<Character, Integer> firstWord, HashMap<Character, Integer> secondWord) {
