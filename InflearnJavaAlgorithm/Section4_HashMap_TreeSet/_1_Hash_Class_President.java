@@ -23,6 +23,23 @@ public class _1_Hash_Class_President {
         return answer;
     }
 
+    public char solution2(int n, String voting){
+        HashMap<Character, Integer> voteCount = new HashMap<>();
+        char classPresident = ' ';
+        int maxValue = Integer.MIN_VALUE;
+
+        for(char vote : voting.toCharArray()){
+            voteCount.put(vote, voteCount.getOrDefault(vote, 0) +1);
+
+            int count = voteCount.get(vote);
+            if(maxValue < count){
+                maxValue = count;
+                classPresident = vote;
+            }
+        }
+        return classPresident;
+    }
+
     public static void main(String[] args) {
         _1_Hash_Class_President T = new _1_Hash_Class_President();
         Scanner sc = new Scanner(System.in);
@@ -30,5 +47,6 @@ public class _1_Hash_Class_President {
         int n = sc.nextInt();
         String voting = sc.next();
         System.out.println(T.solution(n, voting));
+        System.out.println(T.solution2(n, voting));
     }
 }
