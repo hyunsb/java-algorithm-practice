@@ -14,8 +14,28 @@ public class _2_Hash_Anagram {
         String firstWord = sc.next();
         String SecondWord = sc.next();
         System.out.println(T.solution(firstWord, SecondWord));
+        System.out.println(T.solution2(firstWord, SecondWord));
 
     }
+
+    public String solution2(String firstWord, String secondWord){
+        String answer = "YES";
+        HashMap<Character, Integer> map = new HashMap<>();
+        for(char alphabet : firstWord.toCharArray())
+            map.put(alphabet, map.getOrDefault(alphabet, 0) + 1);
+
+        for(char alphabet : secondWord.toCharArray()) {
+            if (!map.containsKey(alphabet) || map.get(alphabet) == 0)
+                return NO;
+            map.put(alphabet, map.get(alphabet) - 1);
+        }
+
+        if(map.isEmpty())
+            answer = YES;
+
+        return answer;
+    }
+
 
     private static final String YES = "YES";
     private static final String NO = "NO";
