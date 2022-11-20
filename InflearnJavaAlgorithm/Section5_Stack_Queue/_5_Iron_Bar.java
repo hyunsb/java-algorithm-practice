@@ -34,4 +34,18 @@ public class _5_Iron_Bar {
 
         return ironBarCnt + cuttingCnt;
     }
+
+    public int solution2(String bar) {
+        int answer = 0;
+        Stack<Character> stack = new Stack<>();
+        for(int i=0; i<bar.length(); i++){
+            if(bar.charAt(i) == '(') stack.push('(');
+            else {
+                stack.pop();
+                if(bar.charAt(i-1) == '(') answer += stack.size();
+                else answer ++;
+            }
+        }
+        return answer;
+    }
 }
