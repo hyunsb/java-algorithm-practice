@@ -21,7 +21,7 @@ public class BridgeMaker {
         return bridge;
     }
 
-    //TODO: bridgeNumberGenerator.generate() 값을 "U" 혹은 "D"로 변환하여 반환한다.
+    // TODO: bridgeNumberGenerator.generate() 값을 "U" 혹은 "D"로 변환하여 반환한다.
     private String convertCorrectBridge(){
         if (bridgeNumberGenerator.generate() == 0)
             return "U";

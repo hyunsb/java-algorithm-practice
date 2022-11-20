@@ -43,7 +43,7 @@ public class _4_Hash_Find_All_Anagram {
         int lt = 0, count = 0;
         for(int rt=word.length()-1; rt<str.length(); rt++){
             HashMap<Character, Integer> strMap = initializeHashMap(str.substring(lt++, rt+1));
-            if (isSameSize(wordMap, strMap) && isAnagram(wordMap,strMap))
+            if (isAnagram(wordMap, strMap))
                 count += 1;
         }
         return count;
@@ -56,15 +56,7 @@ public class _4_Hash_Find_All_Anagram {
         return map;
     }
 
-    private boolean isSameSize(HashMap<Character, Integer> firstWord,
-                               HashMap<Character, Integer> secondWord){
-        return firstWord.size() == secondWord.size();
-    }
-
-
-    private boolean isAnagram(HashMap<Character, Integer> firstWord, HashMap<Character, Integer> secondWord) {
-        for(char key : firstWord.keySet())
-            if(firstWord.get(key) != secondWord.get(key)) return false;
-        return true;
+    private boolean isAnagram( HashMap<Character, Integer> wordMap, HashMap<Character, Integer> strMap){
+        return wordMap.equals(strMap);
     }
 }
