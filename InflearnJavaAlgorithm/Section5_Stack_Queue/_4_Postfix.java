@@ -9,8 +9,24 @@ public class _4_Postfix {
         Scanner sc = new Scanner(System.in);
         String postfix = sc.nextLine();
         System.out.println(T.solution(postfix));
+        System.out.println(T.solution2(postfix));
     }
 
+    public int solution2(String postfix){
+        Stack<Integer> stack = new Stack<>();
+        for(char x  : postfix.toCharArray()){
+            if(Character.isDigit(x)) stack.push(Character.getNumericValue(x));
+            else{
+                int rt = stack.pop();
+                int lt = stack.pop();
+                if(x == '+') stack.push(lt+rt);
+                if(x == '-') stack.push(lt-rt);
+                if(x == '*') stack.push(lt*rt);
+                if(x == '/') stack.push(lt/rt);
+            }
+        }
+        return stack.pop();
+    }
 
     public int solution(String postfix){
         Stack<Integer> stack = new Stack<>();
