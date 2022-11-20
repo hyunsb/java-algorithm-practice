@@ -17,6 +17,26 @@ public class _5_Kth_Number {
         System.out.println(T.solution(n, k, score));
     }
 
+    public int solution2(int n, int k, int[] score){
+        int asnwer = -1;
+        TreeSet<Integer> Tset = new TreeSet<>(Collections.reverseOrder());
+        for(int i=0; i<n; i++){
+            for(int j=i+1; j<n; j++){
+                for(int l=j+1; l<n; l++){
+                    Tset.add(score[i] + score[j] + score[l]);
+                }
+            }
+        }
+
+        int cnt = 0;
+        for(int x : Tset){
+            cnt++;
+            if(cnt==k)
+                return  x;
+        }
+        return asnwer;
+    }
+
     public int solution(int n, int k, int[] score){
         TreeSet<Integer> scoreSet = new TreeSet<>();
         for(int i=0; i<n; i++){
