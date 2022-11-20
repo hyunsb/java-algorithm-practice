@@ -11,6 +11,22 @@ public class _2_Remove_Character_In_Bracket {
 
         String str = sc.nextLine();
         System.out.println(T.solution(str));
+        System.out.println(T.solution2(str));
+    }
+
+    public String solution2(String str) {
+        StringBuilder answer = new StringBuilder();
+        Stack<Character> stack = new Stack<>();
+        for (char c : str.toCharArray()) {
+            if (c == ')') {
+                while (stack.pop() != '(') ;
+                continue;
+            }
+            stack.push(c);
+        }
+        for (char c : stack) answer.append(c);
+        stack.clear();
+        return answer.toString();
     }
 
 
