@@ -11,6 +11,20 @@ public class _1_Correct_Bracket {
 
         String brackets = sc.nextLine();
         System.out.println(T.solution(brackets));
+        System.out.println(T.solution2(brackets));
+    }
+
+    public String solution2(String brackets){
+        Stack<Character> bracketStack = new Stack<>();
+        for(char bracket : brackets.toCharArray()){
+            if(bracket == '(') bracketStack.add(bracket);
+            else {
+                if(bracketStack.isEmpty())return "NO";
+                bracketStack.pop();
+            }
+        }
+        if(!bracketStack.isEmpty()) return "NO";
+        return "YES";
     }
 
     public String solution(String brackets){
