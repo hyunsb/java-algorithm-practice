@@ -19,7 +19,8 @@ public class _6_Queue_Saving_Princess {
 
         int count = 0;
         while (true){
-            int prince = princes.poll();
+            int prince = princes.remove();
+
             count += 1;
             if (count != k) princes.offer(prince);
             else {
