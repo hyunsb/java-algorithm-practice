@@ -12,10 +12,29 @@ public class _7_Curriculum_Design {
         String curriculum = sc.next();
         String timeTable = sc.next();
         System.out.println(T.solution(curriculum, timeTable));
+        System.out.println(T.solution2(curriculum, timeTable));
     }
 
     private final String YES = "YES";
     private final String NO = "NO";
+
+    public String solution2(String curriculum, String timeTable){
+        String answer = YES;
+        Queue<Character> Q = new LinkedList<>();
+        for(char x : curriculum.toCharArray())
+            Q.offer(x);
+
+        for(char x : timeTable.toCharArray()) {
+            if (Q.contains(x))
+                if (x != Q.poll()) return NO;
+        }
+
+        if(!Q.isEmpty())
+            return NO;
+
+        return answer;
+    }
+
     public String solution(String curriculum, String timeTable){
         Queue<String> timeQueue = new LinkedList<>();
         for(String s : timeTable.split("")){
