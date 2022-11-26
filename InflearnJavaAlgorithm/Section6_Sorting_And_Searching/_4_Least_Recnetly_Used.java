@@ -15,6 +15,29 @@ public class _4_Least_Recnetly_Used {
         int[] taskNum = new int[n];
         for(int i=0; i<n; i++) taskNum[i] = sc.nextInt();
         for(int i : T.solution(cacheSize, taskNum)) System.out.print(i + " ");
+        System.out.println();
+        for(int i : T.solution2(cacheSize, taskNum)) System.out.print(i + " ");
+    }
+
+    public int[] solution2(int cacheSize, int[] taskNum){
+        int[] cache = new int[cacheSize];
+
+        for(int task : taskNum){
+            int pos = -1;
+            for(int i=0; i<cacheSize; i++) if( task == cache[i]) pos = i; // cache hit
+
+            if(pos == -1) {
+                for(int i=cacheSize-1; i>=1; i--)
+                    cache[i] = cache[i-1];
+                cache[0] = task;
+            }else {
+                for(int i=pos; i>=1; i--)
+                    cache[i] = cache[i-1];
+                cache[0] = task;
+            }
+        }
+
+        return cache;
     }
 
     public Queue<Integer> solution(int cacheSize, int[] taskNum){
