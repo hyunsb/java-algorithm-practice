@@ -1,6 +1,7 @@
 package InflearnJavaAlgorithm.Section6_Sorting_And_Searching;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Scanner;
 
@@ -14,6 +15,7 @@ public class _5_Check_For_Duplicates {
         for(int i=0; i<n; i++) stud[i] = sc.nextInt();
 
         System.out.println(T.solution(n, stud));
+        System.out.println(T.solution2(n, stud));
     }
 
     public char solution(int n, int[] stud){
@@ -22,6 +24,17 @@ public class _5_Check_For_Duplicates {
         for(int i : stud){
             if(list.contains(i)) return 'D';
             list.add(i);
+        }
+
+        return answer;
+    }
+
+    public char solution2(int n, int[] stud){
+        char answer = 'U';
+        HashMap<Integer, Integer> map = new HashMap<>();
+        for(int i : stud){
+            if(map.getOrDefault(i, 0) != 0) return 'D';
+            map.put(i, 1);
         }
 
         return answer;
