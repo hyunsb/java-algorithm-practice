@@ -29,7 +29,6 @@ public class _9_Decision_Algorithm_Music_Video {
             }
             else lt = mid + 1;
         }
-
         return answer;
     }
 
