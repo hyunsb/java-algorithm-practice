@@ -8,6 +8,15 @@ public class _2_Recursion_Binary_Output {
         Scanner sc = new Scanner(System.in);
 
         T.castingBinary(sc.nextInt());
+        T.DFS(sc.nextInt());
+    }
+
+    public void DFS(int n){
+        if(n==0) return;
+        else {
+            DFS(n/2);
+            System.out.print(n%2);
+        }
     }
 
     public void castingBinary(int decimal){
