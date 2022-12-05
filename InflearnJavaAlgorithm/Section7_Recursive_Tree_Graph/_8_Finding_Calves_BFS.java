@@ -32,7 +32,7 @@ public class _8_Finding_Calves_BFS {
                 int x = Q.poll();
                 for(int distance : dist) {
                     int nx = x + distance;
-                    if(nx == E) return L;
+                    if(nx == E) return L+1;
                     if(1 <= nx && nx <= 10000 && ch[nx] == 0){
                         ch[nx] = 1;
                         Q.offer(nx);
