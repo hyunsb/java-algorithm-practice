@@ -3,6 +3,10 @@ package InflearnJavaAlgorithm.Section7_Recursive_Tree_Graph;
 import java.util.LinkedList;
 import java.util.Queue;
 
+
+// BFS를 사용하여
+// Tree 말단 노드까지의 가장 짧은 경로를 출력한다.
+
 class Node_9{
     int data;
     Node_9 lt, rt;
