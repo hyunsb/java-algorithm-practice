@@ -1,5 +1,7 @@
 package InflearnJavaAlgorithm.Section7_Recursive_Tree_Graph;
 
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Scanner;
 
 public class _8_Finding_Calves_BFS {
@@ -10,6 +12,38 @@ public class _8_Finding_Calves_BFS {
         int S = sc.nextInt();
         int E = sc.nextInt();
         System.out.println(T.solution(S, E));
+        System.out.println(T.BFS(S, E));
+    }
+
+    int answer = 0;
+    int[] dist = {1, -1, 5};
+    int[] ch;
+    Queue<Integer> Q = new LinkedList<>();
+
+    public int BFS(int S, int E){
+        ch = new int[10001];
+        ch[S] = 1;
+        Q.offer(S);
+        int L = 0;
+
+        while (!Q.isEmpty()){
+            int len = Q.size();
+            for(int i=0; i<len; i++){
+                int x = Q.poll();
+                if(x == E) return L;
+
+                for(int distance : dist) {
+                    int nx = x + distance;
+
+                    if(1 <= nx && nx <= 10000 && ch[nx] == 0){
+                        ch[nx] = 1;
+                        Q.offer(nx);
+                    }
+                }
+            }
+            L++;
+        }
+        return L;
     }
 
     public int solution(int S, int E){
