@@ -26,6 +26,7 @@ public class _10_Shortest_Path_BFS {
         tree.root.lt.lt = new Node_10(4);
         tree.root.lt.rt = new Node_10(5);
         System.out.println(tree.BFS(tree.root));
+
     }
 
     public int BFS(Node_10 root){
