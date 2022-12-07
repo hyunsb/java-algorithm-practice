@@ -3,10 +3,10 @@ package InflearnJavaAlgorithm.Section7_Recursive_Tree_Graph;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class Shortest_Path_DFS_Inflearn {
+public class _10_Shortest_Path_BFS_Inflearn {
     Node_10 root;
     public static void main(String[] args) {
-        Shortest_Path_DFS_Inflearn tree = new Shortest_Path_DFS_Inflearn();
+        _10_Shortest_Path_BFS_Inflearn tree = new _10_Shortest_Path_BFS_Inflearn();
         tree.root = new Node_10(1);
         tree.root.lt = new Node_10(2);
         tree.root.rt = new Node_10(3);
