@@ -25,8 +25,8 @@ public class _12_Route_Search_DFS {
         _12_Route_Search_DFS T = new _12_Route_Search_DFS();
         Scanner sc = new Scanner(System.in);
 
-        int n = sc.nextInt();
-        int m = sc.nextInt();
+        n = sc.nextInt();
+        m = sc.nextInt();
         graph = new int[n+1][n+1];
         ch = new int[n+1];
 
