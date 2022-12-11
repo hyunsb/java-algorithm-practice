@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.Scanner;
 
-public class _5_Exchange_Coin_DFS {
+public class _5_Coin_Exchange_DFS {
     static int n, m, answer=Integer.MAX_VALUE;
     public void DFS(int L, int sum, Integer[] arr){
         if(sum>m) return;
@@ -19,7 +19,7 @@ public class _5_Exchange_Coin_DFS {
         }
     }
     public static void main(String[] args){
-        _5_Exchange_Coin_DFS T = new _5_Exchange_Coin_DFS();
+        _5_Coin_Exchange_DFS T = new _5_Coin_Exchange_DFS();
         Scanner kb = new Scanner(System.in);
         n=kb.nextInt();
         Integer[] arr=new Integer[n];
