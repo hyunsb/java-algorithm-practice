@@ -1,5 +1,8 @@
+package InflearnJavaAlgorithm.Section8_DFS_BFS;
+
 import java.util.*;
-class Main{
+
+public class _4_Permutation_DFS{
 	static int[] pm;
 	static int n, m;
 	public void DFS(int L){
@@ -15,7 +18,7 @@ class Main{
 		}
 	}
 	public static void main(String[] args){
-		Main T = new Main();
+		_4_Permutation_DFS T = new _4_Permutation_DFS();
 		Scanner kb = new Scanner(System.in);
 		n=kb.nextInt();
 		m=kb.nextInt();
