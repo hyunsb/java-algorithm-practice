@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class _5_Coin_Exchange_DFS {
     static int coinTypeNumber;
-    static int[] coinType;
+    static Integer[] coinType;
     static int change;
 
     static int minCountCoin = Integer.MAX_VALUE;
@@ -14,7 +14,7 @@ public class _5_Coin_Exchange_DFS {
     public void DFS(int level, int sumOfChange){
         if(sumOfChange > change) return;
 
-        if(level > minCountCoin) return;
+        if(level >= minCountCoin) return;
 
         if(sumOfChange == change){
             minCountCoin = Math.min(minCountCoin, level);
@@ -32,10 +32,11 @@ public class _5_Coin_Exchange_DFS {
 
         coinTypeNumber = sc.nextInt();
 
-        coinType = new int[coinTypeNumber];
+        coinType = new Integer[coinTypeNumber];
         for(int i=0; i<coinTypeNumber; i++)
             coinType[i] = sc.nextInt();
-        Arrays.sort(coinType);
+
+        Arrays.sort(coinType, Collections.reverseOrder());
 
         change = sc.nextInt();
         T.DFS(0, 0);
