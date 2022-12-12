@@ -3,30 +3,33 @@ package InflearnJavaAlgorithm.Section8_DFS_BFS;
 import java.util.*;
 class _3_Get_Max_Score_DFS
 {
-    static int answer=Integer.MIN_VALUE, n, m;
-    boolean flag=false;
-    public void DFS(int L, int sum, int time, int[] ps, int[] pt){
-        if(time>m) return;
-        if(L==n){
-            answer=Math.max(answer, sum);
-        }
-        else{
-            DFS(L+1, sum+ps[L], time+pt[L], ps, pt);
-            DFS(L+1, sum, time, ps, pt);
+    static int answer = Integer.MIN_VALUE;
+    static int question, deadline;
+
+    public void DFS(int level, int score, int time, int[] a, int[] b){
+        if( (time + b[level]) > deadline || level == question) {
+            answer = Math.max(answer, score);
+        }else {
+            DFS(level+1, score+a[level], time+b[level], a, b);
+            DFS(level+1, score, time, a, b);
         }
     }
 
     public static void main(String[] args){
         _3_Get_Max_Score_DFS T = new _3_Get_Max_Score_DFS();
-        Scanner kb = new Scanner(System.in);
-        n=kb.nextInt();
-        m=kb.nextInt();
-        int[] a=new int[n];
-        int[] b=new int[n];
-        for(int i=0; i<n; i++){
-            a[i]=kb.nextInt();
-            b[i]=kb.nextInt();
+        Scanner sc = new Scanner(System.in);
+
+        question = sc.nextInt();
+        deadline = sc.nextInt();
+
+        int[] a=new int[question];
+        int[] b=new int[question];
+
+        for(int i=0; i<question; i++){
+            a[i]=sc.nextInt();
+            b[i]=sc.nextInt();
         }
+
         T.DFS(0, 0, 0, a, b);
         System.out.println(answer);
     }
