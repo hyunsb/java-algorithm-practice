@@ -2,7 +2,7 @@ package InflearnJavaAlgorithm.Section8_DFS_BFS;
 
 import java.util.*;
 
-public class _4_Permutation_DFS{
+public class _4_Permutation_With_Repetition_DFS {
 	static int[] pm;
 	static int n, m;
 
@@ -20,7 +20,7 @@ public class _4_Permutation_DFS{
 	}
 
 	public static void main(String[] args){
-		_4_Permutation_DFS T = new _4_Permutation_DFS();
+		_4_Permutation_With_Repetition_DFS T = new _4_Permutation_With_Repetition_DFS();
 		Scanner sc = new Scanner(System.in);
 		n = sc.nextInt();
 		m = sc.nextInt();
