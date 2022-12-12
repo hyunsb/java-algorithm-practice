@@ -3,7 +3,7 @@ package InflearnJavaAlgorithm.Section8_DFS_BFS;
 import java.util.Scanner;
 
 public class _6_Permutation_DFS {
-    static int[] number, outPut;
+    static int[] number, outPut, check;
 
     public void DFS(int level){
         if(level == outPut.length) {
@@ -12,8 +12,12 @@ public class _6_Permutation_DFS {
             System.out.println();
         }else {
             for(int i=0; i<number.length; i++){
-               outPut[level] = number[i];
-               DFS(level + 1);
+                if(check[i] == 0){
+                    check[i] = 1;
+                    outPut[level] = number[i];
+                    DFS(level + 1);
+                    check[i] = 0;
+                }
             }
         }
     }
@@ -26,6 +30,7 @@ public class _6_Permutation_DFS {
         int m = sc.nextInt();
 
         number = new int[n];
+        check = new int[n];
         outPut = new int[m];
 
         for(int i=0; i<n; i++)
