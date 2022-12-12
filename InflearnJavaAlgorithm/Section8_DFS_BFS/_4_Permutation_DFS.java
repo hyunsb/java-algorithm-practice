@@ -5,18 +5,20 @@ import java.util.*;
 public class _4_Permutation_DFS{
 	static int[] pm;
 	static int n, m;
-	public void DFS(int L){
-		if(L==m){
-			for(int x : pm) System.out.print(x+" ");
+
+	public void DFS(int level){
+		if(level == m){
+			for(int n : pm) System.out.print(n + " ");
 			System.out.println();
-		}
-		else{
+		}else {
 			for(int i=1; i<=n; i++){
-				pm[L]=i;
-				DFS(L+1);
+				pm[level] = i;
+				DFS(level+1);
 			}
 		}
+
 	}
+
 	public static void main(String[] args){
 		_4_Permutation_DFS T = new _4_Permutation_DFS();
 		Scanner kb = new Scanner(System.in);
