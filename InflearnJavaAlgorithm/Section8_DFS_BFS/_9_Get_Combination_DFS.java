@@ -1,7 +1,11 @@
 package InflearnJavaAlgorithm.Section8_DFS_BFS;
 import java.util.*;
 
-public class _9_DFS {
+public class _9_Get_Combination_DFS {
+
+}
+
+class _9_Get_Combination_DFS_Inflearn {
     static int[] combi;
     static int n, m;
     public void DFS(int L, int s){
@@ -17,7 +21,7 @@ public class _9_DFS {
         }
     }
     public static void main(String[] args){
-        _9_DFS T = new _9_DFS();
+        _9_Get_Combination_DFS_Inflearn T = new _9_Get_Combination_DFS_Inflearn();
         Scanner kb = new Scanner(System.in);
         n=kb.nextInt();
         m=kb.nextInt();
