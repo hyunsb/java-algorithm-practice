@@ -30,5 +30,4 @@ public class _6_Subset_DFS {
         ch = new int[n+1];
         T.DFS(1);
     }
-
 }
