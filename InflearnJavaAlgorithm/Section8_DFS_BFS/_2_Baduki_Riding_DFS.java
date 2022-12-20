@@ -28,12 +28,12 @@ import java.util.Scanner;
  * */
 
 public class _2_Baduki_Riding_DFS {
-    private static int WeightLimit;
+    private static int limitWeight;
     private static int maxWeight;
     private static int[] baduks;
 
     void DFS(int level, int sumOfWeight){
-        if(sumOfWeight > WeightLimit)
+        if(sumOfWeight > limitWeight)
             return;
 
         if(level == baduks.length) {
@@ -50,7 +50,7 @@ public class _2_Baduki_Riding_DFS {
         int c = sc.nextInt();
         int n = sc.nextInt();
 
-        WeightLimit = c;
+        limitWeight = c;
         maxWeight = Integer.MIN_VALUE;
 
         baduks = new int[n];
