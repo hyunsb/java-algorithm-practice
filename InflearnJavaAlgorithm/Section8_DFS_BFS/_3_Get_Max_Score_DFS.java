@@ -1,8 +1,7 @@
 package InflearnJavaAlgorithm.Section8_DFS_BFS;
 
 import java.util.*;
-class _3_Get_Max_Score_DFS
-{
+public class _3_Get_Max_Score_DFS{
     static int answer = Integer.MIN_VALUE;
     static int questionNumber, deadline;
 
@@ -37,4 +36,8 @@ class _3_Get_Max_Score_DFS
         T.DFS(0, 0, 0, questionScore, questionTime);
         System.out.println(answer);
     }
+}
+
+class _3_Get_Max_Score_DFS_Inflearn {
+
 }
