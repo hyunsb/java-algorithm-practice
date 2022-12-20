@@ -3,6 +3,43 @@ package InflearnJavaAlgorithm.Section8_DFS_BFS;
 import java.util.Scanner;
 
 public class _1_Subset_With_Equal_Sum_DFS {
+    static int n, sumOfSet = 0;
+    static int[] set;
+    static boolean flag = false;
+    static String answer = "NO";
+
+    public void DFS(int level, int sumOfSubset){
+        if(sumOfSubset > sumOfSet / 2) return;
+        if(flag) return;
+        if(level == n){
+            if( (sumOfSet - sumOfSubset) == sumOfSubset) {
+                answer = "YES";
+                flag = true;
+            }
+        } else {
+            DFS(level+1, sumOfSubset + set[level]);
+            DFS(level+1, sumOfSubset);
+        }
+    }
+
+    public static void main(String[] args) {
+        _1_Subset_With_Equal_Sum_DFS main = new _1_Subset_With_Equal_Sum_DFS();
+        Scanner sc = new Scanner(System.in);
+
+        n = sc.nextInt();
+        set = new int[n];
+
+        for(int i=0; i<n; i++) {
+            set[i] = sc.nextInt();
+            sumOfSet += set[i];
+        }
+
+        main.DFS(0, 0);
+        System.out.println(answer);
+    }
+}
+
+class _1_Subset_With_Equal_Sum_DFS_Inflearn {
     static String answer = "NO";
     static int n, total = 0;
     boolean flag = false;
@@ -25,23 +62,8 @@ public class _1_Subset_With_Equal_Sum_DFS {
         }
     }
 
-
-//    public void DFS(int L, int sum, int[] arr){
-//        if(flag) return;
-//        if(sum > total/2) return;
-//        if(L==n){
-//            if( (total-sum) == sum ){
-//                answer = "YES";
-//                flag = true;
-//            }
-//        }else {
-//            DFS(L+1, sum+arr[L], arr);
-//            DFS(L+1, sum, arr);
-//        }
-//    }
-
     public static void main(String[] args) {
-        _1_Subset_With_Equal_Sum_DFS T = new _1_Subset_With_Equal_Sum_DFS();
+        _1_Subset_With_Equal_Sum_DFS_Inflearn T = new _1_Subset_With_Equal_Sum_DFS_Inflearn();
         Scanner sc = new Scanner(System.in);
 
         n = sc.nextInt();
@@ -51,7 +73,6 @@ public class _1_Subset_With_Equal_Sum_DFS {
             total += arr[i];
         }
 
-//        T.DFS(0, 0, arr);
         T.DFS_(0, 0, arr);
         System.out.println(answer);
     }
