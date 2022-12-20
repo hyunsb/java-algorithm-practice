@@ -39,5 +39,39 @@ public class _3_Get_Max_Score_DFS{
 }
 
 class _3_Get_Max_Score_DFS_Inflearn {
+    static int n, m;
+    static int[] scores, times;
 
+    static int maxScore;
+
+    void DFS(int level, int sumScores, int sumTimes){
+        if(sumTimes > m) return;
+
+        if(level == n) {
+            maxScore = Math.max(maxScore, sumScores);
+            return;
+        }
+
+        DFS(level+1, sumScores + scores[level], sumTimes + times[level]);
+        DFS(level+1, sumScores, sumTimes);
+    }
+
+    public static void main(String[] args) {
+        _3_Get_Max_Score_DFS_Inflearn T = new _3_Get_Max_Score_DFS_Inflearn();
+        Scanner sc = new Scanner(System.in);
+        n = sc.nextInt();
+        m = sc.nextInt();
+
+        maxScore = Integer.MIN_VALUE;
+        scores = new int[n];
+        times = new int[n];
+
+        for(int i=0; i<n; i++){
+            scores[i] = sc.nextInt();
+            times[i] = sc.nextInt();
+        }
+
+        T.DFS(0,0,0);
+        System.out.println(maxScore);
+    }
 }
