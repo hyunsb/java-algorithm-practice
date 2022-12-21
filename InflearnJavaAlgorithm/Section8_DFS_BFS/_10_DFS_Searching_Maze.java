@@ -1,7 +1,13 @@
 package InflearnJavaAlgorithm.Section8_DFS_BFS;
 import java.util.*;
 
-public class _10_DFS_ {
+public class _10_DFS_Searching_Maze{
+    public static void main(String[] args) {
+
+    }
+}
+
+class _10_DFS_Searching_Maze_Inflearn {
     static int[] dx={-1, 0, 1, 0};
     static int[] dy={0, 1, 0, -1};
     static int[][] board;
@@ -23,7 +29,7 @@ public class _10_DFS_ {
     }
 
     public static void main(String[] args){
-        _10_DFS_ T = new _10_DFS_();
+        _10_DFS_Searching_Maze_Inflearn T = new _10_DFS_Searching_Maze_Inflearn();
         Scanner kb = new Scanner(System.in);
         board=new int[8][8];
         for(int i=1; i<=7; i++){
