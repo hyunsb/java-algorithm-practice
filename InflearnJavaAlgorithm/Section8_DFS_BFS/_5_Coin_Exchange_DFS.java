@@ -5,42 +5,35 @@ import java.util.Collections;
 import java.util.Scanner;
 
 public class _5_Coin_Exchange_DFS {
-    static int coinTypeNumber;
-    static Integer[] coinType;
-    static int change;
-
-    static int minCountCoin = Integer.MAX_VALUE;
-
-    public void DFS(int level, int sumOfChange){
-        if(sumOfChange > change) return;
-
-        if(level >= minCountCoin) return;
-
-        if(sumOfChange == change){
-            minCountCoin = Math.min(minCountCoin, level);
-        } else {
-            for(int i=0; i<coinTypeNumber; i++){
-                DFS(level+1, sumOfChange + coinType[i]);
-            }
-        }
-    }
-
-
     public static void main(String[] args) {
         _5_Coin_Exchange_DFS T = new _5_Coin_Exchange_DFS();
         Scanner sc = new Scanner(System.in);
-
-        coinTypeNumber = sc.nextInt();
-
-        coinType = new Integer[coinTypeNumber];
-        for(int i=0; i<coinTypeNumber; i++)
-            coinType[i] = sc.nextInt();
-
-        Arrays.sort(coinType, Collections.reverseOrder());
-
-        change = sc.nextInt();
-        T.DFS(0, 0);
-        System.out.println(minCountCoin);
     }
 }
 
+class _5_Coin_Exchange_DFS_Inflearn{
+    static int n, m, answer=Integer.MAX_VALUE;
+    public void DFS(int L, int sum, Integer[] arr){
+        if(sum>m) return;
+        if(L>=answer) return;
+        if(sum==m){
+            answer=Math.min(answer, L);
+        }
+        else{
+            for(int i=0; i<n; i++){
+                DFS(L+1, sum+arr[i], arr);
+            }
+        }
+    }
+    public static void main(String[] args){
+        _5_Coin_Exchange_DFS_Inflearn T = new _5_Coin_Exchange_DFS_Inflearn();
+        Scanner kb = new Scanner(System.in);
+        n=kb.nextInt();
+        Integer[] arr=new Integer[n];
+        for(int i=0; i<n; i++) arr[i]=kb.nextInt();
+        Arrays.sort(arr, Collections.reverseOrder());
+        m=kb.nextInt();
+        T.DFS(0, 0, arr);
+        System.out.println(answer);
+    }
+}
