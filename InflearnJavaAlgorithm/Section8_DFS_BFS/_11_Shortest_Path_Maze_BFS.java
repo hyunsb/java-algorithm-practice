@@ -1,7 +1,62 @@
 package InflearnJavaAlgorithm.Section8_DFS_BFS;
 import java.util.*;
 
-public class _11_Shortest_Path_Maze_BFS {
+class Point{
+    public int x, y;
+
+    Point(int x, int y){
+        this.x=x;
+        this.y=y;
+    }
+}
+public class _11_Shortest_Path_Maze_BFS{
+    static int[] dx = {-1, 0, 1, 0};
+    static int[] dy = {0, 1, 0, -1};
+    static int[][] maze, dist;
+
+    _11_Shortest_Path_Maze_BFS(){
+        maze = new int[7][7];
+        dist = new int[7][7];
+
+        Scanner sc = new Scanner(System.in);
+        for(int i=0; i<maze.length; i++)
+            for(int j=0; j<maze.length; j++)
+                maze[i][j] = sc.nextInt();
+
+        BFS(0, 0);
+        if(dist[6][6] == 0) System.out.println(-1);
+        else System.out.println(dist[6][6]);
+    }
+
+    void BFS(int x, int y){
+        Queue<Point> queue = new LinkedList<>();
+        queue.offer(new Point(x, y));
+        maze[0][0] = 1;
+        while(!queue.isEmpty()){
+            Point currentPoint = queue.poll();
+            for(int axis = 0; axis < dx.length; axis++){
+                int nx = currentPoint.x + dx[axis];
+                int ny = currentPoint.y + dy[axis];
+
+                try {
+                    if(maze[nx][ny] == 0){
+                        maze[nx][ny] = 1;
+                        queue.offer(new Point(nx, ny));
+                        dist[nx][ny] = dist[currentPoint.x][currentPoint.y] + 1;
+                    }
+                } catch (ArrayIndexOutOfBoundsException ignore) {}
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        _11_Shortest_Path_Maze_BFS main = new _11_Shortest_Path_Maze_BFS();
+    }
+}
+
+// ===========================Inflearn Code================================
+
+class _11_Shortest_Path_Maze_BFS_Inflearn {
     static int[] dx={-1, 0, 1, 0};
     static int[] dy={0, 1, 0, -1};
     static int[][] board, dis;
@@ -25,7 +80,7 @@ public class _11_Shortest_Path_Maze_BFS {
     }
 
     public static void main(String[] args){
-        _11_Shortest_Path_Maze_BFS T = new _11_Shortest_Path_Maze_BFS();
+        _11_Shortest_Path_Maze_BFS_Inflearn T = new _11_Shortest_Path_Maze_BFS_Inflearn();
         Scanner kb = new Scanner(System.in);
         board=new int[8][8];
         dis=new int[8][8];
@@ -40,13 +95,8 @@ public class _11_Shortest_Path_Maze_BFS {
     }
 }
 
-class Point{
-    public int x, y;
-    Point(int x, int y){
-        this.x=x;
-        this.y=y;
-    }
-}
+
+// ===========================Use DFS================================
 
 class _11_Shortest_Path_Maze_DFS{
     static int[] dx = {-1, 0, 1, 0};
