@@ -130,3 +130,74 @@ class _12_Tomato_BFS_Inflearn{
         else System.out.println(-1);
     }
 }
+
+class _12_Tomato_BFS_Practice{
+    static int[] dx = {-1, 0, 1, 0};
+    static int[] dy = {0, 1, 0, -1};
+    static int[][] tomatoBox, tomatoDate;
+    static Queue<Square> queue = new LinkedList<>();
+
+    void BFS(){
+        // error!!
+        // Square currentSquare = queue.poll();
+        while (!queue.isEmpty()){
+            Square currentSquare = queue.poll();
+            int cx = currentSquare.x;
+            int cy = currentSquare.y;
+
+            for(int axis=0; axis < dx.length; axis++){
+                int nx = cx + dx[axis];
+                int ny = cy + dy[axis];
+
+                try {
+                    if(tomatoBox[nx][ny] == 0){
+                        tomatoBox[nx][ny] = 1;
+                        tomatoDate[nx][ny] = tomatoDate[cx][cy] + 1;
+                        queue.offer(new Square(nx, ny));
+                    }
+                }catch (ArrayIndexOutOfBoundsException ignore){}
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        _12_Tomato_BFS_Practice main = new _12_Tomato_BFS_Practice();
+        Scanner sc = new Scanner(System.in);
+        int m = sc.nextInt();
+        int n = sc.nextInt();
+
+        tomatoBox = new int[n][m];
+        tomatoDate = new int[n][m];
+
+        for(int i=0; i<n; i++){
+            for(int j=0; j<m; j++){
+                tomatoBox[i][j] = sc.nextInt();
+                if(tomatoBox[i][j] == 1) // 상한 토마토가 입력되었을 시
+                    queue.offer(new Square(i, j));
+            }
+        }
+
+        main.BFS();
+
+        int decayDate = Integer.MIN_VALUE;
+        boolean flag = true;
+
+        for(int i=0; i<n; i++) {
+            for (int j = 0; j < m; j++) {
+                if (tomatoBox[i][j] == 0) {
+                    flag = false;
+                    break;
+                }
+            }
+        }
+
+        if(flag){
+            for(int i=0; i<n; i++){
+                for(int j=0; j<m; j++){
+                    decayDate = Math.max(decayDate, tomatoDate[i][j]);
+                }
+            }
+            System.out.println(decayDate);
+        }else System.out.println(-1);
+    }
+}
