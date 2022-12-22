@@ -9,6 +9,7 @@ class Point{
         this.y=y;
     }
 }
+
 public class _11_Shortest_Path_Maze_BFS{
     static int[] dx = {-1, 0, 1, 0};
     static int[] dy = {0, 1, 0, -1};
