@@ -22,8 +22,8 @@ public class _12_Tomato_BFS {
 
     public _12_Tomato_BFS(){
         Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
         int m = sc.nextInt();
+        int n = sc.nextInt();
 
         wareHouse = new int[n][m];
         tomatoDate = new int[n][m];
