@@ -89,3 +89,45 @@ class _10_DFS_Searching_Maze_Inflearn {
         System.out.print(answer);
     }
 }
+
+
+class _10_DFS_Searching_Maze_Practice{
+    static int[] dx = {-1, 0, 1, 0};
+    static int[] dy = {0, 1, 0, -1};
+
+    static int[][] maze;
+    static int caseCount;
+
+    void DFS(int x, int y){
+        if(x==6 && y==6){
+            caseCount++;
+            return;
+        }
+
+        for(int i=0; i<dx.length; i++){
+            int nx = x + dx[i];
+            int ny = y + dy[i];
+            try{
+                if(maze[nx][ny] == 0){
+                    maze[nx][ny] = 1;
+                    DFS(nx, ny);
+                    maze[nx][ny] = 0;
+                }
+            } catch (ArrayIndexOutOfBoundsException ignored){}
+        }
+    }
+
+    public static void main(String[] args) {
+        _10_DFS_Searching_Maze_Practice main = new _10_DFS_Searching_Maze_Practice();
+        Scanner sc = new Scanner(System.in);
+
+        maze = new int[7][7];
+        for(int i=0; i<maze.length; i++)
+            for(int j=0; j<maze.length; j++)
+                maze[i][j] = sc.nextInt();
+
+        maze[0][0] = 1;
+        main.DFS(0, 0);
+        System.out.println(caseCount);
+    }
+}
