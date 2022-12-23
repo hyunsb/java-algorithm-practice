@@ -137,6 +137,23 @@ class _12_Tomato_BFS_Practice{
     static int[][] tomatoBox, tomatoDate;
     static Queue<Square> queue = new LinkedList<>();
 
+    _12_Tomato_BFS_Practice(){
+        Scanner sc = new Scanner(System.in);
+        int m = sc.nextInt();
+        int n = sc.nextInt();
+
+        tomatoBox = new int[n][m];
+        tomatoDate = new int[n][m];
+
+        for(int i=0; i<n; i++){
+            for(int j=0; j<m; j++){
+                tomatoBox[i][j] = sc.nextInt();
+                if(tomatoBox[i][j] == 1) // 상한 토마토가 입력되었을 시
+                    queue.offer(new Square(i, j));
+            }
+        }
+    }
+
     void BFS(){
         // error!!
         // Square currentSquare = queue.poll();
@@ -162,28 +179,13 @@ class _12_Tomato_BFS_Practice{
 
     public static void main(String[] args) {
         _12_Tomato_BFS_Practice main = new _12_Tomato_BFS_Practice();
-        Scanner sc = new Scanner(System.in);
-        int m = sc.nextInt();
-        int n = sc.nextInt();
-
-        tomatoBox = new int[n][m];
-        tomatoDate = new int[n][m];
-
-        for(int i=0; i<n; i++){
-            for(int j=0; j<m; j++){
-                tomatoBox[i][j] = sc.nextInt();
-                if(tomatoBox[i][j] == 1) // 상한 토마토가 입력되었을 시
-                    queue.offer(new Square(i, j));
-            }
-        }
-
         main.BFS();
 
         int decayDate = Integer.MIN_VALUE;
         boolean flag = true;
 
-        for(int i=0; i<n; i++) {
-            for (int j = 0; j < m; j++) {
+        for(int i=0; i<tomatoBox.length; i++) {
+            for (int j = 0; j < tomatoBox[0].length; j++) {
                 if (tomatoBox[i][j] == 0) {
                     flag = false;
                     break;
@@ -192,8 +194,8 @@ class _12_Tomato_BFS_Practice{
         }
 
         if(flag){
-            for(int i=0; i<n; i++){
-                for(int j=0; j<m; j++){
+            for(int i=0; i<tomatoBox.length; i++){
+                for(int j=0; j<tomatoBox[0].length; j++){
                     decayDate = Math.max(decayDate, tomatoDate[i][j]);
                 }
             }
