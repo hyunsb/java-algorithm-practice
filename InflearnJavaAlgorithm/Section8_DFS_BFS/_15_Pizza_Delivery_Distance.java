@@ -13,32 +13,31 @@ class Position{
 }
 
 public class _15_Pizza_Delivery_Distance {
-    static int[][] map;
     static int m;
     static List<Position> houseAxis = new ArrayList<>();
     static List<Position> pizzaAxis = new ArrayList<>();
+    static int[] pizzaCombi;
 
     static int minDist = Integer.MAX_VALUE;
 
-    void DFS(int level, List<Position> permutation){
-        if(level == pizzaAxis.size()-1)
-            return;
-
-        if(permutation.size() == m) {
+    void DFS(int level, int idx){
+        if(level == m) {
             int totalDeliveryDist = 0;
             for(Position house : houseAxis){
-                int deliveryDist = Integer.MAX_VALUE;
-                for(Position pizza : permutation){
-                    int dist = Math.abs(house.x - pizza.x) + Math.abs(house.y - pizza.y);
-                    deliveryDist = Math.min(deliveryDist, dist);
+                int minDist = Integer.MAX_VALUE;
+                for(int pizza : pizzaCombi){
+                    int dist = Math.abs(house.x - pizzaAxis.get(pizza).x)
+                            + Math.abs(house.y - pizzaAxis.get(pizza).y);
+                    minDist = Math.min(minDist, dist);
                 }
-                totalDeliveryDist += deliveryDist;
+                totalDeliveryDist += minDist;
             }
             minDist = Math.min(minDist, totalDeliveryDist);
         } else {
-            DFS(level+1, permutation);
-            permutation.add(pizzaAxis.get(level));
-            DFS(level+1, permutation);
+            for(int i=idx; i<pizzaAxis.size(); i++){
+                pizzaCombi[level] = i;
+                DFS(level + 1, i + 1);
+            }
         }
     }
 
@@ -48,19 +47,62 @@ public class _15_Pizza_Delivery_Distance {
 
         int n = sc.nextInt();
         m = sc.nextInt();
+        pizzaCombi = new int[m];
 
-        map = new int[n][n];
-        for(int i=0; i<n; i++)
+        for(int i=0; i<n; i++) {
             for(int j=0; j<n; j++) {
-                map[i][j] = sc.nextInt();
-                if(map[i][j] == 1) houseAxis.add(new Position(i, j));
-                if(map[i][j] == 2) pizzaAxis.add(new Position(i, j));
+                int value = sc.nextInt();
+                if(value == 1) houseAxis.add(new Position(i, j));
+                if(value == 2) pizzaAxis.add(new Position(i, j));
             }
+        }
 
-        List<Position> permutation = new ArrayList<>();
-        main.DFS(0, permutation);
+        main.DFS(0, 0);
         System.out.println(minDist);
     }
 }
 
-class _15_Pizza_Delivery_Distance_Inflearn{}
+class _15_Pizza_Delivery_Distance_Inflearn {
+    static int n, m, len, answer = Integer.MAX_VALUE;
+    static int[] combi;
+    static ArrayList<Point> hs, pz;
+
+    public void DFS(int L, int s) {
+        if (L == m) {
+            int sum = 0;
+            for (Point h : hs) {
+                int dis = Integer.MAX_VALUE;
+                for (int i : combi) {
+                    dis = Math.min(dis, Math.abs(h.x - pz.get(i).x) + Math.abs(h.y - pz.get(i).y));
+                }
+                sum += dis;
+            }
+            answer = Math.min(answer, sum);
+        } else {
+            for (int i = s; i < len; i++) {
+                combi[L] = i;
+                DFS(L + 1, i + 1);
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        _15_Pizza_Delivery_Distance_Inflearn T = new _15_Pizza_Delivery_Distance_Inflearn();
+        Scanner kb = new Scanner(System.in);
+        n = kb.nextInt();
+        m = kb.nextInt();
+        pz = new ArrayList<>();
+        hs = new ArrayList<>();
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                int tmp = kb.nextInt();
+                if (tmp == 1) hs.add(new Point(i, j));
+                else if (tmp == 2) pz.add(new Point(i, j));
+            }
+        }
+        len = pz.size();
+        combi = new int[m];
+        T.DFS(0, 0);
+        System.out.println(answer);
+    }
+}
