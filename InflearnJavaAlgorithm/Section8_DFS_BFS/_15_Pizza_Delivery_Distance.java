@@ -112,3 +112,60 @@ class _15_Pizza_Delivery_Distance_Inflearn {
         System.out.println(answer);
     }
 }
+
+
+/**
+ * pizzaCoordinate, houseCoordinate 에 각각 피자, 집의 좌표를 저장한다.
+ * */
+class _15_Pizza_Delivery_Distance_Practice{
+    static List<Position> pizzaCoordinate, houseCoordinate;
+    static int[] pizzaCombination;  // 피자집의 조합을 저장 (피자집 리스트의 인덱스를 저장)
+    static int m, pizzaNumber, minDist = Integer.MAX_VALUE;
+
+    void DFS(int level, int startPoint){
+        if(level == m){
+            int totalPizzaDist = 0;
+            for(Position house : houseCoordinate){
+                int minPizzaDist = Integer.MAX_VALUE;
+                for(int index : pizzaCombination){
+                    int dist = Math.abs(house.x - pizzaCoordinate.get(index).x)
+                            + Math.abs(house.y - pizzaCoordinate.get(index).y);
+                    minPizzaDist = Math.min(minPizzaDist, dist);
+                }
+                totalPizzaDist += minPizzaDist;
+
+            }
+            minDist = Math.min(minDist, totalPizzaDist);
+        }else {
+            for(int i=startPoint; i<pizzaNumber; i++){
+                pizzaCombination[level] = i;
+                DFS(level+1, i+1);
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        _15_Pizza_Delivery_Distance_Practice main = new _15_Pizza_Delivery_Distance_Practice();
+        Scanner sc = new Scanner(System.in);
+
+        int n = sc.nextInt();
+        m = sc.nextInt();
+
+        // 피자 가게, 집의 위치 좌표를 저장할 리스트
+        pizzaCoordinate = new ArrayList<>();
+        houseCoordinate = new ArrayList<>();
+        pizzaCombination = new int[m];
+
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                int categori = sc.nextInt();
+                if (categori == 1) houseCoordinate.add(new Position(i, j));
+                if (categori == 2) pizzaCoordinate.add(new Position(i, j));
+            }
+        }
+
+        pizzaNumber = pizzaCoordinate.size();
+        main.DFS(0, 0);
+        System.out.println(minDist);
+    }
+}
