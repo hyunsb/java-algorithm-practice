@@ -21,7 +21,7 @@ public class _15_Pizza_Delivery_Distance {
     static int minDist = Integer.MAX_VALUE;
 
     void DFS(int level, List<Position> permutation){
-        if(level == pizzaAxis.size())
+        if(level == pizzaAxis.size()-1)
             return;
 
         if(permutation.size() == m) {
@@ -62,3 +62,5 @@ public class _15_Pizza_Delivery_Distance {
         System.out.println(minDist);
     }
 }
+
+class _15_Pizza_Delivery_Distance_Inflearn{}
