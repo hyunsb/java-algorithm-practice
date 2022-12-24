@@ -22,6 +22,11 @@ public class _15_Pizza_Delivery_Distance {
 
     void DFS(int level, int idx){
         if(level == m) {
+//            for(int x : pizzaCombi){
+//                System.out.print(pizzaAxis.get(x).x + ", " + pizzaAxis.get(x).y + " | ");
+//            }
+//            System.out.println();
+
             int totalDeliveryDist = 0;
             for(Position house : houseAxis){
                 int minDist = Integer.MAX_VALUE;
@@ -32,6 +37,7 @@ public class _15_Pizza_Delivery_Distance {
                 }
                 totalDeliveryDist += minDist;
             }
+//            System.out.println("minDist : " + totalDeliveryDist);
             minDist = Math.min(minDist, totalDeliveryDist);
         } else {
             for(int i=idx; i<pizzaAxis.size(); i++){
