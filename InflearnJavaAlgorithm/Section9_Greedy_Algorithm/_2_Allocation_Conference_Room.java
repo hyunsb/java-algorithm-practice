@@ -99,3 +99,29 @@ class _2_Allocation_Conference_Room_Inflearn{
         System.out.println(T.solution(arr, n));
     }
 }
+
+//===========================Practice Code===========================//
+class _2_Allocation_Conference_Room_Practice{
+    public int solution(ArrayList<ConferenceInfo> conferenceInfos){
+        int answer = 0;
+        Collections.sort(conferenceInfos);
+        int startTime = Integer.MIN_VALUE;
+        for(ConferenceInfo conferenceInfo : conferenceInfos){
+            if(conferenceInfo.start >= startTime) {
+                answer++;
+                startTime = conferenceInfo.end;
+            }
+        }
+        return answer;
+    }
+
+    public static void main(String[] args) {
+        _2_Allocation_Conference_Room_Practice main = new _2_Allocation_Conference_Room_Practice();
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        ArrayList<ConferenceInfo> conferenceInfos = new ArrayList<>();
+        for(int i=0; i<n; i++)
+            conferenceInfos.add(new ConferenceInfo(sc.nextInt(), sc.nextInt()));
+        System.out.println(main.solution(conferenceInfos));
+    }
+}
