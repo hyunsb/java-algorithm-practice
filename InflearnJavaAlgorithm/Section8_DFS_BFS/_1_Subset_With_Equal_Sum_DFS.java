@@ -1,4 +1,4 @@
-package InflearnJavaAlgorithm.Section8_DFS_BFS;
+package Section8_DFS_BFS;
 
 import java.util.Scanner;
 
