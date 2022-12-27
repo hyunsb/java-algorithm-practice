@@ -19,6 +19,3 @@ package Section9_Greedy_Algorithm;
  * <h3 color="9C9C9C">▣출력설명</h3>
  * 첫 번째 줄에 “YES"또는 "NO"를 출력한다.
  * */
-public class _6_Is_Friend_Disjoint_Set {
-
-}
