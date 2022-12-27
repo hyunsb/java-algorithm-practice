@@ -70,3 +70,46 @@ public class _4_Maximum_Import_Schedule {
         System.out.println(main.solution(lectureInfos));
     }
 }
+
+//======================Practice Code==============================//
+
+
+class _4_Maximum_Import_Schedule_Practice{
+    public int solution(ArrayList<LectureInfo> lectureInfos){
+        Collections.sort(lectureInfos);
+        int maxDay = lectureInfos.get(0).day;
+        return getMaxPay(lectureInfos, maxDay);
+    }
+
+    public int getMaxPay(ArrayList<LectureInfo> lectureInfos, int maxDay){
+        int maxPay = 0;
+
+        PriorityQueue<Integer> payList = new PriorityQueue<>(Collections.reverseOrder());
+        int j=0;
+        for(int i=maxDay; i>0; i--){
+            for( ; j<lectureInfos.size(); j++){
+                System.out.print(j + " " + lectureInfos.get(j).day + " ");
+
+                if(lectureInfos.get(j).day < i) break;
+                payList.offer(lectureInfos.get(j).pay);
+
+                System.out.println(payList);
+            }
+            System.out.println();
+            if(!payList.isEmpty()) maxPay += payList.poll();
+        }
+        return maxPay;
+    }
+
+    public static void main(String[] args) {
+        _4_Maximum_Import_Schedule_Practice main = new _4_Maximum_Import_Schedule_Practice();
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+
+        ArrayList<LectureInfo> lectureInfos = new ArrayList<>();
+        for(int i=0; i<n; i++)
+            lectureInfos.add(new LectureInfo(sc.nextInt(), sc.nextInt()));
+
+        System.out.println(main.solution(lectureInfos));
+    }
+}
