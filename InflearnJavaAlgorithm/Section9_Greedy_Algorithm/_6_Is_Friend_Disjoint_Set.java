@@ -24,6 +24,46 @@ import java.util.Scanner;
 
 
 public class _6_Is_Friend_Disjoint_Set {
+    static int[] friendTreeNums; // 배열의 인덱스 번호는 학생 번호, 배열 각 인덱스 값은 친구 트리의 번호
+
+    static int Find(int studentNum){
+        if(studentNum == friendTreeNums[studentNum])
+            return friendTreeNums[studentNum];
+        else return friendTreeNums[studentNum] = Find(friendTreeNums[studentNum]);
+    }
+
+    // 친구관계를 저장하는 메서드
+    static void Union(int student, int friend){
+        // 각 파라매터의 친구 트리의 번호를 저장
+        int studentTreeNum = Find(student);
+        int friendTreeNum = Find(friend);
+
+        // 친구 트리의 번호가 같지 않다면, 같은 번호로 초기화
+        if(studentTreeNum != friendTreeNum)
+            friendTreeNums[studentTreeNum] = friendTreeNum;
+    }
+
+    public static void main(String[] args) {
+        _6_Is_Friend_Disjoint_Set main = new _6_Is_Friend_Disjoint_Set();
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int m = sc.nextInt();
+
+        // 학생의 친구 트리가 형성되기 이전이기 때문에 트리의 번호는 각 학생의 번호로 초기화
+        friendTreeNums = new int[n+1];
+        for(int i=1; i<=n; i++)
+            friendTreeNums[i] = i;
+
+        for(int i=0; i<m; i++){
+            int student = sc.nextInt();
+            int friend = sc.nextInt();
+            Union(student, friend);
+        }
+
+        if(Find(sc.nextInt()) != Find(sc.nextInt()))
+            System.out.println("NO");
+        else System.out.println("YES");
+    }
 }
 
 //==========================Inflearn Code========================//
