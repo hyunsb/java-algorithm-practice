@@ -1,6 +1,7 @@
 package Section9_Greedy_Algorithm;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.Scanner;
 
@@ -80,8 +81,49 @@ public class _7_WonderLand_MST_Kruskal {
 }
 
 //=======================Inflearn Code=======================//
-class _7_WonderLand_MST_Inflearn{
-    public static void main(String[] args) {
 
+class _7_WonderLand_MST_Inflearn{
+    static int[] unf;
+    public static int Find(int v){
+        if(v == unf[v]) return v;
+        else return unf[v] = Find(unf[v]);
+    }
+
+    public static void Union(int a, int b){
+        int fa = Find(a);
+        int fb = Find(b);
+        if(fa != fb) unf[fa] = fb;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int m = sc.nextInt();
+
+        unf = new int[n+1];
+        ArrayList<Edge7> arr = new ArrayList<>();
+
+        for(int i=1; i<=n; i++)
+            unf[i] = i;
+
+        for(int i=0; i<m; i++){
+            int a = sc.nextInt();
+            int b = sc.nextInt();
+            int c = sc.nextInt();
+            arr.add(new Edge7(a, b, c));
+        }
+
+        int answer = 0;
+        Collections.sort(arr);
+        for(Edge7 ob : arr){
+            int fv1 = Find(ob.firstVertex);
+            int fv2 = Find(ob.secondVertex);
+            if(fv1 != fv2){
+                answer += ob.cost;
+                Union(ob.firstVertex, ob.secondVertex);
+            }
+        }
+
+        System.out.println(answer);
     }
 }
