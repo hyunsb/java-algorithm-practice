@@ -105,3 +105,48 @@ class _6_Is_Friend_Disjoint_Set_Inflearn {
         else System.out.println("NO");
     }
 }
+
+//========================Practice Code=======================//
+
+class _6_Is_Friend_Disjoint_Set_Practice{
+    static int[] friendGroupNumber;
+
+    // 친구 트리의 번호를 찾는 메서드
+    static int Find(int student){
+        if(friendGroupNumber[student] == student)
+            return friendGroupNumber[student];
+        else return friendGroupNumber[student] = Find(friendGroupNumber[student]);
+    }
+
+    // 친구 관계를 맺어 친구 트리 배열에 저장하는 메서드
+    static void Union(int studentA, int studentB){
+        int studentGroupA = Find(studentA);
+        int studentGroupB = Find(studentB);
+
+        if(studentGroupA != studentGroupB)
+            friendGroupNumber[studentGroupA] = studentGroupB;
+    }
+
+    static boolean isFriends(int studentA, int studentB){
+        return Find(studentA) == Find(studentB);
+    }
+
+    public static void main(String[] args) {
+        _6_Is_Friend_Disjoint_Set_Practice main = new _6_Is_Friend_Disjoint_Set_Practice();
+        Scanner sc = new Scanner(System.in);
+
+        int n = sc.nextInt();
+        int m = sc.nextInt();
+
+        friendGroupNumber = new int[n+1];
+        for(int i=1; i<=n; i++)
+            friendGroupNumber[i] = i;
+
+        for(int i=0; i<m; i++)
+            Union(sc.nextInt(), sc.nextInt());
+
+        if(isFriends(sc.nextInt(), sc.nextInt()))
+            System.out.println("YES");
+        else System.out.println("NO");
+    }
+}
