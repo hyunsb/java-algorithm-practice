@@ -2,6 +2,10 @@ package Level2;
 
 import java.util.Scanner;
 
+/**
+ * https://school.programmers.co.kr/learn/courses/30/lessons/140107
+ */
+
 public class Dotted {
 
     public long solution(int k, int d) {
