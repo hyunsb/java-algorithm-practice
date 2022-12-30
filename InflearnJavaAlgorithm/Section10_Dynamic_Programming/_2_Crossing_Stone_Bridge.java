@@ -18,7 +18,6 @@ import java.util.Scanner;
  * */
 public class _2_Crossing_Stone_Bridge {
     static int[] dp;
-
     public void solution(){
         dp[1] = 1;
         dp[2] = 2;
