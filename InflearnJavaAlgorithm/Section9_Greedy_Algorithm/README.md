@@ -1,4 +1,4 @@
-# Section 9. Dynamic Programming
+# Section 9. Greedy Algorithm
 
 1. 씨름선수
 2. 회의실 배정
