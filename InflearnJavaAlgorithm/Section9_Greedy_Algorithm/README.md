@@ -1,4 +1,4 @@
-# Section 8. DFS, BFS
+# Section 10. Dynamic Programming
 
 1. 계단오르기
 2. 돌다리 건너기
