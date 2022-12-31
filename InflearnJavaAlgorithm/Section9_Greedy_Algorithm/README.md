@@ -1,8 +1,10 @@
-# Section 10. Dynamic Programming
+# Section 9. Dynamic Programming
 
-1. 계단오르기
-2. 돌다리 건너기
-3. 최대부분증가수열(LIS)
-4. 가장 높은 탑 쌓기(LIS 응용)
-5. 동전교환(냅색 알고리즘)
-6. 최대점수 구하기(냅색알고리즘)
+1. 씨름선수
+2. 회의실 배정
+3. 결혼식
+4. 최대수입스케쥴( PriorityQueue)
+5. 다익스트라 알고리즘
+6. 친구인가(Uion&Find)
+7. 원더랜드(크루스칼 : Uion&Find)
+8. 원더랜드(프림 : PriorityQueue)
