@@ -16,7 +16,6 @@ class Brick implements Comparable<Brick>{
         return o.s-this.s;
     }
 }
-
 public class _4_Build_Tallest_Tower {
     static int[] dy;
     public int solution(ArrayList<Brick> arr){
