@@ -78,3 +78,37 @@ class _5_Coin_Exchange_Inflearn{
         System.out.print(T.solution(arr));
     }
 }
+
+//====================Practice Code=========================//
+
+// 동전의 종류 개수가 최대 50개 이므로 DFS를 활용하면 값을 도출해내기 위한 시간이 오래 걸린다.
+// 따라서 냅색 알고리즘을 활용하여 해결한다.
+class _5_Coin_Exchange_Practice{
+
+    private int solution(int[] coins, int m){
+        int[] minCoinNumber = new int[m+1]; // 거슬러 줄 금액에 따른 최소 코인 개수를 저장할 배열 선언
+        Arrays.fill(minCoinNumber, Integer.MAX_VALUE); // 배열의 모든 값을 최대값으로 초기화
+        minCoinNumber[0] = 0;
+
+        for(int i=0; i<coins.length; i++){
+            for(int j=coins[i]; j<minCoinNumber.length; j++){
+                minCoinNumber[j] = Math.min(minCoinNumber[j], minCoinNumber[j-coins[i]] + 1);
+            }
+        }
+        return minCoinNumber[minCoinNumber.length-1];
+    }
+
+    public static void main(String[] args) {
+        _5_Coin_Exchange_Practice main = new _5_Coin_Exchange_Practice();
+        Scanner sc = new Scanner(System.in);
+
+        int n = sc.nextInt();
+        int[] coins = new int[n];
+
+        for(int i=0; i<coins.length; i++)
+            coins[i] = sc.nextInt();
+
+        int m = sc.nextInt();
+        System.out.println(main.solution(coins, m));
+    }
+}
