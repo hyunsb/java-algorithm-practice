@@ -47,6 +47,7 @@ class Brick_Info implements Comparable<Brick_Info>{
         this.weight = weight;
     }
 
+    // 밑면의 넓이 기준 오름차순으로 정렬
     @Override
     public int compareTo(Brick_Info o) {
         return o.area - this.area;
@@ -56,10 +57,11 @@ class Brick_Info implements Comparable<Brick_Info>{
 public class _4_Build_Tallest_Tower{
 
     public int solution(ArrayList<Brick_Info> bricks){
-        int dp[] = new int[bricks.size()];
-        Collections.sort(bricks);
+        int dp[] = new int[bricks.size()]; // 각 인덱스 값에 해당하는 벽돌로 탑을 쌓았을 때의 탑의 높이를 저장하는 배열
+        Collections.sort(bricks); // 밑면의 넓이 기준 오름차순으로 정렬
         dp[0] = bricks.get(0).height;
 
+        // 현재 벽돌을 선택하여 탑을 쌓을 때의 탑의 높이를 저장한다.
         for(int i=1; i<bricks.size(); i++){
             int max_height = 0;
             for(int j=i-1; j>=0; j--){
@@ -70,6 +72,7 @@ public class _4_Build_Tallest_Tower{
             dp[i] = max_height;
         }
 
+        // 가장 큰 높이를 반환한다.
         return Arrays.stream(dp).max().getAsInt();
     }
 
