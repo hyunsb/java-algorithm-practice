@@ -57,3 +57,25 @@ class _1_Stair_Climb_Inflearn{
         System.out.println(T.solution(n));
     }
 }
+
+//===================Practice Code=========================//
+class _1_Stair_Climb_Practice{
+
+    public int solution(int n){
+        int[] dp = new int[n+1];
+        dp[1] = 1;
+        dp[2] = 2;
+        for(int i=3; i<dp.length; i++){
+            dp[i] = dp[i-1] + dp[i-2];
+        }
+        return dp[dp.length-1];
+    }
+
+    public static void main(String[] args) {
+        _1_Stair_Climb_Practice main = new _1_Stair_Climb_Practice();
+        Scanner sc = new Scanner(System.in);
+
+        int n = sc.nextInt();
+        System.out.println(main.solution(n));
+    }
+}
