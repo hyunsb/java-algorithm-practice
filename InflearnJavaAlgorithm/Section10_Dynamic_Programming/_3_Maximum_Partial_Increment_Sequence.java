@@ -86,3 +86,37 @@ class _3_Maximum_Partial_Increment_Sequence_Inflearn{
         System.out.println(T.solution(arr));
     }
 }
+
+//==================Practice Code=====================//
+class _3_Maximum_Partial_Increment_Sequence_Practice{
+
+    private int solution(int[] sequence){
+        int answer = 0;
+        int[] dp = new int[sequence.length];
+
+        dp[0] = 1;
+        for(int i=1; i<sequence.length; i++){
+            int max = Integer.MIN_VALUE;
+            for(int j=i; j>=0; j--){
+                if(sequence[i] > sequence[j]){
+                    max = Math.max(max, dp[j]);
+                }
+            }
+            dp[i] = max + 1;
+            answer = Math.max(answer, dp[i]);
+        }
+        return answer;
+    }
+
+    public static void main(String[] args) {
+        _3_Maximum_Partial_Increment_Sequence_Practice main = new _3_Maximum_Partial_Increment_Sequence_Practice();
+        Scanner sc = new Scanner(System.in);
+
+        int n = sc.nextInt();
+        int[] arr = new int[n];
+        for(int i=0; i<n; i++)
+            arr[i] = sc.nextInt();
+
+        System.out.println(main.solution(arr));
+    }
+}
