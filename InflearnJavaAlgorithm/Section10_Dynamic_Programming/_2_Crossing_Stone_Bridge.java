@@ -55,3 +55,27 @@ class _2_Crossing_Stone_Bridge_Inflearn{
         System.out.println(T.solution(n));
     }
 }
+
+//=======================Practice Code=========================//
+
+class _2_Crossing_Stone_Bridge_Practice{
+
+    int solution(int stoneBridgeNumber){
+        int[] dp = new int[stoneBridgeNumber+2];
+        dp[1] = 1;
+        dp[2] = 2;
+        for(int i=3; i<dp.length; i++){
+            dp[i] = dp[i-1] + dp[i-2];
+        }
+
+        return dp[dp.length-1];
+    }
+
+    public static void main(String[] args) {
+        _2_Crossing_Stone_Bridge_Practice main = new _2_Crossing_Stone_Bridge_Practice();
+        Scanner sc = new Scanner(System.in);
+
+        int n = sc.nextInt();
+        System.out.println(main.solution(n));
+    }
+}
