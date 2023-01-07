@@ -62,3 +62,28 @@ class _6_Get_Max_Score_Inflearn {
         System.out.print(dy[m]);
     }
 }
+
+//==================Practice Code===================//
+
+// 풀 수 있는 문제, 보석 담기문제의 보석 등등의 자원을 중복으로 담을 수 있을 경우에는 정순으로 DP 시행
+// 중복이 불가능한 경우 역순으로 DP 시행
+
+class _6_Get_Max_Score_Practice{
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int m = sc.nextInt();
+
+        int[] maxScore = new int[m+1]; // maxScore[idx] 는 idx 시간이 주어졌을 때 얻을 수 있는 최대 점수
+
+        for(int i=0; i<n; i++){
+            int questionScore = sc.nextInt();
+            int questionTime = sc.nextInt();
+
+            for(int j=maxScore.length-1; j>=questionTime; j--){
+                maxScore[j] = Math.max(maxScore[j], maxScore[j-questionTime] + questionScore);
+            }
+        }
+        System.out.println(maxScore[maxScore.length-1]);
+    }
+}
