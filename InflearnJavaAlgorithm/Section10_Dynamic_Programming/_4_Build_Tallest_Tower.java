@@ -58,21 +58,21 @@ public class _4_Build_Tallest_Tower{
 
     public int solution(ArrayList<Brick_Info> bricks){
         int dp[] = new int[bricks.size()]; // 각 인덱스 값에 해당하는 벽돌로 탑을 쌓았을 때의 탑의 높이를 저장하는 배열
-        Collections.sort(bricks); // 밑면의 넓이 기준 오름차순으로 정렬
-        dp[0] = bricks.get(0).height;
+        Collections.sort(bricks); // 밑면의 넓이 기준 오름차순으로 정렬 (Brick_Info 클래스에 정의된 compareTo() 메서드 기준)
+        dp[0] = bricks.get(0).height; // 첫 번째 벽돌은 조건을 따지지 않고 쌓을 수 있기 때문에 현재의 값을 저장
 
-        // 현재 벽돌을 선택하여 탑을 쌓을 때의 탑의 높이를 저장한다.
-        for(int i=1; i<bricks.size(); i++){
-            int max_height = 0;
-            for(int j=i-1; j>=0; j--){
-                if(bricks.get(i).weight < bricks.get(j).weight){
-                    max_height = Math.max(max_height, dp[j] + bricks.get(i).height);
+        // 현재 벽돌을 선택하여 탑을 쌓을 때의 탑의 최대 높이를 저장하는 루틴
+        for(int i=1; i<bricks.size(); i++){ // 밑면의 넓이 기준으로 정렬된 벽돌 리스트를 두번째 부터 탐색
+            int max_height = 0; // 현재 벽돌을 선택하여 탑을 쌓았을 때 가능한 최대의 높이를 저장
+            for(int j=i-1; j>=0; j--){ // 현재 벽돌 이전에 쌓여있던 탑의 높이를 역순으로 탐색
+                if(bricks.get(i).weight < bricks.get(j).weight){ // 현재의 벽돌을 쌓을 수 있는 상황일 시
+                    max_height = Math.max(max_height, dp[j] + bricks.get(i).height); // 더 큰 높이 값을 저장
                 }
             }
             dp[i] = max_height;
         }
 
-        // 가장 큰 높이를 반환한다.
+        // 가장 큰 높이를 반환
         return Arrays.stream(dp).max().getAsInt();
     }
 
