@@ -13,6 +13,7 @@
 - Section 9. Greedy Algorithm
 - Section 10. dynamic programming(동적계획법)
 
+![image](https://user-images.githubusercontent.com/96504592/213126142-3b08289c-6f21-47c8-a295-4d5d6d0087df.png)
 
 ![image](https://user-images.githubusercontent.com/96504592/204139794-cf3d80ca-1943-46e1-aac7-636d63cb90d5.png)
 
