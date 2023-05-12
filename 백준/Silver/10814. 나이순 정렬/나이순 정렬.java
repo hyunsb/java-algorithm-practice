@@ -1,26 +1,42 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.StringTokenizer;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
 
         int n = Integer.parseInt(bufferedReader.readLine());
-        String[][] arr = new String[n][2];
+        Member[] members = new Member[n];
 
-        for (int i = 0; i < arr.length; i++) {
+        for (int i = 0; i < n; i++) {
             StringTokenizer str = new StringTokenizer(bufferedReader.readLine());
-            arr[i][0] = str.nextToken();
-            arr[i][1] = str.nextToken();
+            members[i] = new Member(Integer.parseInt(str.nextToken()), str.nextToken());
         }
 
-        Arrays.sort(arr, Comparator.comparingInt(o -> Integer.parseInt(o[0])));
-        for (String[] array : arr){
-            System.out.println(array[0] + " " + array[1]);
+        Arrays.sort(members);
+        for (Member member : members)
+            System.out.println(member);
+    }
+
+    private static class Member implements Comparable<Member> {
+        int age;
+        String name;
+
+        Member(int age, String name) {
+            this.age = age;
+            this.name = name;
+        }
+
+        @Override
+        public String toString() {
+            return age + " " + name;
+        }
+
+        @Override
+        public int compareTo(Member o) {
+            return age - o.age;
         }
     }
 }
