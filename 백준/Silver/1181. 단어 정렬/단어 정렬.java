@@ -12,6 +12,7 @@ public class Main {
         for (int i = 0; i < N; i++) arr[i] = bufferedReader.readLine();
 
         Set<String> stringSet = new TreeSet<>(Arrays.asList(arr));
+        StringBuilder builder = new StringBuilder();
         stringSet.stream().sorted(new Comparator<String>() {
             @Override
             public int compare(String o1, String o2) {
@@ -19,6 +20,7 @@ public class Main {
                     return o1.compareTo(o2);
                 return o1.length() - o2.length();
             }
-        }).forEach(System.out::println);
+        }).forEach(string -> builder.append(string).append("\n"));
+        System.out.println(builder);
     }
 }
