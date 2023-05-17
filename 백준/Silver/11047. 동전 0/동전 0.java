@@ -19,8 +19,7 @@ public class Main {
         int answer = 0;
         for (int i = coins.length-1; i >= 0; i--) {
             int coin = coins[i];
-            while (true) {
-                if ( K < coin ) break;
+            while (K >= coin) {
                 K -= coin;
                 answer++;
             }
