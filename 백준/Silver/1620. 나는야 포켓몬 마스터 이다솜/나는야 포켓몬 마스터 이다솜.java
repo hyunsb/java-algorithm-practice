@@ -13,24 +13,17 @@ class Main {
         int n = Integer.parseInt(stringTokenizer.nextToken());
         int m = Integer.parseInt(stringTokenizer.nextToken());
 
-        Map<String, Integer> nameMap = new HashMap<>();
-        Map<Integer, String> numberMap = new HashMap<>();
-
-        int count = 1;
-        for (int i = 0; i < n; i++) {
+        Map<String, String> map = new HashMap<>();
+        
+        for (int i = 1; i <= n; i++) {
+            String number = String.valueOf(i);
             String name = bufferedReader.readLine();
-            nameMap.put(name, count);
-            numberMap.put(count, name);
-            count += 1;
+            map.put(name, number);
+            map.put(number, name);
         }
 
         for (int i = 0; i < m; i++) {
-            String question = bufferedReader.readLine();
-            try {
-                System.out.println(numberMap.get(Integer.parseInt(question)));
-            } catch (NumberFormatException exception) {
-                System.out.println(nameMap.get(question));
-            }
+            System.out.println(map.get(bufferedReader.readLine()));
         }
     }
 }
