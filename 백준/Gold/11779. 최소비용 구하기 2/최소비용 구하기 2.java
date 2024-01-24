@@ -14,7 +14,6 @@ class Main {
         Queue<Node> queue = new PriorityQueue<>();
         queue.add(new Node(start, 0));
         minDistance[start] = 0;
-        preVisited[start] = 0;
 
         while (!queue.isEmpty()) {
             Node current = queue.poll();
@@ -26,6 +25,7 @@ class Main {
             for (Node next : map[currentVertex]) {
                 int nextVertex = next.vertex;
                 int nextWeight = next.weight + minDistance[currentVertex];
+                
                 if (nextWeight < minDistance[nextVertex]) {
                     minDistance[nextVertex] = nextWeight;
                     queue.add(new Node(nextVertex, nextWeight));
