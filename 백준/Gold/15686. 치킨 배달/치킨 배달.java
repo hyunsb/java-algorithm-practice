@@ -36,9 +36,11 @@ class Main {
 
         // 치킨 집 뽑기
         for (int i = idx; i < totalChickenNumber; i++) {
-            isOpen[i] = true;
-            combination(count + 1, i + 1);
-            isOpen[i] = false;
+            if (!isOpen[i]) {
+                isOpen[i] = true;
+                combination(count + 1, i + 1);
+                isOpen[i] = false;
+            }
         }
     }
 
