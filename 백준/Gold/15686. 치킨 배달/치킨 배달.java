@@ -1,93 +1,83 @@
 import java.io.BufferedReader;
-import java.io.BufferedWriter;
+import java.io.IOException;
 import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.StringTokenizer;
- 
-class Point {
-    int x;
-    int y;
- 
-    Point(int x, int y) {
-        this.x = x;
-        this.y = y;
-    }
-}
- 
-public class Main {
-    static int N, M;
-    static int[][] map;
-    static ArrayList<Point> person;
-    static ArrayList<Point> chicken;
-    static int ans;
-    static boolean[] open;
- 
-    public static void main(String[] args) throws Exception {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-        StringTokenizer st = new StringTokenizer(br.readLine());
- 
-        N = Integer.parseInt(st.nextToken());
-        M = Integer.parseInt(st.nextToken());
- 
-        map = new int[N][N];
-        person = new ArrayList<>();
-        chicken = new ArrayList<>();
- 
-        // 미리 집과 치킨집에 해당하는 좌표를 ArrayList에 넣어 둠.
-        for (int i = 0; i < N; i++) {
-            st = new StringTokenizer(br.readLine());
-            for (int j = 0; j < N; j++) {
-                map[i][j] = Integer.parseInt(st.nextToken());
- 
-                if (map[i][j] == 1) {
-                    person.add(new Point(i, j));
-                } else if (map[i][j] == 2) {
-                    chicken.add(new Point(i, j));
-                }
-            }
-        }
- 
-        ans = Integer.MAX_VALUE;
-        open = new boolean[chicken.size()];
- 
-        DFS(0, 0);
-        bw.write(ans + "\n");
-        bw.flush();
-        bw.close();
-        br.close();
-    }
- 
-    public static void DFS(int start, int cnt) {
-        if (cnt == M) {
-            int res = 0;
- 
-            for (int i = 0; i < person.size(); i++) {
-                int temp = Integer.MAX_VALUE;
- 
-                // 어떤 집과 치킨집 중 open한 치킨집의 모든 거리를 비교한다.
-                // 그 중, 최소 거리를 구한다.
-                for (int j = 0; j < chicken.size(); j++) {
-                    if (open[j]) {
-                        int distance = Math.abs(person.get(i).x - chicken.get(j).x)
-                                + Math.abs(person.get(i).y - chicken.get(j).y);
- 
-                        temp = Math.min(temp, distance);
+
+class Main {
+
+    static int n, m;
+    static List<Building> chickens;
+    static List<Building> houses;
+    static boolean[] isOpen;
+    static int totalChickenNumber;
+    static int minDistance = Integer.MAX_VALUE;
+
+    private static void combination(int count, int idx) {
+        if (count == m) {
+            // 거리 구해서 최소값 비교
+            int totalDistance = 0;
+
+            for (Building house : houses) {
+                int min = 2501;
+
+                for (int i = 0; i < totalChickenNumber; i++) {
+                    if (isOpen[i]) {
+                        int distance = house.getDistanceFrom(chickens.get(i));
+                        if (distance < min) min = distance;
                     }
                 }
-                res += temp;
+                totalDistance += min;
             }
-            ans = Math.min(ans, res);
+            if (totalDistance < minDistance) minDistance = totalDistance;
             return;
         }
- 
-        // 백트래킹
-        for (int i = start; i < chicken.size(); i++) {
-            open[i] = true;
-            DFS(i + 1, cnt + 1);
-            open[i] = false;
+
+        // 치킨 집 뽑기
+        for (int i = idx; i < totalChickenNumber; i++) {
+            isOpen[i] = true;
+            combination(count + 1, i + 1);
+            isOpen[i] = false;
         }
     }
- 
+
+    private static class Building {
+        int x;
+        int y;
+
+        public Building(int x, int y) {
+            this.x = x;
+            this.y = y;
+        }
+
+        public int getDistanceFrom(Building from) {
+            return Math.abs(this.x - from.x) + Math.abs(this.y - from.y);
+        }
+    }
+
+    public static void main(String[] args) throws IOException {
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer tokenizer = new StringTokenizer(bufferedReader.readLine());
+
+        n = Integer.parseInt(tokenizer.nextToken());
+        m = Integer.parseInt(tokenizer.nextToken());
+        chickens = new ArrayList<>();
+        houses = new ArrayList<>();
+
+        for (int i = 0; i < n; i++) {
+            tokenizer = new StringTokenizer(bufferedReader.readLine());
+            for (int j = 0; j < n; j++) {
+                int target = Integer.parseInt(tokenizer.nextToken());
+                if (target == 0) continue;
+                if (target == 1) houses.add(new Building(i, j));
+                if (target == 2) chickens.add(new Building(i, j));
+            }
+        }
+
+        totalChickenNumber = chickens.size();
+        isOpen = new boolean[totalChickenNumber];
+        combination(0, 0);
+        System.out.println(minDistance);
+    }
 }
