@@ -2,59 +2,61 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.StringTokenizer;
 
 class Main {
+
+    static List<String> DNAs = List.of("A", "C", "G", "T");
+    static Map<String, Integer> require = new HashMap<>();
+    static Map<String, Integer> temp = new HashMap<>();
+    static int count = 0;
+
     public static void main(String[] args) throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer tokenizer = new StringTokenizer(bufferedReader.readLine());
-
-        int n = Integer.parseInt(tokenizer.nextToken());
-        int s = Integer.parseInt(tokenizer.nextToken());
-
-        String dnaStr = bufferedReader.readLine();
+        int wordLength = Integer.parseInt(tokenizer.nextToken());
+        int passwordLength = Integer.parseInt(tokenizer.nextToken());
+        String word = bufferedReader.readLine();
 
         tokenizer = new StringTokenizer(bufferedReader.readLine());
-        Map<String, Integer> dnaMap = Map.of(
-                "A", Integer.parseInt(tokenizer.nextToken()),
-                "C", Integer.parseInt(tokenizer.nextToken()),
-                "G", Integer.parseInt(tokenizer.nextToken()),
-                "T", Integer.parseInt(tokenizer.nextToken())
-        );
-
-        int count = 0;
-        int start = 0, end = s;
-        String[] dna = dnaStr.split("");
-
-        Map<String, Integer> checker = new HashMap<>();
-        for (int i = 0; i < end; i++) {
-            String target = dna[i];
-            checker.put(target, checker.getOrDefault(target, 0) + 1);
+        for (String dna : DNAs) {
+            require.put(dna, Integer.parseInt(tokenizer.nextToken()));
+            temp.put(dna, 0);
         }
-        if (check(checker, dnaMap)) count += 1;
 
-        for (; end < dna.length; end++) {
-            checker.put(dna[start], checker.get(dna[start]) - 1);
-            checker.put(dna[end], checker.getOrDefault(dna[end], 0) + 1);
-            start += 1;
+        String[] words = word.split("");
+        for (int i = 0; i < passwordLength; i++) {
+            String target = words[i];
+            temp.put(target, temp.get(target) + 1);
+        }
+        if (checkRequire()) count += 1;
 
-            boolean flag = check(checker, dnaMap);
-            if (flag) count += 1;
+        for (int i = passwordLength; i < wordLength; i++) {
+            String prev = words[i-passwordLength];
+            String next = words[i];
+
+//            System.out.println("prev: " + prev + " next: " + next);
+//            System.out.println(temp);
+
+            temp.put(prev, temp.get(prev) - 1);
+            temp.put(next, temp.get(next) + 1);
+
+            if (checkRequire()) count += 1;
         }
 
         System.out.println(count);
     }
 
-    private static boolean check(Map<String, Integer> checker, Map<String, Integer> dnaMap) {
-        boolean flag = true;
+    static boolean checkRequire() {
+        for (String dna : DNAs) {
+            int req = require.get(dna);
+            int target = temp.get(dna);
+//            System.out.println(dna + "= req : " + req + " target: " + target);
 
-        for (String key : dnaMap.keySet()) {
-            if (dnaMap.get(key) > checker.getOrDefault(key, 0)) {
-                flag = false;
-                break;
-            }
+            if (target < req) return false;
         }
-        return flag;
+        return true;
     }
 }
