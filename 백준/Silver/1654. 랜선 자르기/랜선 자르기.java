@@ -7,30 +7,35 @@ class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer tokenizer = new StringTokenizer(bufferedReader.readLine());
-        int n = Integer.parseInt(tokenizer.nextToken());
-        long k = Long.parseLong(tokenizer.nextToken());
-        long[] arr = new long[n];
 
-        long left = 1, right = Integer.MIN_VALUE;
-        for (int i = 0; i < n; i++) {
-            arr[i] = Long.parseLong(bufferedReader.readLine());
-            if (right < arr[i]) right = arr[i];
+        int k = Integer.parseInt(tokenizer.nextToken());
+        long n = Integer.parseInt(tokenizer.nextToken());
+        long max = 1;
+        long min = 1;
+        int[] lines = new int[k];
+
+        for (int i = 0; i < k; i++) {
+            int line = Integer.parseInt(bufferedReader.readLine());
+            lines[i] = line;
+            if (max < line) max = line;
         }
 
-        while (left <= right) {
-            long target = (left + right) / 2;
+        long length = 0;
+        while (min <= max) {
+            long mid = (min + max) / 2;
+
             long count = 0;
-            
-            for (long i : arr) {
-                count += i / target;
+            for (int line : lines) {
+                count += line/mid;
             }
 
-            if (count >= k) {
-                left = target + 1;
+            if (count < n) {
+                max = mid - 1;
             } else {
-                right = target - 1;
+                length = Math.max(length, mid);
+                min = mid + 1;
             }
         }
-        System.out.println(left - 1);
+        System.out.println(length);
     }
 }
