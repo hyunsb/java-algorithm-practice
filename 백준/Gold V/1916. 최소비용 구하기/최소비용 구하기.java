@@ -58,11 +58,11 @@ class Main {
         int start = Integer.parseInt(tokenizer.nextToken());
         int end = Integer.parseInt(tokenizer.nextToken());
 
-        dijkstra(start);
+        dijkstra(start, end);
         System.out.println(minDistance[end]);
     }
 
-    private static void dijkstra(int start) {
+    private static void dijkstra(int start, int end) {
         Queue<Node> queue = new PriorityQueue<>();
         queue.add(new Node(start, 0));
         minDistance[start] = 0;
@@ -70,9 +70,10 @@ class Main {
         while (!queue.isEmpty()) {
             Node current = queue.poll();
             int currentVertex = current.vertex;
-
+            
             if (isVisited[currentVertex]) continue;
             isVisited[currentVertex] = true;
+            if (currentVertex == end) return;
 
             for (Node node : map[currentVertex]) {
                 int nextVertex = node.vertex;
