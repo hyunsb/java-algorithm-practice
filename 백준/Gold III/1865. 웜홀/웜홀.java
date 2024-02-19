@@ -8,98 +8,93 @@ import java.util.StringTokenizer;
 
 class Main {
 
-    static int n, m, w;
-    static List<Road>[] map;
+    static int nodeNumber, roadNumber, wormHoleNumber;
+    static int INF = 250_000_000;
+
+    static List<Node>[] map;
     static int[] minDistance;
-    static int INF = Integer.MAX_VALUE;
+
+    private static class Node {
+
+        int vertex;
+        int weight;
+
+        public Node(int vertex, int weight) {
+            this.vertex = vertex;
+            this.weight = weight;
+        }
+
+        @Override
+        public String toString() {
+            return "Node{" +
+                "vertex=" + vertex +
+                ", weight=" + weight +
+                '}';
+        }
+    }
 
     public static void main(String[] args) throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-        int TC = Integer.parseInt(bufferedReader.readLine());
+        int testCase = Integer.parseInt(bufferedReader.readLine());
 
-        StringTokenizer tokenizer;
-        for (int repeat = 0; repeat < TC; repeat++) {
-            tokenizer = new StringTokenizer(bufferedReader.readLine());
-            n = Integer.parseInt(tokenizer.nextToken());
-            m = Integer.parseInt(tokenizer.nextToken());
-            w = Integer.parseInt(tokenizer.nextToken());
+        while (testCase-- > 0) {
+            StringTokenizer tokenizer = new StringTokenizer(bufferedReader.readLine());
+            nodeNumber = Integer.parseInt(tokenizer.nextToken());
+            roadNumber = Integer.parseInt(tokenizer.nextToken());
+            wormHoleNumber = Integer.parseInt(tokenizer.nextToken());
 
-            map = new ArrayList[n+1];
-            minDistance = new int[n+1];
-            for (int i = 0; i <= n; i++) {
+            map = new ArrayList[nodeNumber + 1];
+            minDistance = new int[nodeNumber + 1];
+
+            for (int i = 0; i < nodeNumber + 1; i++) {
                 map[i] = new ArrayList<>();
             }
 
-            for (int i = 0; i < m + w; i++) {
+            for (int i = 0; i < roadNumber + wormHoleNumber; i++) {
                 tokenizer = new StringTokenizer(bufferedReader.readLine());
                 int start = Integer.parseInt(tokenizer.nextToken());
                 int end = Integer.parseInt(tokenizer.nextToken());
                 int weight = Integer.parseInt(tokenizer.nextToken());
 
-                if (i < m) {
-                    map[start].add(new Road(end, weight));
-                    map[end].add(new Road(start, weight));
+                if (i < roadNumber) {
+                    map[start].add(new Node(end, weight));
+                    map[end].add(new Node(start, weight));
                     continue;
                 }
-                map[start].add(new Road(end, -weight));
+                map[start].add(new Node(end, -weight));
             }
 
-            boolean isMinusCycle = false;
-            for (int i = 1; i <= n; i++) {
-                if (bellmanFord(i)) {
-                    isMinusCycle = true;
-                    System.out.println("YES");
-                    break;
-                }
-            }
-            if (!isMinusCycle) {
+            if (bellmanFord()) {
                 System.out.println("NO");
+                continue;
             }
+            System.out.println("YES");
         }
     }
 
-    private static boolean bellmanFord(int start) {
+    private static boolean bellmanFord() {
         Arrays.fill(minDistance, INF);
-        minDistance[start] = 0;
-        boolean update = false;
+        minDistance[1] = 0;
 
-        for (int i = 1; i < n; i++) {
-            update = false;
-
-            for (int j = 1; j <= n; j++) {
-                for (Road next : map[j]) {
-                    int nw = minDistance[j] + next.weight;
-                    if (minDistance[j] != INF && minDistance[next.end] > nw) {
-                        minDistance[next.end] = nw;
-                        update = true;
-                    }
-                }
-            }
-            if (!update) {
-                break;
-            }
-        }
-
-        if (update) {
-            for (int i = 1; i <= n; i++) {
-                for (Road next : map[i]) {
-                    if (minDistance[i] != INF &&
-                        minDistance[next.end] > minDistance[i] + next.weight) {
-                        return true;
+        for (int repeat = 1; repeat < nodeNumber; repeat++) {
+            for (int start = 1; start <= nodeNumber; start++) {
+                for (Node next : map[start]) {
+                    int nextWeight = minDistance[start] + next.weight;
+                    if (nextWeight < minDistance[next.vertex]) {
+                        minDistance[next.vertex] = nextWeight;
                     }
                 }
             }
         }
-        return false;
-    }
 
-    private static class Road {
-        int end;
-        int weight;
-
-        public Road(int end, int weight) {
-            this.end = end;
-            this.weight = weight;
+        for (int start = 1; start <= nodeNumber; start++) {
+            for (Node next : map[start]) {
+                int nextWeight = minDistance[start] + next.weight;
+                if (nextWeight < minDistance[next.vertex]) {
+                    return false;
+                }
+            }
         }
+        return true;
     }
 }
