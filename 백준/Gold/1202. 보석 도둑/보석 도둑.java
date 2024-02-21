@@ -12,38 +12,41 @@ class Main {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer tokenizer = new StringTokenizer(bufferedReader.readLine());
 
-        int n = Integer.parseInt(tokenizer.nextToken());
-        int k = Integer.parseInt(tokenizer.nextToken());
+        int gemNumber = Integer.parseInt(tokenizer.nextToken());
+        int bagNumber = Integer.parseInt(tokenizer.nextToken());
+        Gem[] gems = new Gem[gemNumber];
+        int[] bags = new int[bagNumber];
 
-        Gem[] gems = new Gem[n];
-        int[] bags = new int[k];
-
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < gemNumber; i++) {
             tokenizer = new StringTokenizer(bufferedReader.readLine());
             int weight = Integer.parseInt(tokenizer.nextToken());
             int price = Integer.parseInt(tokenizer.nextToken());
+
             gems[i] = new Gem(weight, price);
         }
-        Arrays.sort(gems);
 
-        for (int i = 0; i < k; i++) {
+        for (int i = 0; i < bagNumber; i++) {
             bags[i] = Integer.parseInt(bufferedReader.readLine());
         }
+
+        Arrays.sort(gems);
         Arrays.sort(bags);
 
-        long maxValue = 0;
-        Queue<Integer> queue = new PriorityQueue<>(Comparator.reverseOrder());
-        for (int bagIdx = 0, gemIdx = 0; bagIdx < k; bagIdx++) {
-            while (gemIdx < n && gems[gemIdx].weight <= bags[bagIdx]) {
-                queue.add(gems[gemIdx].price);
-                gemIdx++;
+        long maxPrice = 0;
+        Queue<Integer> gemPriceCanPutBag = new PriorityQueue<>(Comparator.reverseOrder());
+
+        int gemIndex = 0;
+        for (int bagIndex = 0; bagIndex < bagNumber; bagIndex++) {
+            while (gemIndex < gemNumber && bags[bagIndex] >= gems[gemIndex].weight) {
+                gemPriceCanPutBag.add(gems[gemIndex].price);
+                gemIndex++;
             }
 
-            if (!queue.isEmpty()) {
-                maxValue += queue.poll();
+            if (!gemPriceCanPutBag.isEmpty()) {
+                maxPrice += gemPriceCanPutBag.poll();
             }
         }
-        System.out.println(maxValue);
+        System.out.println(maxPrice);
     }
 
     private static class Gem implements Comparable<Gem> {
