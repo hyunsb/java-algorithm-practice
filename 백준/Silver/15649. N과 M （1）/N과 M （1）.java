@@ -6,29 +6,9 @@ import java.util.StringTokenizer;
 class Main {
 
     static int n, m;
+    static int[] numbers;
     static boolean[] isVisited;
-
-    static int[] arr;
-    static StringBuilder answer = new StringBuilder();
-
-    public static void DFS(int depth) {
-        if (depth == m) {
-            for (int i : arr) {
-                answer.append(i).append(" ");
-            }
-            answer.append("\n");
-            return;
-        }
-
-        for (int i = 0; i < n; i++) {
-            if (!isVisited[i]) {
-                isVisited[i] = true;
-                arr[depth] = i + 1;
-                DFS(depth + 1);
-                isVisited[i] = false;
-            }
-        }
-    }
+    static StringBuilder builder = new StringBuilder();
 
     public static void main(String[] args) throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
@@ -36,10 +16,28 @@ class Main {
 
         n = Integer.parseInt(tokenizer.nextToken());
         m = Integer.parseInt(tokenizer.nextToken());
-        isVisited = new boolean[n];
-        arr = new int[m];
+        numbers = new int[m];
+        isVisited = new boolean[n+1];
+        backTracking(0);
+        System.out.println(builder);
+    }
 
-        DFS(0);
-        System.out.println(answer);
+    private static void backTracking(int depth) {
+        if (depth == m) {
+            for (int number : numbers) {
+                builder.append(number).append(" ");
+            }
+            builder.append("\n");
+            return;
+        }
+
+        for (int i = 1; i <= n; i++) {
+            if (!isVisited[i]) {
+                isVisited[i] = true;
+                numbers[depth] = i;
+                backTracking(depth+1);
+                isVisited[i] = false;
+            }
+        }
     }
 }
