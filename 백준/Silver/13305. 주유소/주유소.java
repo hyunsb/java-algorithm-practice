@@ -22,13 +22,13 @@ class Main {
             oilCost[i] = Integer.parseInt(tokenizer.nextToken());
         }
 
-        int totalCost = getTotalCost(cityNumber, oilCost, nextDistance);
+        long totalCost = getTotalCost(cityNumber, oilCost, nextDistance);
 
         System.out.println(totalCost);
     }
 
-    private static int getTotalCost(int cityNumber, int[] oilCost, int[] nextDistance) {
-        int totalCost = 0;
+    private static long getTotalCost(int cityNumber, int[] oilCost, int[] nextDistance) {
+        long totalCost = 0;
         for (int i = 0; i < cityNumber; i++) {
             int cOilCost = oilCost[i];
             int nextCity = i+1;
@@ -44,7 +44,7 @@ class Main {
                 cNextDistance += nextDistance[j];
             }
 
-            totalCost += (cOilCost * cNextDistance);
+            totalCost += ((long) cOilCost * cNextDistance);
             i = nextCity - 1;
         }
         return totalCost;
