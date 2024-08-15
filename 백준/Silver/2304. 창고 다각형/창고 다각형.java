@@ -40,17 +40,10 @@ class Main {
         }
 
         maxNumbers.sort(Integer::compareTo);
-        int leftEnd = maxNumbers.get(0);
-        int rightStart;
-        if (maxNumbers.size() == 1) {
-            rightStart = leftEnd;
-        } else {
-            rightStart = maxNumbers.get(maxNumbers.size() - 1);
-        }
 
         int maxArea = calcMaxArea(maxWeight);
-        int leftArea = calcLeftArea(leftEnd);
-        int rightArea = calcRightArea(rightStart);
+        int leftArea = calcLeftArea(maxNumbers.get(0));
+        int rightArea = calcRightArea(maxNumbers.get(maxNumbers.size() - 1));
 
         System.out.println(maxArea + leftArea + rightArea);
     }
