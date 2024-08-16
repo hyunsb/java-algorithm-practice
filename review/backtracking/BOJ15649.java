@@ -12,6 +12,7 @@ public class BOJ15649 {
     static StringBuilder answer = new StringBuilder();
 
     public static void dfs(int n, int m, int depth) {
+
         if (depth == m) {
             for (int number : numbers) {
                 answer.append(number).append(" ");
