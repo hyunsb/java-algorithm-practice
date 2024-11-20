@@ -22,8 +22,8 @@ class Main {
 
             if (sum == n) {
                 answer += 1;
-                end += 1;
-                sum += end;
+                sum -= start;
+                start += 1;
             }
 
             if (sum > n) {
