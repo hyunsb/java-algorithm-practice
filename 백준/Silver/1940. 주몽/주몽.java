@@ -4,33 +4,41 @@ import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.StringTokenizer;
 
-public class Main {
+class Main {
+
     public static void main(String[] args) throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
 
-        int N = Integer.parseInt(bufferedReader.readLine());
-        int M = Integer.parseInt(bufferedReader.readLine());
-        StringTokenizer tokenizer = new StringTokenizer(bufferedReader.readLine(), " ");
+        int n = Integer.parseInt(bufferedReader.readLine());
+        int m = Integer.parseInt(bufferedReader.readLine());
+        int[] nums = new int[n];
 
-        int[] arr = new int[N];
-        for (int i = 0; i < arr.length; i++) {
-            arr[i] = Integer.parseInt(tokenizer.nextToken());
+        StringTokenizer stringTokenizer = new StringTokenizer(bufferedReader.readLine());
+        for (int i = 0; i < n; i++) {
+            nums[i] = Integer.parseInt(stringTokenizer.nextToken());
         }
+        Arrays.sort(nums);
+        
+        int answer = 0;
 
-        Arrays.sort(arr);
-
-        int count = 0;
-        int lt = 0, rt = arr.length-1, answer = 0;
-        while (lt < rt) {
-            int sum = arr[lt] + arr[rt];
-
-            if (sum == M) {
-                answer++;
-                lt++;
-            } else if (sum < M) {
-                lt++;
-            } else {
-                rt--;
+        int start = 0;
+        int end = n - 1;
+        while (start < end) {
+            int sum = nums[start] + nums[end];
+            
+            if (sum == m) {
+                answer += 1;
+                start += 1;
+                end -= 1;
+                continue;
+            }
+            
+            if (sum > m) {
+                end -= 1;
+            }
+            
+            if (sum < m) {
+                start += 1;
             }
         }
 
