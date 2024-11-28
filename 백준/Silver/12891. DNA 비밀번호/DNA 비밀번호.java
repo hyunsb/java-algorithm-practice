@@ -37,9 +37,6 @@ class Main {
             String prev = words[i-passwordLength];
             String next = words[i];
 
-//            System.out.println("prev: " + prev + " next: " + next);
-//            System.out.println(temp);
-
             temp.put(prev, temp.get(prev) - 1);
             temp.put(next, temp.get(next) + 1);
 
@@ -53,8 +50,6 @@ class Main {
         for (String dna : DNAs) {
             int req = require.get(dna);
             int target = temp.get(dna);
-//            System.out.println(dna + "= req : " + req + " target: " + target);
-
             if (target < req) return false;
         }
         return true;
