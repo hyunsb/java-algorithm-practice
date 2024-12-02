@@ -4,6 +4,7 @@ import java.io.InputStreamReader;
 import java.util.Stack;
 
 class Main {
+
     public static void main(String[] args) throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         int n = Integer.parseInt(bufferedReader.readLine());
