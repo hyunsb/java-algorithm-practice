@@ -1,49 +1,33 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.List;
 
 class Main {
+
     public static void main(String[] args) throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-        String str = bufferedReader.readLine();
+        String word = bufferedReader.readLine();
 
-        List<Integer> numbers = new ArrayList<>();
-        List<Character> sign = new ArrayList<>();
+        int answer = 0;
 
-        StringBuilder number = new StringBuilder();
-        for (char c : str.toCharArray()) {
-            if (c == '-' || c == '+') {
-                numbers.add(Integer.parseInt(number.toString()));
-                sign.add(c);
+        String[] split = word.split("-");
+        for (int i = 0; i < split.length; i++) {
+            int sum = calcSum(split[i]);
 
-                number = new StringBuilder();
-                continue;
-            }
-            number.append(c);
+            if (i == 0) answer += sum;
+            else answer -= sum;
         }
-        numbers.add(Integer.parseInt(number.toString()));
 
-        int result = numbers.get(0);
+        System.out.println(answer);
+    }
+
+    private static int calcSum(String word) {
+        String[] split = word.split("[+]");
+
         int sum = 0;
-        for (int i = 1; i < numbers.size(); i++) {
-            if (sign.get(i-1) == '-') {
-                result -= sum;
-                sum = 0;
-                sum += numbers.get(i);
-
-            } else if (sign.get(i-1) == '+') {
-                if (sum == 0) {
-                    result += numbers.get(i);
-                } else {
-                    sum += numbers.get(i);
-
-                }
-            }
+        for (int i = 0; i < split.length; i++) {
+            sum += Integer.parseInt(split[i]);
         }
-        result -= sum;
-
-        System.out.println(result);
+        return sum;
     }
 }
