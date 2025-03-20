@@ -3,30 +3,29 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 class Main {
-
     public static void main(String[] args) throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-        String word = bufferedReader.readLine();
+        String origin = bufferedReader.readLine();
 
+        String[] removeMinus = origin.split("-");
         int answer = 0;
 
-        String[] split = word.split("-");
-        for (int i = 0; i < split.length; i++) {
-            int sum = calcSum(split[i]);
-
-            if (i == 0) answer += sum;
-            else answer -= sum;
+        for (int i = 0; i < removeMinus.length; i++) {
+            if (i == 0) {
+                answer += sum(removeMinus[i]);
+                continue;
+            }
+            answer -= sum(removeMinus[i]);
         }
-
         System.out.println(answer);
     }
 
-    private static int calcSum(String word) {
-        String[] split = word.split("[+]");
-
+    public static int sum(String origin) {
         int sum = 0;
-        for (int i = 0; i < split.length; i++) {
-            sum += Integer.parseInt(split[i]);
+        
+        String[] removePlus = origin.split("[+]");
+        for (String plus : removePlus) {
+            sum += Integer.parseInt(plus);
         }
         return sum;
     }
